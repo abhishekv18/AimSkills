@@ -1,0 +1,583 @@
+// import { motion } from "framer-motion";
+// import {
+ 
+//   HeartHandshake,
+ 
+//   Mail,
+//   MapPin,
+//   Phone,
+//   Users,
+// } from "lucide-react";
+// import { FaFacebook,FaInstagram,FaLinkedin} from "react-icons/fa";
+// const quickLinks = [
+//   { label: "Home", href: "/" },
+//   { label: "About Us", href: "/about" },
+//   { label: "Programs", href: "/programs" },
+//   { label: "Impact", href: "/impact" },
+// ];
+
+// const resourceLinks = [
+//   { label: "Gallery", href: "/gallery" },
+//   { label: "Blogs", href: "/blogs" },
+//   { label: "Reports", href: "/reports" },
+// ];
+
+// const involvedLinks = [
+//   { label: "Donate", href: "/donate" },
+//   { label: "Volunteer", href: "/volunteer" },
+//   { label: "Contact Us", href: "/contact" },
+// ];
+
+// const socialLinks = [
+//   { label: "Facebook", href: "#facebook", icon: FaFacebook },
+//   { label: "Instagram", href: "#instagram", icon:FaInstagram },
+//   { label: "LinkedIn", href: "#linkedin", icon: FaLinkedin },
+// ];
+
+// const footerVariants = {
+//   hidden: {
+//     opacity: 0,
+//     y: 28,
+//   },
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     transition: {
+//       duration: 0.65,
+//       ease: [0.22, 1, 0.36, 1],
+//       staggerChildren: 0.1,
+//     },
+//   },
+// };
+
+// const itemVariants = {
+//   hidden: {
+//     opacity: 0,
+//     y: 18,
+//   },
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     transition: {
+//       duration: 0.5,
+//       ease: [0.22, 1, 0.36, 1],
+//     },
+//   },
+// };
+
+// function FooterLink({ href, children }) {
+//   return (
+//     <a
+//       href={href}
+//       className="text-sm font-medium text-white/70 transition-colors duration-200 hover:text-white"
+//     >
+//       {children}
+//     </a>
+//   );
+// }
+
+// function FooterColumn({ title, children }) {
+//   return (
+//     <motion.div variants={itemVariants}>
+//       <h3 className="text-sm font-extrabold uppercase tracking-[0.16em] text-white">
+//         {title}
+//       </h3>
+//       <div className="mt-5 flex flex-col gap-3">{children}</div>
+//     </motion.div>
+//   );
+// }
+
+// export default function Footer() {
+//   return (
+//     <footer className="relative overflow-hidden bg-[#0D2B6B] text-white">
+//       <div className="pointer-events-none absolute -left-28 top-16 h-80 w-80 rounded-full bg-[#2E6FD9]/25 blur-3xl" />
+//       <div className="pointer-events-none absolute -right-28 bottom-8 h-80 w-80 rounded-full bg-[#B8952A]/25 blur-3xl" />
+//       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.12)_1px,transparent_0)] bg-[length:28px_28px] opacity-20" />
+
+//       <motion.div
+//         variants={footerVariants}
+//         initial="hidden"
+//         whileInView="visible"
+//         viewport={{
+//           once: true,
+//           amount: 0.16,
+//         }}
+//         className="relative z-10 mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20"
+//       >
+//         <motion.div
+//           variants={itemVariants}
+//           className="grid gap-10 rounded-2xl border border-white/10 bg-white/[0.04] p-6 shadow-sm backdrop-blur-sm sm:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:p-10"
+//         >
+//           <div className="text-center lg:text-left">
+//             <a href="/" className="inline-flex items-center gap-3">
+//               <span className="flex size-12 items-center justify-center rounded-2xl border border-white/15 bg-white text-[#0D2B6B] text-xl font-extrabold shadow-sm">
+//                 A
+//               </span>
+
+//               <span>
+//                 <span className="block text-3xl font-extrabold tracking-tight text-white">
+//                   Aim<span className="text-[#D4AF55]">Skills</span>
+//                 </span>
+//                 <span className="mt-1 block text-xs font-bold uppercase tracking-[0.22em] text-[#B8CCF0]">
+//                   For every child
+//                 </span>
+//               </span>
+//             </a>
+
+//             <p className="mx-auto mt-5 max-w-xl text-base font-medium leading-7 text-white/70 lg:mx-0">
+//               Empowering youth with skills, education, and opportunities to
+//               build a better future.
+//             </p>
+
+//             <div className="mt-6 flex justify-center gap-3 lg:justify-start">
+//               {socialLinks.map((item) => {
+//                 const Icon = item.icon;
+
+//                 return (
+//                   <a
+//                     key={item.label}
+//                     href={item.href}
+//                     aria-label={item.label}
+//                     className="flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/10 text-white transition-all duration-200 hover:-translate-y-0.5 hover:border-[#B8952A] hover:bg-[#B8952A]"
+//                   >
+//                     <Icon size={18} strokeWidth={2.2} />
+//                   </a>
+//                 );
+//               })}
+//             </div>
+//           </div>
+
+//           <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
+//             <motion.a
+//               href="/donate"
+//               whileHover={{
+//                 y: -2,
+//                 scale: 1.03,
+//               }}
+//               whileTap={{
+//                 scale: 0.98,
+//               }}
+//               className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#B8952A] px-7 py-4 text-base font-extrabold text-white shadow-lg shadow-black/10 transition-colors hover:bg-[#D4AF55]"
+//             >
+//               <HeartHandshake size={20} strokeWidth={2.4} />
+//               Donate Now
+//             </motion.a>
+
+//             <motion.a
+//               href="/volunteer"
+//               whileHover={{
+//                 y: -2,
+//                 scale: 1.03,
+//               }}
+//               whileTap={{
+//                 scale: 0.98,
+//               }}
+//               className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1A4DA8] px-7 py-4 text-base font-bold text-white shadow-md shadow-black/10 transition-colors hover:bg-[#2E6FD9]"
+//             >
+//               <Users size={20} strokeWidth={2.4} />
+//               Become a Volunteer
+//             </motion.a>
+//           </div>
+//         </motion.div>
+
+//         <motion.div
+//           variants={itemVariants}
+//           className="mt-14 grid gap-10 border-t border-white/10 pt-12 text-center sm:grid-cols-2 sm:text-left lg:grid-cols-4"
+//         >
+//           <FooterColumn title="Quick Links">
+//             {quickLinks.map((link) => (
+//               <FooterLink key={link.label} href={link.href}>
+//                 {link.label}
+//               </FooterLink>
+//             ))}
+//           </FooterColumn>
+
+//           <FooterColumn title="Resources">
+//             {resourceLinks.map((link) => (
+//               <FooterLink key={link.label} href={link.href}>
+//                 {link.label}
+//               </FooterLink>
+//             ))}
+//           </FooterColumn>
+
+//           <FooterColumn title="Get Involved">
+//             {involvedLinks.map((link) => (
+//               <FooterLink key={link.label} href={link.href}>
+//                 {link.label}
+//               </FooterLink>
+//             ))}
+//           </FooterColumn>
+
+//           <FooterColumn title="Contact Info">
+//             <a
+//               href="https://maps.google.com"
+//               className="flex items-start justify-center gap-3 text-sm font-medium leading-6 text-white/70 transition-colors hover:text-white sm:justify-start"
+//             >
+//               <MapPin
+//                 size={17}
+//                 strokeWidth={2.2}
+//                 className="mt-0.5 shrink-0 text-[#D4AF55]"
+//               />
+//               AimSkills Education Trust, India
+//             </a>
+
+//             <a
+//               href="mailto:contact@aimskills.org"
+//               className="flex items-center justify-center gap-3 text-sm font-medium text-white/70 transition-colors hover:text-white sm:justify-start"
+//             >
+//               <Mail
+//                 size={17}
+//                 strokeWidth={2.2}
+//                 className="shrink-0 text-[#D4AF55]"
+//               />
+//               contact@aimskills.org
+//             </a>
+
+//             <a
+//               href="tel:+918482969631"
+//               className="flex items-center justify-center gap-3 text-sm font-medium text-white/70 transition-colors hover:text-white sm:justify-start"
+//             >
+//               <Phone
+//                 size={17}
+//                 strokeWidth={2.2}
+//                 className="shrink-0 text-[#D4AF55]"
+//               />
+//               +91 84829 69631
+//             </a>
+//           </FooterColumn>
+//         </motion.div>
+
+//         <motion.div
+//           variants={itemVariants}
+//           className="mt-12 border-t border-white/10 pt-8 text-center"
+//         >
+//           <p className="text-sm font-medium text-white/60">
+//             © 2025 AimSkills. All rights reserved.
+//           </p>
+//         </motion.div>
+//       </motion.div>
+//     </footer>
+//   );
+// }
+import { motion } from "framer-motion";
+import {
+  HeartHandshake,
+  Mail,
+  MapPin,
+  Phone,
+  Users,
+  FileText,
+  Shield,
+  Cookie,
+  Heart,
+} from "lucide-react";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+
+const quickLinks = [
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Programs", href: "/programs" },
+  { label: "Impact", href: "/impact" },
+];
+
+const resourceLinks = [
+  { label: "Gallery", href: "/gallery" },
+  { label: "Blogs", href: "/blogs" },
+  
+];
+
+const involvedLinks = [
+  { label: "Donate", href: "/donate" },
+  { label: "Volunteer", href: "/volunteer" },
+  
+  { label: "Contact Us", href: "/contact" },
+];
+
+const legalLinks = [
+  { label: "Privacy Policy", href: "/privacy-policy", icon: Shield },
+  { label: "Terms of Service", href: "/terms-of-service", icon: FileText },
+  { label: "Cookie Policy", href: "/cookie-policy", icon: Cookie },
+  { label: "Refund Policy", href: "/refund-policy", icon: FileText },
+];
+
+const socialLinks = [
+  { label: "Facebook", href: "#facebook", icon: FaFacebook },
+  { label: "Instagram", href: "#instagram", icon: FaInstagram },
+  { label: "LinkedIn", href: "#linkedin", icon: FaLinkedin },
+];
+
+const footerVariants = {
+  hidden: {
+    opacity: 0,
+    y: 28,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.65,
+      ease: [0.22, 1, 0.36, 1],
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+    y: 18,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+function FooterLink({ href, children }) {
+  return (
+    <a
+      href={href}
+      className="text-sm font-medium text-white/70 transition-colors duration-200 hover:text-white hover:underline underline-offset-4"
+    >
+      {children}
+    </a>
+  );
+}
+
+function FooterColumn({ title, children }) {
+  return (
+    <motion.div variants={itemVariants}>
+      <h3 className="text-sm font-extrabold uppercase tracking-[0.16em] text-white">
+        {title}
+      </h3>
+      <div className="mt-5 flex flex-col gap-3">{children}</div>
+    </motion.div>
+  );
+}
+
+export default function Footer() {
+  return (
+    <footer className="relative overflow-hidden bg-[#0D2B6B] text-white">
+      <div className="pointer-events-none absolute -left-28 top-16 h-80 w-80 rounded-full bg-[#2E6FD9]/25 blur-3xl" />
+      <div className="pointer-events-none absolute -right-28 bottom-8 h-80 w-80 rounded-full bg-[#B8952A]/25 blur-3xl" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.12)_1px,transparent_0)] bg-[size:28px_28px] opacity-20" />
+
+      <motion.div
+        variants={footerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          amount: 0.16,
+        }}
+        className="relative z-10 mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20"
+      >
+        {/* Top CTA Card */}
+        <motion.div
+          variants={itemVariants}
+          className="grid gap-10 rounded-2xl border border-white/10 bg-white/[0.04] p-6 shadow-sm backdrop-blur-sm sm:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:p-10"
+        >
+          <div className="text-center lg:text-left">
+            <a href="/" className="inline-flex items-center gap-3">
+              <span className="flex size-12 items-center justify-center rounded-2xl border border-white/15 bg-white text-[#0D2B6B] text-xl font-extrabold shadow-sm">
+                A
+              </span>
+
+              <span>
+                <span className="block text-3xl font-extrabold tracking-tight text-white">
+                  Aim<span className="text-[#D4AF55]">Skills</span>
+                </span>
+                <span className="mt-1 block text-xs font-bold uppercase tracking-[0.22em] text-[#B8CCF0]">
+                  For every child
+                </span>
+              </span>
+            </a>
+
+            <p className="mx-auto mt-5 max-w-xl text-base font-medium leading-7 text-white/70 lg:mx-0">
+              Empowering youth with skills, education, and opportunities to
+              build a better future. Registered under AimSkills Education Trust.
+            </p>
+
+            <div className="mt-6 flex justify-center gap-3 lg:justify-start">
+              {socialLinks.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    aria-label={item.label}
+                    className="flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/10 text-white transition-all duration-200 hover:-translate-y-0.5 hover:border-[#B8952A] hover:bg-[#B8952A]"
+                  >
+                    <Icon size={18} />
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
+            <motion.a
+              href="/donate"
+              whileHover={{
+                y: -2,
+                scale: 1.03,
+              }}
+              whileTap={{
+                scale: 0.98,
+              }}
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#B8952A] px-7 py-4 text-base font-extrabold text-white shadow-lg shadow-black/10 transition-colors hover:bg-[#D4AF55]"
+            >
+              <HeartHandshake size={20} strokeWidth={2.4} />
+              Donate Now
+            </motion.a>
+
+            <motion.a
+              href="/volunteer"
+              whileHover={{
+                y: -2,
+                scale: 1.03,
+              }}
+              whileTap={{
+                scale: 0.98,
+              }}
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1A4DA8] px-7 py-4 text-base font-bold text-white shadow-md shadow-black/10 transition-colors hover:bg-[#2E6FD9]"
+            >
+              <Users size={20} strokeWidth={2.4} />
+              Become a Volunteer
+            </motion.a>
+          </div>
+        </motion.div>
+
+        {/* Footer Links Grid */}
+        <motion.div
+          variants={itemVariants}
+          className="mt-14 grid gap-10 border-t border-white/10 pt-12 text-center sm:grid-cols-2 sm:text-left lg:grid-cols-5"
+        >
+          <FooterColumn title="Quick Links">
+            {quickLinks.map((link) => (
+              <FooterLink key={link.label} href={link.href}>
+                {link.label}
+              </FooterLink>
+            ))}
+          </FooterColumn>
+
+          <FooterColumn title="Resources">
+            {resourceLinks.map((link) => (
+              <FooterLink key={link.label} href={link.href}>
+                {link.label}
+              </FooterLink>
+            ))}
+          </FooterColumn>
+
+          <FooterColumn title="Get Involved">
+            {involvedLinks.map((link) => (
+              <FooterLink key={link.label} href={link.href}>
+                {link.label}
+              </FooterLink>
+            ))}
+          </FooterColumn>
+
+          <FooterColumn title="Legal">
+            {legalLinks.map((link) => {
+              const Icon = link.icon;
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="flex items-center justify-center gap-2 text-sm font-medium text-white/70 transition-colors duration-200 hover:text-white hover:underline underline-offset-4 sm:justify-start"
+                >
+                  <Icon size={14} strokeWidth={2} className="text-[#D4AF55]" />
+                  {link.label}
+                </a>
+              );
+            })}
+          </FooterColumn>
+
+          <FooterColumn title="Contact Info">
+            <a
+              href="https://maps.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start justify-center gap-3 text-sm font-medium leading-6 text-white/70 transition-colors hover:text-white sm:justify-start"
+            >
+              <MapPin
+                size={17}
+                strokeWidth={2.2}
+                className="mt-0.5 shrink-0 text-[#D4AF55]"
+              />
+              AimSkills Education Trust, India
+            </a>
+
+            <a
+              href="mailto:contact@aimskills.org"
+              className="flex items-center justify-center gap-3 text-sm font-medium text-white/70 transition-colors hover:text-white sm:justify-start"
+            >
+              <Mail
+                size={17}
+                strokeWidth={2.2}
+                className="shrink-0 text-[#D4AF55]"
+              />
+              contact@aimskills.org
+            </a>
+
+            <a
+              href="tel:+918482969631"
+              className="flex items-center justify-center gap-3 text-sm font-medium text-white/70 transition-colors hover:text-white sm:justify-start"
+            >
+              <Phone
+                size={17}
+                strokeWidth={2.2}
+                className="shrink-0 text-[#D4AF55]"
+              />
+              +91 84829 69631
+            </a>
+          </FooterColumn>
+        </motion.div>
+
+        {/* Bottom Bar */}
+     {/* Bottom Bar */}
+<motion.div
+  variants={itemVariants}
+  className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-center sm:flex-row"
+>
+  <div className="flex flex-col items-center gap-1 sm:flex-row sm:gap-2">
+    <p className="text-sm font-medium text-white/60">
+      © {new Date().getFullYear()} AimSkills Education Trust. All rights reserved.
+    </p>
+    <span className="hidden text-white/40 sm:inline">•</span>
+    <p className="inline-flex items-center gap-1 text-sm font-medium text-white/50">
+      Made with <Heart size={14} className="fill-red-500 text-red-500" /> by <span className="font-semibold text-white/70">Abhishek</span>
+    </p>
+  </div>
+  <div className="flex items-center gap-4">
+    <a
+      href="/privacy-policy"
+      className="text-sm font-medium text-white/60 transition-colors hover:text-white"
+    >
+      Privacy Policy
+    </a>
+    <span className="text-white/30">•</span>
+    <a
+      href="/terms-of-service"
+      className="text-sm font-medium text-white/60 transition-colors hover:text-white"
+    >
+      Terms of Service
+    </a>
+    <span className="text-white/30">•</span>
+    <a
+      href="/cookie-policy"
+      className="text-sm font-medium text-white/60 transition-colors hover:text-white"
+    >
+      Cookie Policy
+    </a>
+  </div>
+</motion.div>
+      </motion.div>
+    </footer>
+  );
+}

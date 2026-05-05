@@ -1,0 +1,220 @@
+
+import { useEffect, useRef } from "react";
+import {
+  motion,
+  useInView,
+  useMotionValue,
+  useSpring,
+  useTransform,
+} from "framer-motion";
+import {
+  BadgeCheck,
+  BookOpenCheck,
+  Building2,
+  GraduationCap,
+  TrendingUp,
+} from "lucide-react";
+
+const stats = [
+  {
+    value: 10000,
+    suffix: "+",
+    label: "Students Trained",
+    icon: GraduationCap,
+  },
+  {
+    value: 100,
+    suffix: "+",
+    label: "Training Programs",
+    icon: BookOpenCheck,
+  },
+  {
+    value: 50,
+    suffix: "+",
+    label: "Partner Organizations",
+    icon: Building2,
+  },
+  {
+    value: 85,
+    suffix: "%",
+    label: "Placement Success",
+    icon: BadgeCheck,
+  },
+];
+
+const sectionVariants = {
+  hidden: {
+    opacity: 0,
+    y: 32,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1],
+      staggerChildren: 0.12,
+      delayChildren: 0.12,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 26,
+    scale: 0.97,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.58,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+function CountUpNumber({ value, suffix, start }) {
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, {
+    stiffness: 80,
+    damping: 22,
+    mass: 0.8,
+  });
+
+  const displayValue = useTransform(springValue, (latest) => {
+    const rounded = Math.round(latest);
+    const formatted =
+      rounded >= 1000 ? rounded.toLocaleString("en-IN") : rounded;
+
+    return `${formatted}${suffix}`;
+  });
+
+  useEffect(() => {
+    if (start) {
+      motionValue.set(value);
+    }
+  }, [motionValue, start, value]);
+
+  return <motion.span>{displayValue}</motion.span>;
+}
+
+function StatCard({ stat, index, startCount }) {
+  const Icon = stat.icon;
+
+  return (
+    <motion.div
+      variants={cardVariants}
+      whileHover={{
+        y: -8,
+        scale: 1.025,
+      }}
+      transition={{
+        duration: 0.22,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow duration-300 hover:shadow-md sm:p-7"
+    >
+      <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[#EEF3FC] opacity-80 blur-2xl" />
+      <div className="pointer-events-none absolute -bottom-12 left-8 h-24 w-24 rounded-full bg-[#F5E8C0] opacity-50 blur-2xl" />
+
+      <div className="relative">
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex size-12 items-center justify-center rounded-2xl bg-[#EEF3FC] text-[#0D2B6B] shadow-sm transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-105">
+            <Icon size={23} strokeWidth={2.2} />
+          </div>
+
+          <span className="rounded-full border border-[#B8CCF0]/60 bg-[#F8F9FB] px-3 py-1 text-xs font-extrabold text-[#B8952A]">
+            0{index + 1}
+          </span>
+        </div>
+
+        <div className="mt-7 text-4xl font-extrabold tracking-tight text-[#1A4DA8] sm:text-5xl">
+          <CountUpNumber
+            value={stat.value}
+            suffix={stat.suffix}
+            start={startCount}
+          />
+        </div>
+
+        <h3 className="mt-3 text-sm font-extrabold uppercase tracking-wide text-[#111827]">
+          {stat.label}
+        </h3>
+
+        <div className="mt-5 h-1.5 overflow-hidden rounded-full bg-[#EEF3FC]">
+          <motion.div
+            initial={{ width: 0 }}
+            animate={startCount ? { width: "100%" } : { width: 0 }}
+            transition={{
+              duration: 1,
+              delay: 0.15 + index * 0.1,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="h-full rounded-full bg-[#B8952A]"
+          />
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+export default function ImpactSection() {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, {
+    once: true,
+    amount: 0.28,
+  });
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden bg-gradient-to-b from-[#F8F9FB] to-[#EEF3FC] py-20 sm:py-24 lg:py-28"
+    >
+      <div className="pointer-events-none absolute -left-28 top-16 h-80 w-80 rounded-full bg-[#B8CCF0]/35 blur-3xl" />
+      <div className="pointer-events-none absolute -right-24 bottom-10 h-80 w-80 rounded-full bg-[#F5E8C0]/70 blur-3xl" />
+
+      <motion.div
+        variants={sectionVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8"
+      >
+        <motion.div
+          variants={cardVariants}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#B8CCF0]/70 bg-white px-4 py-2 text-sm font-bold text-[#1A4DA8] shadow-sm">
+            <TrendingUp size={17} strokeWidth={2.2} />
+            Trusted progress
+          </div>
+
+          <h2 className="text-3xl font-extrabold tracking-tight text-[#0D2B6B] sm:text-4xl lg:text-5xl">
+            Our Impact in Numbers
+          </h2>
+
+          <p className="mx-auto mt-5 max-w-2xl text-base font-medium leading-7 text-slate-700 sm:text-lg">
+            Delivering measurable change through skill development and education
+          </p>
+
+          <div className="mx-auto mt-7 h-1 w-20 rounded-full bg-[#B8952A]" />
+        </motion.div>
+
+        <motion.div
+          variants={sectionVariants}
+          className="mt-12 grid gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4"
+        >
+          {stats.map((stat, index) => (
+            <StatCard
+              key={stat.label}
+              stat={stat}
+              index={index}
+              startCount={isInView}
+            />
+          ))}
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+}
