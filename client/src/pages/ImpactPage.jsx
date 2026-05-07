@@ -1,0 +1,950 @@
+import { useEffect, useRef } from "react";
+import {
+  motion,
+  useInView,
+  useMotionValue,
+  useSpring,
+  useTransform,
+} from "framer-motion";
+import {
+  ArrowRight,
+  BadgeCheck,
+  BarChart3,
+  BriefcaseBusiness,
+  Building2,
+  CheckCircle2,
+  ChevronRight,
+  GraduationCap,
+  HandHeart,
+  HeartHandshake,
+  Image,
+  Landmark,
+  MapPin,
+  Quote,
+  Sprout,
+  TrendingUp,
+  UsersRound,
+} from "lucide-react";
+import Navbar from "../components/Navbar";
+import CTASection from "../components/CTASection";
+import PartnersSection from "../components/PartneRSction";
+import Footer from "../components/Footer";
+
+const metrics = [
+  {
+    value: 10000,
+    suffix: "+",
+    label: "Candidates Trained",
+    description: "Youth equipped with practical employability skills",
+    icon: GraduationCap,
+  },
+  {
+    value: 85,
+    suffix: "%",
+    label: "Placement Success",
+    description: "Learners moving toward meaningful career opportunities",
+    icon: TrendingUp,
+  },
+  {
+    value: 120,
+    suffix: "+",
+    label: "Villages Reached",
+    description: "Community programs supporting rural development",
+    icon: MapPin,
+  },
+  {
+    value: 50,
+    suffix: "+",
+    label: "CSR & Institutional Partners",
+    description: "Organizations collaborating for measurable impact",
+    icon: Building2,
+  },
+];
+
+const placements = [
+  {
+    name: "Riya Sharma",
+    role: "Customer Support Executive",
+    image: "/assets/impact/placement-1.jpg",
+    story:
+      "After completing communication and workplace readiness training, Riya secured her first formal job and now supports her family with steady income.",
+  },
+  {
+    name: "Aman Khan",
+    role: "Retail Operations Associate",
+    image: "/assets/impact/placement-2.jpg",
+    story:
+      "Aman gained interview confidence, digital basics, and role-specific training that helped him transition from uncertainty to employment.",
+  },
+  {
+    name: "Neha Patil",
+    role: "Data Entry Operator",
+    image: "/assets/impact/placement-3.jpg",
+    story:
+      "With guided training and placement support, Neha built practical skills and entered a workplace aligned with her career goals.",
+  },
+];
+
+const villageImpact = [
+  {
+    title: "SHG Capacity Building",
+    description:
+      "Supporting self-help groups with training, awareness, and livelihood-linked knowledge.",
+    icon: UsersRound,
+  },
+  {
+    title: "Village Skill Camps",
+    description:
+      "Bringing structured training and career awareness directly to rural communities.",
+    icon: Landmark,
+  },
+  {
+    title: "Livelihood Pathways",
+    description:
+      "Helping families access skills, confidence, and sustainable income opportunities.",
+    icon: Sprout,
+  },
+];
+
+const caseStudies = [
+  {
+    title: "From uncertainty to employment",
+    before: "Limited exposure to workplace expectations and interview skills.",
+    after: "Completed training, improved confidence, and secured an entry-level role.",
+    image: "/assets/impact/case-study-1.jpg",
+  },
+  {
+    title: "From isolated learning to community progress",
+    before: "Rural learners lacked access to organized skill development programs.",
+    after: "Village training sessions created awareness, participation, and career direction.",
+    image: "/assets/impact/case-study-2.jpg",
+  },
+];
+
+const gallery = [
+  {
+    src: "/assets/impact/gallery-1.jpg",
+    caption: "Employability training workshop",
+  },
+  {
+    src: "/assets/impact/gallery-2.jpg",
+    caption: "Youth career readiness session",
+  },
+  {
+    src: "/assets/impact/gallery-3.jpg",
+    caption: "Village development initiative",
+  },
+  {
+    src: "/assets/impact/gallery-4.jpg",
+    caption: "SHG community interaction",
+  },
+  {
+    src: "/assets/impact/gallery-5.jpg",
+    caption: "Placement preparation activity",
+  },
+  {
+    src: "/assets/impact/gallery-6.jpg",
+    caption: "Trainer-led classroom learning",
+  },
+];
+
+const csrTrust = [
+  "Outcome-focused program design",
+  "Transparent reporting and documentation",
+  "Community-first implementation model",
+  "Scalable CSR partnership framework",
+];
+
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 32,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.14,
+      delayChildren: 0.15,
+    },
+  },
+};
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+    y: 28,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+const stagger = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.12,
+    },
+  },
+};
+
+function SectionReveal({ children, id, className = "" }) {
+  return (
+    <motion.section
+      id={id}
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.14 }}
+      className={className}
+    >
+      {children}
+    </motion.section>
+  );
+}
+
+function CountUp({ value, suffix, start }) {
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, {
+    stiffness: 80,
+    damping: 22,
+    mass: 0.8,
+  });
+
+  const displayValue = useTransform(springValue, (latest) => {
+    const rounded = Math.round(latest);
+    const formatted =
+      rounded >= 1000 ? rounded.toLocaleString("en-IN") : rounded;
+
+    return `${formatted}${suffix}`;
+  });
+
+  useEffect(() => {
+    if (start) motionValue.set(value);
+  }, [motionValue, start, value]);
+
+  return <motion.span>{displayValue}</motion.span>;
+}
+
+function SectionHeading({ badge, title, highlight, text, icon: Icon }) {
+  return (
+    <motion.div
+      variants={stagger}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.22 }}
+      className="mx-auto max-w-3xl text-center"
+    >
+      <motion.div
+        variants={fadeUp}
+        className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#B8CCF0]/70 bg-white px-4 py-2 text-sm font-bold text-[#1A4DA8] shadow-sm"
+      >
+        {Icon ? <Icon size={17} strokeWidth={2.2} /> : null}
+        {badge}
+      </motion.div>
+
+      <motion.h2
+        variants={fadeUp}
+        className="text-3xl font-extrabold tracking-tight text-[#0D2B6B] sm:text-4xl lg:text-5xl"
+      >
+        {title} {highlight ? <span className="text-[#B8952A]">{highlight}</span> : null}
+      </motion.h2>
+
+      <motion.p
+        variants={fadeUp}
+        className="mx-auto mt-5 max-w-2xl text-base font-medium leading-7 text-slate-700 sm:text-lg"
+      >
+        {text}
+      </motion.p>
+
+      <motion.div
+        variants={fadeUp}
+        className="mx-auto mt-7 h-1 w-20 rounded-full bg-[#B8952A]"
+      />
+    </motion.div>
+  );
+}
+
+function ImpactHeroSection() {
+  return (
+    // <section className="relative min-h-[78vh] overflow-hidden bg-[#0D2B6B]">
+    //   <div className="absolute inset-0">
+    //     <img
+    //       src="/src/assets/Gemini_Generated_Image_d0vhlyd0vhlyd0vh.png"
+    //       alt="AimSkills training impact"
+    //       className="h-full w-full object-cover"
+    //     />
+    //   </div>
+
+    //   <div className="absolute inset-0 bg-gradient-to-r from-[#0D2B6B]/90 via-[#0D2B6B]/72 to-[#0D2B6B]/24" />
+    //   <div className="absolute inset-0 bg-gradient-to-t from-[#0D2B6B]/55 via-transparent to-[#0D2B6B]/15" />
+
+    //   <div className="pointer-events-none absolute -left-24 top-20 h-80 w-80 rounded-full bg-[#2E6FD9]/35 blur-3xl" />
+    //   <div className="pointer-events-none absolute right-10 top-24 h-72 w-72 rounded-full bg-[#B8952A]/30 blur-3xl" />
+
+    //   <div className="relative z-10 mx-auto flex min-h-[78vh] max-w-7xl items-center px-6 py-28 lg:px-8">
+    //     <motion.div
+    //       variants={stagger}
+    //       initial="hidden"
+    //       animate="visible"
+    //       className="max-w-4xl"
+    //     >
+    //       <motion.div
+    //         variants={fadeUp}
+    //         className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-bold text-[#F5E8C0] shadow-sm backdrop-blur-md"
+    //       >
+    //         <BarChart3 size={17} strokeWidth={2.2} />
+    //         Measurable Social Impact
+    //       </motion.div>
+
+    //       <motion.h1
+    //         variants={fadeUp}
+    //         className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl"
+    //       >
+    //         Impact That Turns CSR Into{" "}
+    //         <span className="text-[#D4AF55]">Measurable Change</span>
+    //       </motion.h1>
+
+    //       <motion.p
+    //         variants={fadeUp}
+    //         className="mt-6 max-w-2xl text-base font-medium leading-8 text-slate-200 sm:text-lg"
+    //       >
+    //         From skill training to placements, village development, and SHG
+    //         empowerment, AimSkills creates outcomes that can be seen, tracked,
+    //         and sustained.
+    //       </motion.p>
+
+    //       <motion.div
+    //         variants={fadeUp}
+    //         className="mt-9 flex flex-col gap-4 sm:flex-row"
+    //       >
+    //         <a
+    //           href="/csr"
+    //           className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#B8952A] px-7 py-4 text-base font-extrabold text-white shadow-lg shadow-black/15 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#D4AF55]"
+    //         >
+    //           Explore CSR Impact
+    //           <ArrowRight size={18} strokeWidth={2.4} />
+    //         </a>
+
+    //         <a
+    //           href="/contact"
+    //           className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1A4DA8] px-7 py-4 text-base font-bold text-white shadow-md shadow-black/15 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#2E6FD9]"
+    //         >
+    //           Partner With Us
+    //         </a>
+    //       </motion.div>
+    //     </motion.div>
+    //   </div>
+    // </section>
+//    <section className="relative min-h-[72vh] overflow-hidden bg-[#0D2B6B]">
+//          <div className="absolute inset-0">
+//            <img
+//              src="/src/assets/Gemini_Generated_Image_sy3pujsy3pujsy3p.png"
+//              alt="AimSkills students and trainers"
+//              className="h-full w-full object-cover"
+//            />
+//          </div>
+   
+//          <div className="absolute inset-0 bg-gradient-to-r from-[#0D2B6B]/80 via-[#0D2B6B]/62 to-transparent" />
+//          <div className="absolute inset-0 bg-gradient-to-t from-[#0D2B6B]/45 via-transparent to-[#0D2B6B]/10" />
+   
+//          <div className="pointer-events-none absolute -left-24 top-20 h-80 w-80 rounded-full bg-[#2E6FD9]/35 blur-3xl" />
+//          <div className="pointer-events-none absolute right-8 top-24 h-72 w-72 rounded-full bg-[#B8952A]/30 blur-3xl" />
+//          <div className="pointer-events-none absolute bottom-10 right-28 h-40 w-40 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm" />
+//          <div className="pointer-events-none absolute bottom-28 right-12 h-24 w-24 rounded-2xl border border-[#D4AF55]/30 bg-[#F5E8C0]/10 backdrop-blur-sm" />
+   
+//          <div className="relative z-10 mx-auto flex min-h-[72vh] max-w-7xl items-center px-6 py-28 lg:px-8">
+//            <motion.div
+//              variants={containerVariants}
+//              initial="hidden"
+//              animate="visible"
+//              className="max-w-3xl text-left"
+//            >
+   
+//                  <motion.nav
+//                variants={itemVariants}
+//                aria-label="Breadcrumb"
+//                className="mb-6 flex items-center gap-2 text-sm font-semibold text-white/75"
+//              >
+//                <a
+//                  href="/"
+//                  className="transition-colors hover:text-[#F5E8C0]"
+//                >
+//                  Home
+//                </a>
+//                <ChevronRight size={16} strokeWidth={2.4} />
+//                <span className="text-[#F5E8C0]">Impact</span>
+//              </motion.nav>
+   
+//              <motion.div
+//                variants={itemVariants}
+//                className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-bold text-[#F5E8C0] shadow-sm backdrop-blur-md"
+//              >
+//                <span className="h-2 w-2 rounded-full bg-[#D4AF55]" />
+//               Measurable Social Impact
+//              </motion.div>
+   
+//              <motion.h1
+//                variants={itemVariants}
+//                className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl"
+//              >
+//               Our Impact
+//              </motion.h1>
+   
+//              <motion.p
+//                variants={itemVariants}
+//                className="mt-6 max-w-xl text-base font-medium leading-8 text-slate-200 sm:text-lg"
+//              >
+//               AimSkills drives measurable impact through skill development, placements, and sustainable community transformation.
+//              </motion.p>
+   
+//              <motion.div
+//                variants={itemVariants}
+//                className="mt-8 h-1 w-24 rounded-full bg-[#B8952A]"
+//              />
+//            </motion.div>
+//          </div>
+//        </section>
+<section className="relative min-h-[72vh] overflow-hidden bg-[#0D2B6B]">
+  <div className="absolute inset-0">
+    <img
+      src="/src/assets/happy-indian-student-using-laptop-while-studying-with-female-friends-in-front-of-university-building-video.jpg"
+      alt="AimSkills students and trainers"
+      className="h-full w-full object-cover"
+    />
+  </div>
+
+  <div className="absolute inset-0 bg-gradient-to-r from-[#0D2B6B]/80 via-[#0D2B6B]/62 to-transparent" />
+  <div className="absolute inset-0 bg-gradient-to-t from-[#0D2B6B]/45 via-transparent to-[#0D2B6B]/10" />
+
+  <div className="pointer-events-none absolute -left-24 top-20 h-80 w-80 rounded-full bg-[#2E6FD9]/35 blur-3xl" />
+  <div className="pointer-events-none absolute right-8 top-24 h-72 w-72 rounded-full bg-[#B8952A]/30 blur-3xl" />
+  <div className="pointer-events-none absolute bottom-10 right-28 h-40 w-40 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm" />
+  <div className="pointer-events-none absolute bottom-28 right-12 h-24 w-24 rounded-2xl border border-[#D4AF55]/30 bg-[#F5E8C0]/10 backdrop-blur-sm" />
+
+  <div className="relative z-10 mx-auto flex min-h-[72vh] max-w-7xl items-center px-6 py-28 lg:px-8">
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      className="max-w-3xl text-left"
+    >
+      <motion.nav
+        variants={itemVariants}
+        aria-label="Breadcrumb"
+        className="mb-6 flex items-center gap-2 text-sm font-semibold text-white/75"
+      >
+        <a
+          href="/"
+          className="transition-colors hover:text-[#F5E8C0]"
+        >
+          Home
+        </a>
+        <ChevronRight size={16} strokeWidth={2.4} />
+        <span className="text-[#F5E8C0]">Impact</span>
+      </motion.nav>
+
+      <motion.div
+        variants={itemVariants}
+        className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-bold text-[#F5E8C0] shadow-sm backdrop-blur-md"
+      >
+        <span className="h-2 w-2 rounded-full bg-[#D4AF55]" />
+        Measurable Social Impact
+      </motion.div>
+
+      <motion.h1
+        variants={itemVariants}
+        className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl"
+      >
+        Our Impact
+      </motion.h1>
+
+      <motion.p
+        variants={itemVariants}
+        className="mt-6 max-w-xl text-base font-medium leading-8 text-slate-200 sm:text-lg"
+      >
+        AimSkills drives measurable impact through skill development, placements, and sustainable community transformation.
+      </motion.p>
+       <motion.div
+        variants={itemVariants}
+            className="mt-8 h-1 w-24 rounded-full bg-[#B8952A]"
+       >
+       </motion.div>
+  
+      
+    </motion.div>
+  </div>
+</section>
+  );
+}
+
+function ImpactMetricsSection() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.28 });
+
+  return (
+    <section
+      ref={ref}
+      className="relative overflow-hidden bg-gradient-to-b from-[#F8F9FB] to-[#EEF3FC] py-20 sm:py-24 lg:py-28"
+    >
+      <div className="pointer-events-none absolute -left-28 top-16 h-80 w-80 rounded-full bg-[#B8CCF0]/35 blur-3xl" />
+      <div className="pointer-events-none absolute -right-28 bottom-8 h-80 w-80 rounded-full bg-[#F5E8C0]/70 blur-3xl" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+        <SectionHeading
+          badge="Impact Dashboard"
+          title="Numbers That Reflect"
+          highlight="Real Outcomes"
+          text="Every partnership supports training, confidence-building, livelihood pathways, and measurable community transformation."
+          icon={TrendingUp}
+        />
+
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          className="mt-12 grid gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4"
+        >
+          {metrics.map((metric, index) => {
+            const Icon = metric.icon;
+
+            return (
+              <motion.article
+                key={metric.label}
+                variants={fadeUp}
+                whileHover={{ y: -8, scale: 1.025 }}
+                className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-[#D4AF55]/70 hover:shadow-md"
+              >
+                <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[#EEF3FC] opacity-80 blur-2xl" />
+                <div className="pointer-events-none absolute -bottom-12 left-8 h-24 w-24 rounded-full bg-[#F5E8C0] opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-80" />
+
+                <div className="relative">
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex size-12 items-center justify-center rounded-2xl bg-[#EEF3FC] text-[#0D2B6B] transition-all duration-300 group-hover:bg-[#F5E8C0] group-hover:text-[#B8952A]">
+                      <Icon size={23} strokeWidth={2.2} />
+                    </div>
+
+                    {/* <span className="rounded-full border border-[#B8CCF0]/60 bg-[#F8F9FB] px-3 py-1 text-xs font-extrabold text-[#B8952A]">
+                      0{index + 1}
+                    </span> */}
+                  </div>
+
+                  <div className="mt-7 text-4xl font-extrabold tracking-tight text-[#1A4DA8] sm:text-5xl">
+                    <CountUp
+                      value={metric.value}
+                      suffix={metric.suffix}
+                      start={isInView}
+                    />
+                  </div>
+
+                  <h3 className="mt-3 text-sm font-extrabold uppercase tracking-wide text-[#111827]">
+                    {metric.label}
+                  </h3>
+
+                  <p className="mt-3 text-sm font-medium leading-6 text-slate-500">
+                    {metric.description}
+                  </p>
+                </div>
+              </motion.article>
+            );
+          })}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function PlacementSuccessSection() {
+  return (
+    <section className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <SectionHeading
+          badge="Placement Stories"
+          title="Training That Leads to"
+          highlight="Livelihoods"
+          text="Our programs are designed to move learners from classroom readiness to real workplace opportunities."
+          icon={BriefcaseBusiness}
+        />
+
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.16 }}
+          className="mt-12 grid gap-6 lg:mt-16 lg:grid-cols-3"
+        >
+          {placements.map((item) => (
+            <motion.article
+              key={item.name}
+              variants={fadeUp}
+              whileHover={{ y: -8, scale: 1.015 }}
+              className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:border-[#D4AF55]/70 hover:shadow-md"
+            >
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0D2B6B]/70 via-transparent to-transparent" />
+                <div className="absolute bottom-5 left-5 right-5">
+                  <div className="inline-flex rounded-full bg-[#B8952A] px-3 py-1 text-xs font-extrabold text-white">
+                    Placed Candidate
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-xl font-extrabold text-[#0D2B6B]">
+                  {item.name}
+                </h3>
+                <p className="mt-1 text-sm font-bold text-[#1A4DA8]">
+                  {item.role}
+                </p>
+                <p className="mt-4 text-sm font-medium leading-7 text-slate-600">
+                  {item.story}
+                </p>
+              </div>
+            </motion.article>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function SHGAndVillageImpactSection() {
+  return (
+    <section className="relative overflow-hidden bg-[#EEF3FC] py-20 sm:py-24 lg:py-28">
+      <div className="pointer-events-none absolute -left-28 top-16 h-80 w-80 rounded-full bg-[#B8CCF0]/35 blur-3xl" />
+      <div className="pointer-events-none absolute -right-28 bottom-8 h-80 w-80 rounded-full bg-[#F5E8C0]/70 blur-3xl" />
+
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, x: -42 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.22 }}
+          transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
+          className="relative overflow-hidden rounded-2xl border border-[#B8CCF0]/70 bg-white p-2 shadow-md"
+        >
+          <img
+            src="/assets/impact/village-impact.jpg"
+            alt="Village and SHG impact"
+            className="h-[360px] w-full rounded-xl object-cover sm:h-[460px] lg:h-[540px]"
+          />
+          <div className="absolute inset-2 rounded-xl bg-gradient-to-t from-[#0D2B6B]/55 via-transparent to-transparent" />
+          <div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-white/95 p-5 shadow-sm backdrop-blur-md">
+            <p className="text-sm font-extrabold text-[#0D2B6B]">
+              Rural programs built around local needs
+            </p>
+            <p className="mt-2 text-sm font-medium leading-6 text-slate-600">
+              We work with communities to create skills, participation, and
+              livelihood awareness.
+            </p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.div
+            variants={fadeUp}
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#B8CCF0]/70 bg-white px-4 py-2 text-sm font-bold text-[#1A4DA8] shadow-sm"
+          >
+            <HandHeart size={17} strokeWidth={2.2} />
+            Village & SHG Impact
+          </motion.div>
+
+          <motion.h2
+            variants={fadeUp}
+            className="text-3xl font-extrabold tracking-tight text-[#0D2B6B] sm:text-4xl lg:text-5xl"
+          >
+            Strengthening Communities Through{" "}
+            <span className="text-[#B8952A]">Local Action</span>
+          </motion.h2>
+
+          <motion.p
+            variants={fadeUp}
+            className="mt-5 max-w-2xl text-base font-medium leading-8 text-slate-700 sm:text-lg"
+          >
+            Our village and SHG programs connect training with grassroots
+            realities, helping communities access knowledge, livelihood
+            direction, and long-term resilience.
+          </motion.p>
+
+          <motion.div variants={stagger} className="mt-8 grid gap-4">
+            {villageImpact.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.div
+                  key={item.title}
+                  variants={fadeUp}
+                  whileHover={{ y: -4, scale: 1.015 }}
+                  className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:border-[#D4AF55]/70 hover:shadow-md"
+                >
+                  <div className="flex gap-4">
+                    <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-[#EEF3FC] text-[#1A4DA8] transition-all duration-300 group-hover:bg-[#F5E8C0] group-hover:text-[#B8952A]">
+                      <Icon size={23} strokeWidth={2.2} />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-extrabold text-[#0D2B6B]">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 text-sm font-medium leading-6 text-slate-600">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function BeforeAfterCaseStudiesSection() {
+  return (
+    <section className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <SectionHeading
+          badge="Transformation Studies"
+          title="Before & After"
+          highlight="Impact Stories"
+          text="CSR impact becomes powerful when progress is visible. These studies show how structured intervention creates real change."
+          icon={Quote}
+        />
+
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.16 }}
+          className="mt-12 grid gap-6 lg:mt-16 lg:grid-cols-2"
+        >
+          {caseStudies.map((item) => (
+            <motion.article
+              key={item.title}
+              variants={fadeUp}
+              whileHover={{ y: -8, scale: 1.015 }}
+              className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:border-[#D4AF55]/70 hover:shadow-md"
+            >
+              <div className="relative h-72 overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0D2B6B]/65 via-transparent to-transparent" />
+              </div>
+
+              <div className="p-6 sm:p-8">
+                <h3 className="text-2xl font-extrabold text-[#0D2B6B]">
+                  {item.title}
+                </h3>
+
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-2xl bg-[#F8F9FB] p-5">
+                    <span className="text-xs font-extrabold uppercase tracking-[0.16em] text-slate-500">
+                      Before
+                    </span>
+                    <p className="mt-3 text-sm font-medium leading-6 text-slate-600">
+                      {item.before}
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl bg-[#EEF3FC] p-5">
+                    <span className="text-xs font-extrabold uppercase tracking-[0.16em] text-[#B8952A]">
+                      After
+                    </span>
+                    <p className="mt-3 text-sm font-medium leading-6 text-slate-700">
+                      {item.after}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function ImpactGallerySection() {
+  return (
+    <section className="relative overflow-hidden bg-[#EEF3FC] py-20 sm:py-24 lg:py-28">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <SectionHeading
+          badge="Field Gallery"
+          title="Photos That Capture"
+          highlight="Real Work"
+          text="Training rooms, village programs, placement activities, and community participation from the ground."
+          icon={Image}
+        />
+
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.14 }}
+          className="mt-12 grid gap-5 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3"
+        >
+          {gallery.map((item) => (
+            <motion.figure
+              key={item.src}
+              variants={fadeUp}
+              whileHover={{ y: -6, scale: 1.015 }}
+              className="group relative h-72 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-sm transition-all duration-300 hover:shadow-md"
+            >
+              <img
+                src={item.src}
+                alt={item.caption}
+                className="h-full w-full rounded-xl object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-2 rounded-xl bg-gradient-to-t from-[#0D2B6B]/70 via-transparent to-transparent" />
+              <figcaption className="absolute bottom-6 left-6 right-6 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                <span className="inline-flex rounded-full bg-white/95 px-4 py-2 text-sm font-extrabold text-[#0D2B6B] shadow-sm backdrop-blur-md">
+                  {item.caption}
+                </span>
+              </figcaption>
+            </motion.figure>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function CSRTrustSection() {
+  return (
+    <section className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28">
+      <div className="pointer-events-none absolute -left-28 top-16 h-80 w-80 rounded-full bg-[#B8CCF0]/35 blur-3xl" />
+      <div className="pointer-events-none absolute -right-28 bottom-8 h-80 w-80 rounded-full bg-[#F5E8C0]/70 blur-3xl" />
+
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, x: -42 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.22 }}
+          transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
+          className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0D2B6B] to-[#1A4DA8] p-8 shadow-md sm:p-10 lg:p-12"
+        >
+          <div className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-[#B8952A]/30 blur-3xl" />
+
+          <div className="relative">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-bold text-[#F5E8C0] shadow-sm backdrop-blur-md">
+              <BadgeCheck size={17} strokeWidth={2.2} />
+              CSR Credibility
+            </div>
+
+            <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
+              Built for Responsible CSR Partnerships
+            </h2>
+
+            <div className="mt-6 h-1 w-20 rounded-full bg-[#D4AF55]" />
+
+            <p className="mt-6 text-base font-medium leading-8 text-slate-200 sm:text-lg">
+              AimSkills helps organizations convert CSR intent into structured,
+              transparent, and measurable community outcomes.
+            </p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid gap-5 sm:grid-cols-2"
+        >
+          {csrTrust.map((item) => (
+            <motion.div
+              key={item}
+              variants={fadeUp}
+              whileHover={{ y: -5, scale: 1.02 }}
+              className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-[#D4AF55]/70 hover:shadow-md"
+            >
+              <CheckCircle2
+                size={24}
+                strokeWidth={2.3}
+                className="text-[#B8952A]"
+              />
+              <h3 className="mt-5 text-lg font-extrabold text-[#0D2B6B]">
+                {item}
+              </h3>
+              <p className="mt-3 text-sm font-medium leading-6 text-slate-600">
+                Designed to support accountability, clarity, and long-term
+                institutional trust.
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+export default function ImpactPage() {
+  return (
+    <main className="min-h-screen scroll-smooth bg-[#F8F9FB] text-[#111827] antialiased">
+      <Navbar activePath="/impact" />
+
+      <ImpactHeroSection />
+
+      <SectionReveal id="impact-metrics">
+        <ImpactMetricsSection />
+      </SectionReveal>
+
+      <SectionReveal id="placement-success">
+        <PlacementSuccessSection />
+      </SectionReveal>
+
+      <SectionReveal id="village-impact">
+        <SHGAndVillageImpactSection />
+      </SectionReveal>
+
+      <SectionReveal id="case-studies">
+        <BeforeAfterCaseStudiesSection />
+      </SectionReveal>
+
+      <SectionReveal id="impact-gallery">
+        <ImpactGallerySection />
+      </SectionReveal>
+
+      <SectionReveal id="csr-trust">
+        <CSRTrustSection />
+      </SectionReveal>
+<SectionReveal id="cta">
+        <CTASection />
+      </SectionReveal>
+      <SectionReveal id="partners">
+        <PartnersSection />
+      </SectionReveal>
+
+      
+
+      <Footer />
+    </main>
+  );
+}

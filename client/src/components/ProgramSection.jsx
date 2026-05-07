@@ -156,7 +156,7 @@ function ProgramCard({ program }) {
 
 export default function ProgramsSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-[#0D2B6B] to-slate-900 py-20 sm:py-24 lg:py-28">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#0D2B6B] to-[#1A4DA8] py-20 sm:py-24 lg:py-28">
       {/* Ambient glow effects */}
       <div className="pointer-events-none absolute -left-32 top-0 h-[500px] w-[500px] rounded-full bg-blue-600/20 blur-[120px]" />
       <div className="pointer-events-none absolute -right-32 bottom-0 h-[500px] w-[500px] rounded-full bg-amber-600/15 blur-[120px]" />
