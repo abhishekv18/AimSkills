@@ -162,7 +162,7 @@ export default function HeroSection() {
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1A4DA8] px-7 py-4 text-base font-bold text-white shadow-md shadow-[#0D2B6B]/20 transition-colors hover:bg-[#2E6FD9] hover:shadow-lg hover:shadow-[#0D2B6B]/25 focus:outline-none focus:ring-4 focus:ring-[#B8CCF0]/50"
             >
               <Users size={20} strokeWidth={2.4} />
-              Become a Volunteer
+              Partner with Us
             </motion.a>
           </motion.div>
         </motion.div>

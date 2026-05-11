@@ -9,5 +9,32 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+<script>
+  let chatbotLoaded = false;
+
+  function loadChatbot() {
+    if (chatbotLoaded) return;
+
+    chatbotLoaded = true;
+
+    const chatbotScript = document.createElement("script");
+
+    chatbotScript.src =
+      "https://support-ai-olive.vercel.app/chatBot.js";
+
+    chatbotScript.setAttribute(
+      "data-owner-id",
+      "usr_118949407629509378"
+    );
+
+    document.body.appendChild(chatbotScript);
+  }
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      loadChatbot();
+    }
+  });
+</script>
   </body>
 </html>

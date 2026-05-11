@@ -256,7 +256,7 @@ export default function CTASection() {
             className="inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-white/20 bg-white/10 px-7 py-3.5 text-base font-bold text-white backdrop-blur-md transition-all hover:border-white/30 hover:bg-white/15 hover:shadow-xl hover:shadow-black/20 focus:outline-none focus:ring-4 focus:ring-white/20 sm:w-auto"
           >
             <Users size={20} strokeWidth={2.4} />
-            Become a Volunteer
+            Partner with Us
           </motion.a>
         </motion.div>
       </motion.div>

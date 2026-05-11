@@ -95,9 +95,9 @@ function ApproachCard({ approach }) {
             </div>
           </div>
 
-          <span className="rounded-full border border-[#B8CCF0]/70 bg-[#EEF3FC] px-4 py-2 text-sm font-extrabold tracking-wide text-[#1A4DA8]">
+          {/* <span className="rounded-full border border-[#B8CCF0]/70 bg-[#EEF3FC] px-4 py-2 text-sm font-extrabold tracking-wide text-[#1A4DA8]">
             {approach.step}
-          </span>
+          </span> */}
         </div>
 
         <h3 className="mt-8 text-2xl font-extrabold tracking-tight text-[#0D2B6B]">
