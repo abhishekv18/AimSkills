@@ -46,7 +46,7 @@ export default function FounderMessageSection() {
 
           <div className="relative overflow-hidden rounded-3xl border border-[#B8CCF0]/70 bg-white p-2 shadow-md">
             <img
-              src="/assets/about/founder.jpg"
+              src="/src/assets/Picture1.png"
               alt="Founder of AimSkills"
               className="h-[420px] w-full rounded-2xl object-cover sm:h-[520px]"
             />

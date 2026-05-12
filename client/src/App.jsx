@@ -11,17 +11,18 @@ import VolunteerPage from './pages/VolunteerPage'
 import BecomeTrainingPartnerPage from './pages/BecomeTrainingPartnerPage'
 import HireTrainedCandidatesPage from './pages/HireTrainedCandidatesPage'
 import ContactPage from './pages/ContactPage'
+import AdminLoginPage from './pages/AdminLogin'
+import WhatsAppButton from './components/WhatsAppButton'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-
+<ScrollToTop/>
       <Routes> 
-     
-        
-       
+
          <Route path='/'  element={<HomePage/>}/>
            <Route path='/about'  element={<AboutPage/>}/>
             <Route path='/programs'  element={<ProgramsPage/>}/>
@@ -32,8 +33,9 @@ function App() {
                          <Route path='/partner'  element={<BecomeTrainingPartnerPage/>}/>
                            <Route path='/hire'  element={<HireTrainedCandidatesPage/>}/>
                            <Route path='/contact'  element={<ContactPage/>}/>
+                            <Route path='/admin/login'  element={<AdminLoginPage/>}/>
      </Routes>
-   
+   <WhatsAppButton/>
     </>
   )
 }
