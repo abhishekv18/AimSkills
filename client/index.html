@@ -11,77 +11,7 @@
     <script type="module" src="/src/main.jsx"></script>
 
 
-<script>
-  let chatbotLoaded = false;
-  let chatbotVisible = false;
 
-  // Pages where chatbot should NOT load
-  const blockedRoutes = ["/admin", "/admin/dashboard"];
-
-  function shouldLoadChatbot() {
-    const currentPath = window.location.pathname;
-
-    return !blockedRoutes.some((route) =>
-      currentPath.startsWith(route)
-    );
-  }
-
-  function animateChatbot(show) {
-    const chatbot = document.querySelector(
-      'iframe[src*="support-ai-olive"]'
-    );
-
-    if (!chatbot) return;
-
-    chatbot.style.transition =
-      "all 0.5s cubic-bezier(0.16, 1, 0.3, 1)";
-
-    if (show) {
-      chatbot.style.opacity = "1";
-      chatbot.style.transform = "translateY(0)";
-      chatbot.style.pointerEvents = "auto";
-    } else {
-      chatbot.style.opacity = "0";
-      chatbot.style.transform = "translateY(40px)";
-      chatbot.style.pointerEvents = "none";
-    }
-  }
-
-  function loadChatbot() {
-    if (chatbotLoaded || !shouldLoadChatbot()) return;
-
-    chatbotLoaded = true;
-
-    const chatbotScript = document.createElement("script");
-
-    chatbotScript.src =
-      "https://support-ai-olive.vercel.app/chatBot.js";
-
-    chatbotScript.setAttribute(
-      "data-owner-id",
-      "usr_118949407629509378"
-    );
-
-    document.body.appendChild(chatbotScript);
-
-    chatbotScript.onload = () => {
-      setTimeout(() => {
-        animateChatbot(false);
-      }, 500);
-    };
-  }
-
-  window.addEventListener("scroll", () => {
-    loadChatbot();
-
-    const shouldShow = window.scrollY > 100;
-
-    if (shouldShow !== chatbotVisible) {
-      chatbotVisible = shouldShow;
-      animateChatbot(chatbotVisible);
-    }
-  });
-</script>
   </body>
 </html>
 

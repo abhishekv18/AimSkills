@@ -29,6 +29,8 @@ import Navbar from "../components/Navbar";
 import CTASection from "../components/CTASection";
 import PartnersSection from "../components/PartneRSction";
 import Footer from "../components/Footer";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 
 const heroStats = [
@@ -286,6 +288,16 @@ function SectionHeading({ badge, title, highlight, text, icon: Icon }) {
 }
 
 function ImpactHeroSection() {
+
+
+      const { userData } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (userData) {
+      navigate("/admin/dashboard");
+    }
+  }, [userData, navigate]);
   return (
 
   <section className="relative min-h-[72vh] overflow-hidden bg-[#0D2B6B]">
@@ -293,7 +305,7 @@ function ImpactHeroSection() {
         <img
           src="/src/assets/Gemini_Generated_Image_paj8qqpaj8qqpaj8.png"
           alt="AimSkills students and trainers"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover opacity-80"
         />
       </div>
 
@@ -315,7 +327,7 @@ function ImpactHeroSection() {
             animate="visible"
             className="max-w-3xl"
           >
-            <motion.nav
+            {/* <motion.nav
               variants={itemVariants}
               aria-label="Breadcrumb"
               className="mb-6 flex items-center gap-2 text-sm font-semibold text-white/75"
@@ -328,7 +340,7 @@ function ImpactHeroSection() {
               </a>
               <ChevronRight size={16} strokeWidth={2.4} />
               <span className="text-[#F5E8C0]">Impact</span>
-            </motion.nav>
+            </motion.nav> */}
 
             <motion.div
               variants={itemVariants}

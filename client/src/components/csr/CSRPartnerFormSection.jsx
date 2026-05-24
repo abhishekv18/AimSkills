@@ -1,30 +1,38 @@
-// src/components/csr/CSRPartnerFormSection.jsx
+
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Building2, Mail, MessageSquareText, Phone, Send, UserRound } from "lucide-react";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { ServerUrl } from "../../App";
 
 const fields = [
   {
     label: "Full Name",
+    name: "name",
     type: "text",
     placeholder: "Your name",
     icon: UserRound,
   },
   {
     label: "Organization",
+    name: "organization",
     type: "text",
     placeholder: "Company or institution name",
     icon: Building2,
   },
   {
     label: "Email Address",
+    name: "email",
     type: "email",
     placeholder: "you@company.com",
     icon: Mail,
   },
   {
     label: "Phone Number",
+    name: "phone",
     type: "tel",
-    placeholder: "+91 00000 00000",
+    placeholder: "9898989898",
     icon: Phone,
   },
 ];
@@ -54,7 +62,7 @@ const itemVariants = {
   },
 };
 
-function InputField({ field }) {
+function InputField({ field, value, onChange }) {
   const Icon = field.icon;
 
   return (
@@ -64,7 +72,10 @@ function InputField({ field }) {
         <Icon size={18} strokeWidth={2.2} className="shrink-0 text-[#1A4DA8]" />
         <input
           type={field.type}
+          name={field.name}
           placeholder={field.placeholder}
+          value={value}
+          onChange={onChange}
           className="w-full bg-transparent text-sm font-medium text-[#111827] outline-none placeholder:text-slate-400"
         />
       </span>
@@ -73,6 +84,108 @@ function InputField({ field }) {
 }
 
 export default function CSRPartnerFormSection() {
+  const [formData, setFormData] = useState({
+    name: "",
+    organization: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    
+    try {
+      const result = await axios.post(
+        ServerUrl + "/api/csr/register",
+        formData,
+        { withCredentials: true }
+      );
+
+      toast.success(result.data.message || "Inquiry submitted successfully!", {
+        duration: 4000,
+        position: "top-center",
+        style: {
+          background: "#0D2B6B",
+          color: "#fff",
+          borderRadius: "12px",
+          padding: "16px",
+          fontWeight: "600",
+        },
+        iconTheme: {
+          primary: "#F5E8C0",
+          secondary: "#0D2B6B",
+        },
+      });
+      
+      setFormData({
+        name: "",
+        organization: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    } catch (error) {
+      if (error.response) {
+        toast.error(error.response.data.message || "Something went wrong. Please try again.", {
+          duration: 4000,
+          position: "top-center",
+          style: {
+            background: "#7F1D1D",
+            color: "#fff",
+            borderRadius: "12px",
+            padding: "16px",
+            fontWeight: "600",
+          },
+          iconTheme: {
+            primary: "#FCA5A5",
+            secondary: "#7F1D1D",
+          },
+        });
+      } else if (error.request) {
+        toast.error("Network error. Please check your connection and try again.", {
+          duration: 4000,
+          position: "top-center",
+          style: {
+            background: "#7F1D1D",
+            color: "#fff",
+            borderRadius: "12px",
+            padding: "16px",
+            fontWeight: "600",
+          },
+          iconTheme: {
+            primary: "#FCA5A5",
+            secondary: "#7F1D1D",
+          },
+        });
+      } else {
+        toast.error("An unexpected error occurred. Please try again.", {
+          duration: 4000,
+          position: "top-center",
+          style: {
+            background: "#7F1D1D",
+            color: "#fff",
+            borderRadius: "12px",
+            padding: "16px",
+            fontWeight: "600",
+          },
+          iconTheme: {
+            primary: "#FCA5A5",
+            secondary: "#7F1D1D",
+          },
+        });
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section
       id="partner-form"
@@ -95,7 +208,7 @@ export default function CSRPartnerFormSection() {
           </div>
 
           <h2 className="text-3xl font-extrabold tracking-tight text-[#0D2B6B] sm:text-4xl lg:text-5xl">
-            Let’s Design a CSR Program With{" "}
+            Let's Design a CSR Program With{" "}
             <span className="text-[#B8952A]">Measurable Impact</span>
           </h2>
 
@@ -124,11 +237,17 @@ export default function CSRPartnerFormSection() {
 
         <motion.form
           variants={itemVariants}
+          onSubmit={handleSubmit}
           className="rounded-3xl border border-slate-200 bg-white p-6 shadow-md sm:p-8"
         >
           <div className="grid gap-5 sm:grid-cols-2">
             {fields.map((field) => (
-              <InputField key={field.label} field={field} />
+              <InputField
+                key={field.label}
+                field={field}
+                value={formData[field.name]}
+                onChange={handleInputChange}
+              />
             ))}
           </div>
 
@@ -137,20 +256,52 @@ export default function CSRPartnerFormSection() {
               CSR Interest / Message
             </span>
             <textarea
+              name="message"
               rows={5}
               placeholder="Tell us about your CSR focus area, location, beneficiaries, or project goals."
+              value={formData.message}
+              onChange={handleInputChange}
               className="mt-2 w-full resize-none rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium leading-7 text-[#111827] shadow-sm outline-none transition-colors placeholder:text-slate-400 focus:border-[#1A4DA8]"
             />
           </label>
 
           <motion.button
             type="submit"
-            whileHover={{ y: -2, scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#B8952A] px-7 py-4 text-base font-extrabold text-white shadow-md shadow-[#B8952A]/30 transition-colors hover:bg-[#D4AF55] sm:w-auto"
+            disabled={isLoading}
+            whileHover={isLoading ? {} : { y: -2, scale: 1.02 }}
+            whileTap={isLoading ? {} : { scale: 0.98 }}
+            className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#B8952A] px-7 py-4 text-base font-extrabold text-white shadow-md shadow-[#B8952A]/30 transition-colors hover:bg-[#D4AF55] disabled:opacity-50 disabled:cursor-not-allowed sm:w-auto"
           >
-            Submit Partnership Inquiry
-            <Send size={18} strokeWidth={2.4} />
+            {isLoading ? (
+              <>
+                <svg
+                  className="animate-spin h-5 w-5 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  />
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                  />
+                </svg>
+                Submitting...
+              </>
+            ) : (
+              <>
+                Submit Partnership Inquiry
+                <Send size={18} strokeWidth={2.4} />
+              </>
+            )}
           </motion.button>
         </motion.form>
       </motion.div>

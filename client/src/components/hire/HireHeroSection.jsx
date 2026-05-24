@@ -190,7 +190,7 @@ export default function HireHeroSection() {
         <img
           src="/src/assets/Gemini_Generated_Image_ou17kuou17kuou17.png"
           alt="HR team interviewing trained AimSkills candidates"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover opacity-80"
         />
       </div>
 
@@ -201,7 +201,7 @@ export default function HireHeroSection() {
       <div className="pointer-events-none absolute right-10 top-24 h-72 w-72 rounded-full bg-[#B8952A]/30 blur-3xl" />
       
     
-      <div className="relative z-10 mx-auto flex min-h-[72vh] max-w-7xl items-center px-6 py-28 lg:px-8">
+      <div className="relative z-10 mx-auto flex min-h-[72vh] max-w-7xl items-center px-6 py-22 lg:px-8">
         <div className="grid gap-10 w-full lg:grid-cols-[1fr_auto] lg:gap-16 lg:items-center">
           {/* Left content */}
           <motion.div

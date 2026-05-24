@@ -66,7 +66,7 @@
 
 // src/pages/VolunteerPage.jsx
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import VolunteerHeroSection from "../components/volunteer/VolunteerHeroSection";
 import VolunteerOpportunitiesSection from "../components/volunteer/VolunteerOpportunitiesSection";
@@ -76,7 +76,8 @@ import CTASection from "../components/CTASection";
 import PartnersSection from "../components/PartneRSction";
 import Footer from "../components/Footer";
 import { Shield, X, LogIn } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 32 },
@@ -218,6 +219,16 @@ function AdminAccessButton() {
 }
 
 export default function VolunteerPage() {
+
+    const { userData } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (userData) {
+      navigate("/admin/dashboard");
+    }
+  }, [userData, navigate]);
+
   return (
     <main className="min-h-screen scroll-smooth bg-[#F8F9FB] text-[#111827] antialiased">
       <Navbar activePath="/volunteer" />

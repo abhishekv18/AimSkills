@@ -656,7 +656,7 @@ export default function Navbar({
                     letterSpacing: "0.18em", textTransform: "uppercase", marginTop: 3,
                   }}
                 >
-                  For every child
+                 Building futures
                 </div>
               </div>
             </a>

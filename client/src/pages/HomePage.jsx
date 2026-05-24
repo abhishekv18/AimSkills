@@ -12,6 +12,9 @@ import TestimonialsSection from "../components/Testimonials";
 import CTASection from "../components/CTASection";
 import PartnersSection from "../components/PartneRSction";
 import Footer from "../components/Footer";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const sectionVariants = {
   hidden: {
@@ -101,6 +104,16 @@ function UpcomingSection({ title, subtitle, eyebrow, dark = false }) {
 }
 
 export default function HomePage() {
+
+    const { userData } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (userData) {
+      navigate("/admin/dashboard");
+    }
+  }, [userData, navigate]);
+
   return (
     <main className="min-h-screen scroll-smooth bg-[#F8F9FB] font-['Plus_Jakarta_Sans',sans-serif] text-[#111827] antialiased">
       <Navbar />

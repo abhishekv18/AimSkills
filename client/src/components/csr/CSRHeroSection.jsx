@@ -41,7 +41,7 @@ export default function CSRHeroSection() {
           // src="/src/assets/Students-of-various-trades-at-Vedanta-Skill-School_1-scaled.jpg"
           src="/src/assets/Gemini_Generated_Image_rnns11rnns11rnns.png"
           alt="CSR partnership and skill development"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover opacity-80"
         />
       </div>
 
@@ -62,7 +62,7 @@ export default function CSRHeroSection() {
             animate="visible"
             className="max-w-3xl"
           >
-            <motion.nav
+            {/* <motion.nav
               variants={itemVariants}
               aria-label="Breadcrumb"
               className="mb-6 flex items-center gap-2 text-sm font-semibold text-white/75"
@@ -75,7 +75,7 @@ export default function CSRHeroSection() {
               </a>
               <ChevronRight size={16} strokeWidth={2.4} />
               <span className="text-[#F5E8C0]">CSR Partnerships</span>
-            </motion.nav>
+            </motion.nav> */}
 
             <motion.div
               variants={itemVariants}

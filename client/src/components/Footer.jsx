@@ -114,12 +114,12 @@ export default function Footer() {
           once: true,
           amount: 0.16,
         }}
-        className="relative z-10 mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20"
+        className="relative z-10 mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16"
       >
         {/* Top CTA Card */}
         <motion.div
           variants={itemVariants}
-          className="grid gap-10 rounded-2xl border border-white/10 bg-white/[0.04] p-6 shadow-sm backdrop-blur-sm sm:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:p-10"
+          className="grid gap-10 rounded-2xl border border-white/10 bg-white/[0.04] p-5 shadow-sm backdrop-blur-sm sm:p-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:p-8"
         >
           <div className="text-center lg:text-left">
             <a href="/" className="inline-flex items-center gap-3">
@@ -136,7 +136,7 @@ export default function Footer() {
                   Aim<span className="text-[#D4AF55]">Skills</span>
                 </span>
                 <span className="mt-1 block text-xs font-bold uppercase tracking-[0.22em] text-[#B8CCF0]">
-                  For every child
+               Building futures
                 </span>
               </span>
             </a>

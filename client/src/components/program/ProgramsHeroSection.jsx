@@ -144,7 +144,7 @@ export default function ProgramsHeroSection() {
         <img
           src="/src/assets/Gemini_Generated_Image_2cjbv12cjbv12cjb.png"
           alt="AimSkills training and education program"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover opacity-80"
         />
       </div>
 
@@ -166,7 +166,7 @@ export default function ProgramsHeroSection() {
             animate="visible"
             className="max-w-3xl"
           >
-            <motion.nav
+            {/* <motion.nav
               variants={itemVariants}
               aria-label="Breadcrumb"
               className="mb-6 flex items-center gap-2 text-sm font-semibold text-white/75"
@@ -179,7 +179,7 @@ export default function ProgramsHeroSection() {
               </a>
               <ChevronRight size={16} strokeWidth={2.4} />
               <span className="text-[#F5E8C0]">Programs</span>
-            </motion.nav>
+            </motion.nav> */}
 
             <motion.div
               variants={itemVariants}

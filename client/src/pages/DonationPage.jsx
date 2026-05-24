@@ -10,6 +10,9 @@ import DonorSupportSection from "../components/donate/DonorSupportSection";
 import CTASection from "../components/CTASection";
 import PartnersSection from "../components/PartneRSction";
 import Footer from "../components/Footer";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 32 },
@@ -35,6 +38,16 @@ function SectionReveal({ children, id }) {
 }
 
 export default function DonatePage() {
+
+    const { userData } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (userData) {
+      navigate("/admin/dashboard");
+    }
+  }, [userData, navigate]);
+
   return (
     <main className="min-h-screen scroll-smooth bg-[#F8F9FB] text-[#111827] antialiased">
       <Navbar activePath="/donate" />

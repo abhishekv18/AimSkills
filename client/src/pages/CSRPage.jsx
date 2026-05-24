@@ -12,6 +12,9 @@ import CSRProjectsSection from "../components/csr/CSRProjectsSection";
 import CSRBenefitsSection from "../components/csr/CSRBenefitsSection";
 import CSRProposalSection from "../components/csr/CSRProposalSection";
 import CSRPartnerFormSection from "../components/csr/CSRPartnerFormSection";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const sectionVariants = {
   hidden: {
@@ -44,6 +47,16 @@ function SectionReveal({ children, id, className = "" }) {
 }
 
 export default function CSRPage() {
+
+    const { userData } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (userData) {
+      navigate("/admin/dashboard");
+    }
+  }, [userData, navigate]);
+
   return (
     <main className="min-h-screen scroll-smooth bg-[#F8F9FB] text-[#111827] antialiased">
       <Navbar activePath="/csr" />

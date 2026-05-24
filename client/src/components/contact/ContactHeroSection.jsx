@@ -156,7 +156,7 @@ export default function ContactHeroSection() {
         <img
           src="/src/assets/Gemini_Generated_Image_nmkkbynmkkbynmkk.png"
           alt="AimSkills office and training discussion"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover opacity-80"
         />
       </div>
 
@@ -169,7 +169,7 @@ export default function ContactHeroSection() {
       <div className="pointer-events-none absolute bottom-12 right-28 h-40 w-40 rounded-2xl border border-white/10 bg-white/5" />
       <div className="pointer-events-none absolute bottom-32 right-12 h-24 w-24 rounded-2xl border border-[#D4AF55]/30 bg-[#F5E8C0]/10" />
 
-      <div className="relative z-10 mx-auto flex min-h-[72vh] max-w-7xl items-center px-6 py-28 lg:px-8">
+      <div className="relative z-10 mx-auto flex min-h-[72vh] max-w-7xl items-center px-6 py-22 lg:px-8">
         <div className="grid gap-10 w-full lg:grid-cols-[1fr_auto] lg:gap-16 lg:items-center">
           {/* Left content */}
           <motion.div
