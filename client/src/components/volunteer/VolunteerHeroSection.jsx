@@ -202,7 +202,9 @@ export default function VolunteerHeroSection() {
             >
               Volunteer
               <br />
-              With Purpose
+             
+                {/* <br /> */}
+              <span className="text-[#D4AF55]"> With Purpose</span>
             </motion.h1>
 
             <motion.p

@@ -560,7 +560,7 @@ export default function Blogs() {
                   </motion.div>
                 ) : (
                   <>
-                    <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.03 }} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.03 }} className="grid gap-6 sm:grid-cols-1 lg:grid-cols-2">
                       {paginatedBlogs.map((blog) => (
                         <BlogCard key={blog.id} blog={blog} onShare={setShareBlog} />
                       ))}

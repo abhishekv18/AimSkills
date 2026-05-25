@@ -482,11 +482,11 @@ export default function HireCandidateFormSection() {
           className="relative"
         >
           <div className="absolute -left-4 -top-4 h-28 w-28 rounded-2xl bg-white" />
-          <div className="absolute -bottom-4 -right-4 h-32 w-32 rounded-2xl bg-[#F5E8C0]" />
+          {/* <div className="absolute -bottom-4 -right-4 h-32 w-32 rounded-2xl bg-[#F5E8C0]" /> */}
 
           <div className="relative overflow-hidden rounded-3xl border border-[#B8CCF0]/70 bg-white p-2 shadow-md">
             <img
-              src="/assets/hire/form.jpg"
+              src="/src/assets/Gemini_Generated_Image_n6urtvn6urtvn6ur.png"
               alt="Hiring trained candidates from AimSkills"
               className="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]"
             />

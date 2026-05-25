@@ -193,7 +193,9 @@ export default function ProgramsHeroSection() {
               variants={itemVariants}
               className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl"
             >
-              Our Programs
+              Our
+                   {/* <br /> */}
+              <span className="text-[#D4AF55]"> Programs</span>
             </motion.h1>
 
             <motion.p

@@ -89,7 +89,9 @@ export default function CSRHeroSection() {
               variants={itemVariants}
               className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl"
             >
-              CSR Partnerships
+              CSR
+                   {/* <br /> */}
+              <span className="text-[#D4AF55]"> Partnerships</span>
             </motion.h1>
 
             <motion.p

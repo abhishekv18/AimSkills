@@ -8,7 +8,7 @@ import AboutSection from "../components/AboutSection";
 import ProgramsSection from "../components/ProgramSection";
 import TestimonialsSection from "../components/Testimonials";
 
-
+import BlogsPreviewSection from "../components/BlogsPreviewSection";
 import CTASection from "../components/CTASection";
 import PartnersSection from "../components/PartneRSction";
 import Footer from "../components/Footer";
@@ -154,7 +154,7 @@ export default function HomePage() {
           /> */}
         </SectionShell>
       </SectionReveal>
-
+      <BlogsPreviewSection />
       <SectionReveal id="cta" className="relative bg-[#F5E8C0]">
         <SectionShell>
           <CTASection />

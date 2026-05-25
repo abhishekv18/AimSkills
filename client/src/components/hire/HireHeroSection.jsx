@@ -224,7 +224,7 @@ export default function HireHeroSection() {
             >
               Hire Trained
               <br />
-              Candidates
+            <span className="text-[#D4AF55]"> Candidates</span>
             </motion.h1>
 
             <motion.p

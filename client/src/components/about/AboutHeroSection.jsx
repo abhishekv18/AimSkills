@@ -193,7 +193,9 @@ export default function AboutHeroSection() {
               variants={itemVariants}
               className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl"
             >
-              About AimSkills
+              About 
+              {/* <br /> */}
+              <span className="text-[#D4AF55]"> AimSkills</span>
             </motion.h1>
 
             <motion.p

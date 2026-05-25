@@ -270,11 +270,11 @@ export default function ContactFormSection() {
           className="relative"
         >
           <div className="absolute -left-4 -top-4 h-28 w-28 rounded-2xl bg-[#EEF3FC]" />
-          <div className="absolute -bottom-4 -right-4 h-32 w-32 rounded-2xl bg-[#F5E8C0]" />
+         
 
           <div className="relative overflow-hidden rounded-3xl border border-[#B8CCF0]/70 bg-white p-2 shadow-md">
             <img
-              src="/assets/contact/contact-support.jpg"
+              src="/src/assets/Gemini_Generated_Image_m4vuzwm4vuzwm4vu.png"
               alt="AimSkills contact and support team"
               className="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]"
             />

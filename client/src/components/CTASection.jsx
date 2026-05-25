@@ -162,7 +162,7 @@ const itemVariants = {
 
 export default function CTASection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#0D2B6B] to-[#1A4DA8] py-13 sm:py-15 lg:py-17">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#0D2B6B] to-[#1A4DA8] py-14 sm:py-16 lg:py-18">
 
       {/* Ambient Glow */}
       <div className="pointer-events-none absolute -left-28 top-0 h-[420px] w-[420px] rounded-full bg-blue-600/20 blur-[110px]" />
@@ -183,7 +183,7 @@ export default function CTASection() {
           once: true,
           amount: 0.25,
         }}
-        className="relative z-10 mx-auto max-w-5xl px-5 sm:px-6 lg:px-7 text-center"
+        className="relative z-10 mx-auto max-w-5xl px-6 sm:px-7 lg:px-8 text-center"
       >
         {/* Badge */}
         <motion.div

@@ -31,7 +31,8 @@ import PartnersSection from "../components/PartneRSction";
 import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
+import {  Camera, Eye } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const heroStats = [
   { value: "10,000+", label: "Lives Impacted" },
@@ -69,30 +70,54 @@ const metrics = [
   },
 ];
 
+// const placements = [
+//   {
+//     name: "Riya Sharma",
+//     role: "Customer Support Executive",
+//     image: "/src/assets/gettyimages-2164057693-612x612.jpg",
+//     story:
+//       "After completing communication and workplace readiness training, Riya secured her first formal job and now supports her family with steady income.",
+//   },
+//   {
+//     name: "Aman Khan",
+//     role: "Retail Operations Associate",
+//     image: "/src/assets/indian-man-student-shirt-posed-outdoor_627829-2276.avif",
+//     story:
+//       "Aman gained interview confidence, digital basics, and role-specific training that helped him transition from uncertainty to employment.",
+//   },
+//   {
+//     name: "Neha Patil",
+//     role: "Data Entry Operator",
+//     image: "/src/assets/f045cd4fcc0c57d0f2306e072160c3d0.jpg",
+//     story:
+//       "With guided training and placement support, Neha built practical skills and entered a workplace aligned with her career goals.",
+//   },
+// ];
 const placements = [
   {
     name: "Riya Sharma",
     role: "Customer Support Executive",
-    image: "/assets/impact/placement-1.jpg",
+    image: "/src/assets/gettyimages-2164057693-612x612.jpg",
     story:
-      "After completing communication and workplace readiness training, Riya secured her first formal job and now supports her family with steady income.",
+      "After completing communication, digital literacy, and workplace readiness training, Riya secured her first formal job as a Customer Support Executive. Today, she contributes to her family’s financial stability while building confidence, professional experience, and a clear career path.",
   },
+
   {
     name: "Aman Khan",
     role: "Retail Operations Associate",
-    image: "/assets/impact/placement-2.jpg",
+    image: "/src/assets/indian-man-student-shirt-posed-outdoor_627829-2276.avif",
     story:
-      "Aman gained interview confidence, digital basics, and role-specific training that helped him transition from uncertainty to employment.",
+      "Aman developed interview confidence, digital fundamentals, and practical retail skills through structured training. With placement guidance and mentorship, he successfully transitioned from uncertainty to meaningful employment and now continues to grow in his professional journey.",
   },
+
   {
     name: "Neha Patil",
     role: "Data Entry Operator",
-    image: "/assets/impact/placement-3.jpg",
+    image: "/src/assets/f045cd4fcc0c57d0f2306e072160c3d0.jpg",
     story:
-      "With guided training and placement support, Neha built practical skills and entered a workplace aligned with her career goals.",
+      "Through guided learning, hands-on computer training, and placement support, Neha strengthened her practical skills and workplace confidence. She secured a role aligned with her career aspirations and now looks toward greater independence and long-term professional growth.",
   },
 ];
-
 const villageImpact = [
   {
     title: "SHG Capacity Building",
@@ -119,43 +144,38 @@ const caseStudies = [
     title: "From uncertainty to employment",
     before: "Limited exposure to workplace expectations and interview skills.",
     after: "Completed training, improved confidence, and secured an entry-level role.",
-    image: "/assets/impact/case-study-1.jpg",
+    image: "/src/assets/Screenshot 2026-05-25 042225.png",
   },
   {
     title: "From isolated learning to community progress",
     before: "Rural learners lacked access to organized skill development programs.",
     after: "Village training sessions created awareness, participation, and career direction.",
-    image: "/assets/impact/case-study-2.jpg",
+    image: "/src/assets/Screenshot 2026-05-25 042136.png",
   },
 ];
 
 const gallery = [
   {
-    src: "/assets/impact/gallery-1.jpg",
-    caption: "Employability training workshop",
+    src: "/src/assets/img5 (1).jpg",
+    title: "Skill Development Training",
+    description:
+      "Hands-on workshops helping youth strengthen employability, communication, and workplace readiness skills.",
   },
+
   {
-    src: "/assets/impact/gallery-2.jpg",
-    caption: "Youth career readiness session",
+    src: "/src/assets/img4 (1).jpg",
+    title: "Community Outreach Programs",
+    description:
+      "Village-level engagement activities promoting awareness, participation, and sustainable local development.",
   },
+
   {
-    src: "/assets/impact/gallery-3.jpg",
-    caption: "Village development initiative",
-  },
-  {
-    src: "/assets/impact/gallery-4.jpg",
-    caption: "SHG community interaction",
-  },
-  {
-    src: "/assets/impact/gallery-5.jpg",
-    caption: "Placement preparation activity",
-  },
-  {
-    src: "/assets/impact/gallery-6.jpg",
-    caption: "Trainer-led classroom learning",
+    src: "/src/assets/img2 (2).jpg",
+    title: "Workforce Training & Production Excellence",
+    description:
+      "Hands-on manufacturing training developing technical expertise, discipline, and future employment opportunities.",
   },
 ];
-
 const csrTrust = [
   "Outcome-focused program design",
   "Transparent reporting and documentation",
@@ -354,7 +374,9 @@ function ImpactHeroSection() {
               variants={itemVariants}
               className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl"
             >
-              Our Impact
+              Our 
+                   {/* <br /> */}
+              <span className="text-[#D4AF55]"> Impact</span>
             </motion.h1>
 
             <motion.p
@@ -565,7 +587,7 @@ function SHGAndVillageImpactSection() {
           className="relative overflow-hidden rounded-2xl border border-[#B8CCF0]/70 bg-white p-2 shadow-md"
         >
           <img
-            src="/assets/impact/village-impact.jpg"
+            src="/src/assets/Gemini_Generated_Image_omh9psomh9psomh9.png"
             alt="Village and SHG impact"
             className="h-[360px] w-full rounded-xl object-cover sm:h-[460px] lg:h-[540px]"
           />
@@ -714,15 +736,75 @@ function BeforeAfterCaseStudiesSection() {
   );
 }
 
+
+// function ImpactGallerySection() {
+//   return (
+//     <section className="relative overflow-hidden bg-[#EEF3FC] py-20 lg:py-28">
+//       <div className="mx-auto max-w-7xl px-6 lg:px-8">
+
+//         <SectionHeading
+//           badge="Field Gallery"
+//           title="Moments From"
+//           highlight="The Ground"
+//           text="Real stories of training, community engagement, and career transformation."
+//           icon={Image}
+//         />
+
+//         <motion.div
+//           variants={stagger}
+//           initial="hidden"
+//           whileInView="visible"
+//           viewport={{ once: true, amount: 0.15 }}
+//           className="mt-14 grid gap-8 lg:grid-cols-3"
+//         >
+//           {gallery.map((item) => (
+//             <motion.div
+//               key={item.src}
+//               variants={fadeUp}
+//               whileHover={{ y: -8 }}
+//               className="group overflow-hidden rounded-3xl bg-white shadow-md transition-all duration-300 hover:shadow-2xl"
+//             >
+//               <div className="overflow-hidden">
+//                 <img
+//                   src={item.src}
+//                   alt={item.title}
+//                   className="h-[320px] w-full object-cover transition duration-700 group-hover:scale-105"
+//                 />
+//               </div>
+
+//               <div className="p-6">
+//                 <h3 className="text-xl font-bold text-[#0D2B6B]">
+//                   {item.title}
+//                 </h3>
+
+//                 <p className="mt-3 text-[15px] leading-relaxed text-slate-600">
+//                   {item.description}
+//                 </p>
+//               </div>
+//             </motion.div>
+//           ))}
+//         </motion.div>
+
+//       </div>
+//     </section>
+//   );
+// }
 function ImpactGallerySection() {
   return (
-    <section className="relative overflow-hidden bg-[#EEF3FC] py-20 sm:py-24 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section className="relative overflow-hidden bg-[#EEF3FC] py-20 lg:py-28">
+      {/* Background Decorations */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute top-0 right-0 w-[450px] h-[450px] bg-[#B8CCF0]/25 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#F5E8C0]/20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4" />
+      </div>
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(13,43,107,0.05)_1px,transparent_0)] bg-[length:28px_28px] opacity-40" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading
           badge="Field Gallery"
-          title="Photos That Capture"
-          highlight="Real Work"
-          text="Training rooms, village programs, placement activities, and community participation from the ground."
+          title="Moments From"
+          highlight="The Ground"
+          text="Real stories of training, community engagement, and career transformation."
           icon={Image}
         />
 
@@ -730,35 +812,84 @@ function ImpactGallerySection() {
           variants={stagger}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.14 }}
-          className="mt-12 grid gap-5 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3"
+          viewport={{ once: true, amount: 0.15 }}
+          className="mt-14 grid gap-8 lg:grid-cols-3"
         >
-          {gallery.map((item) => (
-            <motion.figure
+          {gallery.map((item, index) => (
+            <motion.div
               key={item.src}
               variants={fadeUp}
-              whileHover={{ y: -6, scale: 1.015 }}
-              className="group relative h-72 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-sm transition-all duration-300 hover:shadow-md"
+              whileHover={{ y: -10 }}
+              className="group relative overflow-hidden rounded-3xl bg-white border border-slate-200/50 shadow-md transition-all duration-500 hover:shadow-2xl hover:shadow-slate-300/40 hover:border-[#B8CCF0]/60"
             >
-              <img
-                src={item.src}
-                alt={item.caption}
-                className="h-full w-full rounded-xl object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-2 rounded-xl bg-gradient-to-t from-[#0D2B6B]/70 via-transparent to-transparent" />
-              <figcaption className="absolute bottom-6 left-6 right-6 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                <span className="inline-flex rounded-full bg-white/95 px-4 py-2 text-sm font-extrabold text-[#0D2B6B] shadow-sm backdrop-blur-md">
-                  {item.caption}
-                </span>
-              </figcaption>
-            </motion.figure>
+              {/* Image Container */}
+              <div className="relative overflow-hidden">
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  className="h-[340px] w-full object-cover transition duration-700 group-hover:scale-110"
+                />
+                
+                {/* Gradient Overlay on Hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0D2B6B]/70 via-[#0D2B6B]/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                
+                {/* View Overlay */}
+                {/* <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-white/90 backdrop-blur-md px-5 py-2.5 text-sm font-bold text-[#1A4DA8] shadow-2xl">
+                    <Eye size={16} />
+                    View Image
+                  </span>
+                </div> */}
+
+                {/* Top Badge */}
+                <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white/20 backdrop-blur-xl border border-white/30 px-3 py-1.5 text-[11px] font-bold text-white shadow-lg">
+                    <Camera size={12} />
+                    AimSkills
+                  </span>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 lg:p-7">
+                <h3 className="text-xl font-extrabold text-[#0D2B6B] leading-tight group-hover:text-[#1A4DA8] transition-colors duration-300">
+                  {item.title}
+                </h3>
+
+                <p className="mt-3 text-[15px] leading-relaxed text-slate-600">
+                  {item.description}
+                </p>
+
+                {/* Bottom Decorative Line */}
+                <div className="mt-5 pt-4 border-t border-slate-100 flex items-center gap-2">
+                  <div className="h-1 w-8 rounded-full bg-[#B8952A] group-hover:w-16 transition-all duration-500" />
+                  <div className="h-1 w-2 rounded-full bg-[#B8CCF0]" />
+                </div>
+              </div>
+            </motion.div>
           ))}
+        </motion.div>
+
+        {/* View Full Gallery Link */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="mt-14 text-center"
+        >
+          <Link
+            to="/gallery"
+            className="inline-flex items-center gap-2.5 rounded-xl bg-white border-2 border-[#B8CCF0] px-7 py-3.5 text-sm font-bold text-[#1A4DA8] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-[#EEF3FC] hover:border-[#1A4DA8] hover:shadow-lg"
+          >
+            View Full Gallery
+            <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
         </motion.div>
       </div>
     </section>
   );
 }
-
 function CSRTrustSection() {
   return (
     <section className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28">

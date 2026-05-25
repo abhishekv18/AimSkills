@@ -6,7 +6,7 @@ const projects = [
   {
     title: "Youth Employability Mission",
     category: "Skill Development",
-    image: "/assets/csr/project-youth.jpg",
+    image: "/src/assets/Gemini_Generated_Image_v9tj66v9tj66v9tj.png",
     icon: GraduationCap,
     description:
       "A placement-oriented program for underserved youth covering communication, digital skills, interview readiness, and workplace behavior.",
@@ -15,7 +15,7 @@ const projects = [
   {
     title: "Village Livelihood Initiative",
     category: "Rural Development",
-    image: "/assets/csr/project-village.jpg",
+    image: "/src/assets/Gemini_Generated_Image_qwyweaqwyweaqwyw.png",
     icon: MapPin,
     description:
       "A community-focused CSR model designed to strengthen awareness, livelihood readiness, and local participation in rural areas.",
@@ -24,7 +24,7 @@ const projects = [
   {
     title: "Women & SHG Empowerment Program",
     category: "Community Impact",
-    image: "/assets/csr/project-shg.jpg",
+    image: "/src/assets/Gemini_Generated_Image_sm8jf7sm8jf7sm8j.png",
     icon: UsersRound,
     description:
       "A structured capacity-building initiative for SHGs and women-led groups focused on confidence, skills, and economic participation.",

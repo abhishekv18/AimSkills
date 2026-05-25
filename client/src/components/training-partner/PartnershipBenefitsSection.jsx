@@ -17,7 +17,7 @@ const benefitBlocks = [
     title: "Join a Training Ecosystem Designed for Reach & Reliability",
     description:
       "AimSkills collaborates with institutions, training centers, corporate partners, and skilling agencies to create structured programs that can scale across communities and learner groups.",
-    image: "/assets/training-partner/ecosystem.jpg",
+    image: "/src/assets/Gemini_Generated_Image_ki326tki326tki32.png",
     icon: Network,
     direction: "image-left",
     highlights: [
@@ -31,7 +31,7 @@ const benefitBlocks = [
     title: "Build Long-Term Value Through Professional Collaboration",
     description:
       "Our partnership model supports sustainable growth through program design, trainer enablement, field execution, CSR alignment, and measurable learning outcomes.",
-    image: "/assets/training-partner/growth.jpg",
+    image: "/src/assets/Gemini_Generated_Image_ibfxpcibfxpcibfx.png",
     icon: Building2,
     direction: "content-left",
     highlights: [

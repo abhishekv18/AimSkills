@@ -76,7 +76,9 @@ export default function DonateHeroSection() {
             >
               Empower Lives
               <br />
-              Through Giving
+             
+               {/* <br /> */}
+              <span className="text-[#D4AF55]">  Through Giving</span>
             </motion.h1>
 
             <motion.p

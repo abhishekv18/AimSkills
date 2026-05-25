@@ -225,7 +225,8 @@ export default function TrainingPartnerHeroSection() {
             >
               Scale Impact
               <br />
-              Through Partnership
+            
+               <span className="text-[#D4AF55]"> Through Partnership</span>
             </motion.h1>
 
             <motion.p

@@ -192,7 +192,7 @@ export default function ContactHeroSection() {
             >
               Contact
               <br />
-              AimSkills
+            <span className="text-[#D4AF55]">AimSkills</span>
             </motion.h1>
 
             <motion.p

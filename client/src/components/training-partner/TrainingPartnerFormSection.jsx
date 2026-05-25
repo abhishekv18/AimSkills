@@ -394,7 +394,7 @@ export default function TrainingPartnerFormSection() {
 
           <div className="relative overflow-hidden rounded-3xl border border-[#B8CCF0]/70 bg-white p-2 shadow-md">
             <img
-              src="/assets/training-partner/form.jpg"
+              src="/src/assets/Screenshot 2026-05-25 033002.png"
               alt="AimSkills training partner collaboration"
               className="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]"
             />
