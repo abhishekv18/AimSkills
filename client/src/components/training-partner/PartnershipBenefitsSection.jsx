@@ -16,7 +16,7 @@ const benefitBlocks = [
     eyebrow: "Nationwide Skilling Network",
     title: "Join a Training Ecosystem Designed for Reach & Reliability",
     description:
-      "AimSkills collaborates with institutions, training centers, corporate partners, and skilling agencies to create structured programs that can scale across communities and learner groups.",
+      "Aim Skills collaborates with institutions, training centers, corporate partners, and skilling agencies to create structured programs that can scale across communities and learner groups.",
     image: "/src/assets/Gemini_Generated_Image_ki326tki326tki32.png",
     icon: Network,
     direction: "image-left",

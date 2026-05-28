@@ -180,7 +180,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const upiId = "aimskills@upi";
+const upiId = "7248776407@okbizaxis";
 
 const trustItems = ["100% Secure Donation", "Direct Impact", "Trusted NGO"];
 
@@ -352,15 +352,15 @@ export default function DonationMethodsSection() {
                     <div className="relative">
                       <div className="absolute -inset-4 rounded-full bg-[#F5E8C0]/20 blur-xl" />
                       <img
-                        src="/assets/donate/upi-qr.png"
+                        src="/src/assets/WhatsApp Image 2026-05-26 at 10.11.00 PM.jpeg"
                         alt="AimSkills donation QR code"
-                        className="relative h-56 w-56 rounded-2xl object-contain"
+                        className="relative h-72 w-72 rounded-2xl object-contain"
                       />
                     </div>
                   </motion.div>
 
                   <a
-                    href="/assets/donate/upi-qr.png"
+                    href="/src/assets/WhatsApp Image 2026-05-26 at 10.11.00 PM.jpeg"
                     download
                     className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#B8952A] px-8 py-4 text-base font-extrabold text-white shadow-lg shadow-[#B8952A]/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#D4AF55] hover:shadow-xl"
                   >
@@ -410,7 +410,7 @@ export default function DonationMethodsSection() {
                     <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-slate-500">
                       UPI ID
                     </p>
-                    <div className="mt-4 break-all text-3xl font-extrabold tracking-tight text-[#0D2B6B]">
+                    <div className="mt-4 break-all text-2xl font-extrabold tracking-tight text-[#0D2B6B]">
                       {upiId}
                     </div>
                     

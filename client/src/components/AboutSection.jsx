@@ -159,7 +159,7 @@ export default function AboutSection() {
             className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#B8CCF0]/70 bg-white px-4 py-2 text-sm font-bold text-[#1A4DA8] shadow-sm"
           >
             <span className="h-2 w-2 rounded-full bg-[#B8952A]" />
-            About AimSkills
+            About Aim Skills
           </motion.div>
 
           <motion.h2

@@ -98,7 +98,7 @@ export default function CSRBenefitsSection() {
 
             <h2 className="text-3xl font-extrabold tracking-tight text-[#0D2B6B] sm:text-4xl lg:text-5xl">
               Why CSR Teams Choose{" "}
-              <span className="text-[#B8952A]">AimSkills</span>
+              <span className="text-[#B8952A]">Aim Skills</span>
             </h2>
 
             <p className="mt-5 max-w-xl text-base font-medium leading-8 text-slate-700 sm:text-lg">

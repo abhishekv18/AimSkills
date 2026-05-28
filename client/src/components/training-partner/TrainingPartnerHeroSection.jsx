@@ -233,7 +233,7 @@ export default function TrainingPartnerHeroSection() {
               variants={itemVariants}
               className="mt-6 max-w-xl text-base font-medium leading-8 text-slate-200 sm:text-lg"
             >
-              Collaborate with AimSkills to deliver industry-relevant skill
+              Collaborate with Aim Skills to deliver industry-relevant skill
               training that transforms careers and communities.
             </motion.p>
 

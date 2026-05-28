@@ -411,7 +411,7 @@ export default function TrainingPartnerFormSection() {
                     Together we create meaningful learning opportunities
                   </p>
                   <p className="mt-2 text-sm font-medium leading-6 text-slate-600">
-                    Collaborate with AimSkills to build scalable skill
+                    Collaborate with Aim Skills to build scalable skill
                     development and social impact programs.
                   </p>
                 </div>

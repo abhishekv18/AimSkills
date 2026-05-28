@@ -195,7 +195,7 @@ export default function AboutHeroSection() {
             >
               About 
               {/* <br /> */}
-              <span className="text-[#D4AF55]"> AimSkills</span>
+              <span className="text-[#D4AF55]"> Aim Skills</span>
             </motion.h1>
 
             <motion.p

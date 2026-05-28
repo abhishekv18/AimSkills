@@ -2,32 +2,13 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Building2, Clock, Mail, MapPin, Phone } from "lucide-react";
 
-// const contactCards = [
-//   {
-//     title: "Office Location",
-//     detail: "AimSkills Education Trust, India",
-//     href: "https://maps.google.com",
-//     icon: MapPin,
-//   },
-//   {
-//     title: "Phone Number",
-//     detail: "+91 84829 69631",
-//     href: "tel:+918482969631",
-//     icon: Phone,
-//   },
-//   {
-//     title: "Email Address",
-//     detail: "contact@aimskills.org",
-//     href: "mailto:contact@aimskills.org",
-//     icon: Mail,
-//   },
-// ];
+
 const contactCards = [
   {
     title: "Office Location",
-    detail: "AimSkills Education Trust, India",
+    detail: "Aim Skills Education Trust, India",
     subDetail: "Visit our headquarters",
-    href: "https://maps.google.com",
+    href: "https://www.google.com/maps/place/Noida,+Uttar+Pradesh+201301,+India",
     icon: MapPin,
     color: "from-[#EEF3FC] to-white",
     iconBg: "bg-[#EEF3FC] text-[#1A4DA8]",
@@ -36,9 +17,9 @@ const contactCards = [
   },
   {
     title: "Phone Number",
-    detail: "+91 84829 69631",
+    detail: "+91 72487 76407",
     subDetail: "Mon-Sat, 9 AM - 6 PM IST",
-    href: "tel:+918482969631",
+    href: "tel:+917248776407",
     icon: Phone,
     color: "from-[#F5E8C0]/30 to-white",
     iconBg: "bg-[#F5E8C0] text-[#B8952A]",
@@ -47,9 +28,9 @@ const contactCards = [
   },
   {
     title: "Email Address",
-    detail: "contact@aimskills.org",
+    detail: "aimskillstrust@gmail.com",
     subDetail: "We reply within 24 hours",
-    href: "mailto:contact@aimskills.org",
+    href: "mailto:aimskillstrust@gmail.com",
     icon: Mail,
     color: "from-emerald-50 to-white",
     iconBg: "bg-emerald-50 text-emerald-600",
@@ -107,7 +88,7 @@ export default function ContactInformationSection() {
           </div>
 
           <h2 className="text-3xl font-extrabold tracking-tight text-[#0D2B6B] sm:text-4xl lg:text-5xl">
-            Reach AimSkills Through{" "}
+            Reach Aim Skills Through{" "}
             <span className="text-[#B8952A]">Any Channel</span>
           </h2>
 
@@ -259,13 +240,13 @@ export default function ContactInformationSection() {
                       Our Headquarters
                     </h3>
                     <p className="text-sm text-slate-500">
-                      AimSkills Education Trust, India
+                      Aim Skills Education Trust, Noida, Uttar Pradesh 201301, India
                     </p>
                   </div>
                 </div>
                 
                 <a
-                  href="https://maps.google.com"
+                  href="https://www.google.com/maps/place/Noida,+Uttar+Pradesh+201301,+India"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hidden sm:flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-[#1A4DA8] shadow-sm transition-all duration-200 hover:bg-[#EEF3FC] hover:border-[#1A4DA8]/30"
@@ -281,7 +262,7 @@ export default function ContactInformationSection() {
               <div className="relative h-[400px] sm:h-[450px]">
                 <iframe
                   title="AimSkills location map"
-                  src="https://www.google.com/maps?q=India&output=embed"
+                  src="https://www.google.com/maps?q=Noida,+Uttar+Pradesh+201301,+India&output=embed"
                   className="h-full w-full border-0 transition-all duration-700"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"

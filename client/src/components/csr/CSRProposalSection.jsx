@@ -108,9 +108,9 @@ export default function CSRProposalSection() {
                     <Icon size={26} strokeWidth={2.2} />
                   </div>
 
-                  <span className="rounded-full bg-[#B8952A] px-4 py-2 text-sm font-extrabold text-white">
+                  {/* <span className="rounded-full bg-[#B8952A] px-4 py-2 text-sm font-extrabold text-white">
                     {step.step}
-                  </span>
+                  </span> */}
                 </div>
 
                 <h3 className="mt-8 text-2xl font-extrabold text-white">

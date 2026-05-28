@@ -68,7 +68,7 @@ export default function WhyHireSection() {
         >
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#B8CCF0]/70 bg-white px-4 py-2 text-sm font-bold text-[#1A4DA8] shadow-sm">
             <span className="h-2 w-2 rounded-full bg-[#B8952A]" />
-            Why Hire From AimSkills
+            Why Hire From Aim Skills
           </div>
 
           <h2 className="text-3xl font-extrabold tracking-tight text-[#0D2B6B] sm:text-4xl lg:text-5xl">
@@ -77,7 +77,7 @@ export default function WhyHireSection() {
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-base font-medium leading-7 text-slate-700 sm:text-lg">
-            AimSkills bridges training and employment by preparing candidates
+            Aim Skills bridges training and employment by preparing candidates
             with job-focused skills and workplace readiness.
           </p>
 

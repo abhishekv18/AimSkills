@@ -131,7 +131,7 @@ const AdminLoginPage = () => {
               </div>
               <div className="hidden sm:block">
                 <h1 className="text-lg sm:text-xl font-bold text-[#0D2B6B] group-hover:text-[#1A4DA8] transition-colors">
-                  AimSkills
+                  Aim Skills
                 </h1>
                 <p className="text-xs sm:text-sm text-[#111827]/70">Building futures</p>
               </div>
@@ -170,7 +170,7 @@ const AdminLoginPage = () => {
                 </div>
                 <h2 className="text-2xl xl:text-3xl font-bold mb-3">Admin Portal</h2>
                 <p className="text-base xl:text-lg text-[#B8CCF0]">
-                  Secure access to manage AimSkills operations and youth employment initiatives.
+                  Secure access to manage Aim Skills operations and youth employment initiatives.
                 </p>
               </motion.div>
 
@@ -387,7 +387,7 @@ const AdminLoginPage = () => {
 
         <div>
           <h3 className="text-sm sm:text-lg font-bold">
-            AimSkills
+            Aim Skills
           </h3>
           <p className="text-[11px] sm:text-sm text-[#B8CCF0]">
             Building futures
@@ -399,7 +399,7 @@ const AdminLoginPage = () => {
       <div className="flex flex-col items-center sm:items-end text-center sm:text-right">
         
         <div className="text-[11px] sm:text-sm text-[#B8CCF0]">
-          © 2026 AimSkills. All rights reserved.
+          © 2026 Aim Skills. All rights reserved.
         </div>
 
         <div className="mt-1 text-[11px] sm:text-xs text-[#B8CCF0]">

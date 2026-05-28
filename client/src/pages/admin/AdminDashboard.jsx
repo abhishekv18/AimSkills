@@ -322,7 +322,21 @@ const fetchAllData = async () => {
   const handleLogout = async () => {
     try {
       await axios.post(ServerUrl + endpoints.logout, {}, { withCredentials: true });
-      toast.success("Logout successfully");
+      toast.success("Logout successfully", {
+        duration: 4000,
+        position: "top-center",
+        style: {
+          background: "#0D2B6B",
+          color: "#fff",
+          borderRadius: "12px",
+          padding: "16px",
+          fontWeight: "600",
+        },
+        iconTheme: {
+          primary: "#F5E8C0",
+          secondary: "#0D2B6B",
+        },
+      });
       dispatch(setUserData(null));
       setAdminUser(null);
       navigate("/");
@@ -494,7 +508,7 @@ const fetchAllData = async () => {
   />
 </div>
             <div>
-              <h1 className="text-xl font-bold tracking-tight">AimSkills</h1>
+              <h1 className="text-xl font-bold tracking-tight">Aim Skills</h1>
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-200/70">
                 Admin Panel
               </p>
@@ -962,7 +976,7 @@ const fetchAllData = async () => {
               Admin Overview
             </div>
             <h2 className="mt-4 text-3xl font-bold tracking-tight lg:text-4xl">
-              AimSkills Management
+              Aim Skills Management
             </h2>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-emerald-100/80">
               Monitor form submissions, manage blogs, upload gallery photos,

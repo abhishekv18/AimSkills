@@ -299,7 +299,7 @@ export default function IndustryReadySection() {
         >
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#B8CCF0]/70 bg-[#F8F9FB] px-4 py-2 text-sm font-bold text-[#1A4DA8] shadow-sm">
             <Sparkles size={17} strokeWidth={2.2} />
-            Why Hire From AimSkills
+            Why Hire From Aim Skills
           </div>
 
           <h2 className="text-3xl font-extrabold tracking-tight text-[#0D2B6B] sm:text-4xl lg:text-5xl">

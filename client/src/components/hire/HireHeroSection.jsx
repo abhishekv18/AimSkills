@@ -232,7 +232,7 @@ export default function HireHeroSection() {
               className="mt-6 max-w-xl text-base font-medium leading-8 text-slate-200 sm:text-lg"
             >
               Connect with industry-ready candidates trained through practical,
-              career-focused programs at AimSkills.
+              career-focused programs at Aim Skills.
             </motion.p>
 
             <motion.div

@@ -397,7 +397,7 @@ export default function BlogsPreviewSection() {
               <div className="inline-flex flex-col items-center gap-4">
                 <Link
                   to="/blogs"
-                  className="group inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-[#1A4DA8] to-[#2E6FD9] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#1A4DA8]/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1A4DA8]/35 hover:from-[#2E6FD9] hover:to-[#1A4DA8]"
+                  className="group inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-[#1A4DA8] to-[#0D2B6B]  px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#1A4DA8]/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1A4DA8]/35"
                 >
                   View All Articles
                   <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1" />

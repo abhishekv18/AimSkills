@@ -46,7 +46,7 @@ const DonationPopup = () => {
 if (isBlockedRoute) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5">
       <div
         className={`absolute inset-0 bg-black/40 backdrop-blur-xs transition-opacity duration-300 ${isAnimating ? 'opacity-100' : 'opacity-0'}`}
         onClick={handleClose}
@@ -81,7 +81,7 @@ if (isBlockedRoute) return null;
           </div>
         </div>
 
-        <div className="p-5 sm:p-6">
+        <div className="p-4 sm:p-5">
           <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-4">
             <div className="text-center p-2 bg-[#EEF3FC] rounded-lg border border-[#B8CCF0]">
               <Users className="w-4 h-4 text-[#1A4DA8] mx-auto mb-1" />

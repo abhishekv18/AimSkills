@@ -12,13 +12,13 @@ const supportItems = [
     title: "Email Assistance",
     description: "Write to us for donation confirmation or contribution queries.",
     icon: Mail,
-    href: "mailto:contact@aimskills.org",
+    href: "mailto:aimskillstru@gmail.com",
   },
   {
     title: "Call Support",
     description: "Connect with our team for direct donation support.",
     icon: Phone,
-    href: "tel:+918482969631",
+    href: "tel:+917248776407",
   },
 ];
 
@@ -84,7 +84,7 @@ export default function DonorSupportSection() {
             );
           })}
         </div>
-
+{/* 
         <div className="mt-10 rounded-3xl border border-[#B8CCF0]/70 bg-[#EEF3FC] p-6 shadow-sm sm:p-8">
           <h3 className="text-xl font-extrabold text-[#0D2B6B]">
             Quick donor questions
@@ -100,7 +100,7 @@ export default function DonorSupportSection() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
