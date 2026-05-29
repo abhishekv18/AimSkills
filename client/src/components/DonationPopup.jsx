@@ -52,7 +52,7 @@ if (isBlockedRoute) return null;
         onClick={handleClose}
       />
 
-      <div className={`relative bg-white rounded-2xl shadow-2xl w-full max-w-sm mx-auto transform transition-all duration-300 ${isAnimating ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}>
+      <div className={`relative bg-white rounded-2xl shadow-2xl w-[92%] max-w-[340px] mx-auto transform transition-all duration-300 ${isAnimating ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}>
         <button
           onClick={handleClose}
           className="absolute top-3 right-3 p-2 text-white bg-black/30 hover:bg-black/50 rounded-full z-20"
@@ -60,7 +60,7 @@ if (isBlockedRoute) return null;
           <X size={18} />
         </button>
 
-        <div className="relative bg-gradient-to-br from-[#0D2B6B] via-[#1A4DA8] to-[#2E6FD9] text-white p-5 rounded-t-2xl overflow-hidden">
+        <div className="relative bg-gradient-to-br from-[#0D2B6B] via-[#1A4DA8] to-[#2E6FD9] text-white p-4 rounded-t-2xl overflow-hidden">
           <img
             src="/Gemini_Generated_Image_wzb9imwzb9imwzb9.png"
             alt="Banner"
@@ -73,7 +73,7 @@ if (isBlockedRoute) return null;
               <div className="bg-white/20 p-2 rounded-full">
                 <Heart className="w-5 h-5 text-[#F5E8C0] fill-current" />
               </div>
-              <h2 className="text-lg sm:text-xl font-semibold">Empower Youth Through Skills</h2>
+              <h2 className="text-base sm:text-lg font-semibold">Empower Youth Through Skills</h2>
             </div>
             <p className="text-[#B8CCF0] text-xs sm:text-sm">
               Help underprivileged youth gain employable skills and build brighter futures.
@@ -81,7 +81,7 @@ if (isBlockedRoute) return null;
           </div>
         </div>
 
-        <div className="p-4 sm:p-5">
+        <div className="p-3 sm:p-4">
           <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-4">
             <div className="text-center p-2 bg-[#EEF3FC] rounded-lg border border-[#B8CCF0]">
               <Users className="w-4 h-4 text-[#1A4DA8] mx-auto mb-1" />
