@@ -62,7 +62,7 @@ if (isBlockedRoute) return null;
 
         <div className="relative bg-gradient-to-br from-[#0D2B6B] via-[#1A4DA8] to-[#2E6FD9] text-white p-5 rounded-t-2xl overflow-hidden">
           <img
-            src="/src/assets/Gemini_Generated_Image_wzb9imwzb9imwzb9.png"
+            src="/Gemini_Generated_Image_wzb9imwzb9imwzb9.png"
             alt="Banner"
             className="absolute inset-0 w-full h-full object-cover opacity-20"
           />
