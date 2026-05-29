@@ -25,8 +25,8 @@ import Blogs from './pages/Blogs'
 import BlogDetail from './pages/BlogDetails'
 import DonationPopup from './components/DonationPopup'
 
-export const ServerUrl="http://localhost:8000";
-
+//export const ServerUrl="http://localhost:8000";
+export const ServerUrl="https://aimskills.onrender.com";
 function App() {
 const dispatch=useDispatch();
 const [authLoading, setAuthLoading] = useState(true);

@@ -47,8 +47,8 @@ import { toast } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserData } from "../../redux/userSlice";
 
-const ServerUrl = "http://localhost:8000";
-
+//const ServerUrl = "http://localhost:8000";
+const ServerUrl = "https://aimskills.onrender.com";
 const monthLabels = [
   "Jan", "Feb", "Mar", "Apr", "May", "Jun",
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
