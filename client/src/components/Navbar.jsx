@@ -1516,7 +1516,7 @@ export default function Navbar({
                 }
               >
                 <img
-                  src="/WhatsApp Image 2026-05-01 at 8.07.03 PM.jpeg"
+                  src="/assets/WhatsApp Image 2026-05-01 at 8.07.03 PM.jpeg"
                   alt="AimSkills logo"
                   style={{ width: "100%", height: "100%", objectFit: "contain" }}
                 />
