@@ -73,7 +73,7 @@ import VolunteerOpportunitiesSection from "../components/volunteer/VolunteerOppo
 import WhyVolunteerSection from "../components/volunteer/WhyVolunteerSection";
 import VolunteerFormSection from "../components/volunteer/VolunteerFormSection";
 import CTASection from "../components/CTASection";
-import PartnersSection from "../components/PartneRSction";
+import PartnersSection from "../components/PartnersSection";
 import Footer from "../components/Footer";
 import { Shield, X, LogIn } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";

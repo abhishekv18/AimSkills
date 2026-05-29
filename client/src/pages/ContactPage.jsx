@@ -6,7 +6,7 @@ import ContactIntroSection from "../components/contact/ContactIntroSection";
 import ContactFormSection from "../components/contact/ContactFormSection";
 import ContactInformationSection from "../components/contact/ContactInformationSection";
 import CTASection from "../components/CTASection";
-import PartnersSection from "../components/PartneRSction";
+import PartnersSection from "../components/PartnersSection";
 import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";

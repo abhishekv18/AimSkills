@@ -105,7 +105,7 @@ import ProgramsHeroSection from "../components/program/ProgramsHeroSection";
 import ProgramsIntroSection from "../components/program/ProgramsIntroSection";
 import DetailedProgramsSection from "../components/program/DetailedProgramsSection";
 import ApproachSection from "../components/program/ApproachSection";
-import PartnersSection from "../components/PartneRSction";
+import PartnersSection from "../components/PartnersSection";
 import CTASection from "../components/CTASection";
 import Footer from "../components/Footer";
 import { useSelector } from "react-redux";

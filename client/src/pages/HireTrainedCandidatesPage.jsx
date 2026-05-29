@@ -6,7 +6,7 @@ import WhyHireSection from "../components/hire/WhyHireSection";
 import IndustryReadySection from "../components/hire/IndustryReadySection";
 import HireCandidateFormSection from "../components/hire/HireCandidateFormSection";
 import CTASection from "../components/CTASection";
-import PartnersSection from "../components/PartneRSction";
+import PartnersSection from "../components/PartnersSection";
 import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";

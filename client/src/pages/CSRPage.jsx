@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import CTASection from "../components/CTASection";
-import PartnersSection from "../components/PartneRSction";
+import PartnersSection from "../components/PartnersSection";
 import Footer from "../components/Footer";
 import CSRHeroSection from "../components/csr/CSRHeroSection";
 import CSRIntroSection from "../components/csr/CSRIntroSection";

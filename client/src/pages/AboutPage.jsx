@@ -9,7 +9,7 @@ import TeamOverviewSection from "../components/about/TeamOverviewSection";
 import AwardsSection from "../components/about/AwardsSection";
 import TimelineSection from "../components/about/TimelineSection";
 import CTASection from "../components/CTASection";
-import PartnersSection from "../components/PartneRSction";
+import PartnersSection from "../components/PartnersSection";
 import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";

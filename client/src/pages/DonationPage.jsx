@@ -8,7 +8,7 @@ import DonationMethodsSection from "../components/donate/DonationMethodsSection"
 import TransparencyTrustSection from "../components/donate/TransparencyTrustSection";
 import DonorSupportSection from "../components/donate/DonorSupportSection";
 import CTASection from "../components/CTASection";
-import PartnersSection from "../components/PartneRSction";
+import PartnersSection from "../components/PartnersSection";
 import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";

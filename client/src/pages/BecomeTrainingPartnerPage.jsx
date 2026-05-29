@@ -6,7 +6,7 @@ import PartnershipBenefitsSection from "../components/training-partner/Partnersh
 import PartnershipProcessSection from "../components/training-partner/PartnershipProcessSection";
 import TrainingPartnerFormSection from "../components/training-partner/TrainingPartnerFormSection";
 import CTASection from "../components/CTASection";
-import PartnersSection from "../components/PartneRSction";
+import PartnersSection from "../components/PartnersSection";
 import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";

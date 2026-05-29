@@ -22,7 +22,7 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import CTASection from "../components/CTASection";
-import PartnersSection from "../components/PartneRSction";
+import PartnersSection from "../components/PartnersSection";
 import Footer from "../components/Footer";
 import { toast } from "react-hot-toast";
 import { useSelector } from "react-redux";

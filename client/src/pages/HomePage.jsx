@@ -10,7 +10,7 @@ import TestimonialsSection from "../components/Testimonials";
 
 import BlogsPreviewSection from "../components/BlogsPreviewSection";
 import CTASection from "../components/CTASection";
-import PartnersSection from "../components/PartneRSction";
+import PartnersSection from "../components/PartnersSection";
 import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
