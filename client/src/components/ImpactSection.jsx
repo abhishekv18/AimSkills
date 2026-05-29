@@ -345,10 +345,10 @@ function StatCard({ stat, index, startCount }) {
           </div>
 
           {/* Trend indicator */}
-          {/* <div className="flex items-center gap-1 rounded-full bg-[#EEF3FC] px-2.5 py-1">
+          <div className="flex items-center gap-1 rounded-full bg-[#EEF3FC] px-2.5 py-1">
             <TrendingUp size={14} className="text-[#1A4DA8]" strokeWidth={2.5} />
             <span className="text-xs font-bold text-[#1A4DA8]">+{Math.floor(Math.random() * 25 + 5)}%</span>
-          </div> */}
+          </div>
         </div>
 
         <div className="mt-7 text-4xl font-extrabold tracking-tight text-[#1A4DA8] sm:text-5xl">
@@ -482,7 +482,7 @@ export default function ImpactSection() {
         </motion.div>
 
         {/* Bottom accent line */}
-        <motion.div
+        {/* <motion.div
           initial={{ scaleX: 0, opacity: 0 }}
           animate={isInView ? { scaleX: 1, opacity: 1 } : { scaleX: 0, opacity: 0 }}
           transition={{ duration: 0.8, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -493,7 +493,7 @@ export default function ImpactSection() {
           <div className="h-1 w-6 rounded-full bg-[#1A4DA8]" />
           <div className="h-1 w-8 rounded-full bg-[#B8952A]" />
           <div className="h-1 w-12 rounded-full bg-[#B8CCF0]" />
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </section>
   );

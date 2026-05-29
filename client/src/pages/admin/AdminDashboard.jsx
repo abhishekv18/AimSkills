@@ -502,7 +502,7 @@ const fetchAllData = async () => {
           <div className="flex items-center gap-3">
     <div className="flex size-12 items-center justify-center">
   <img
-    src="/src/assets/WhatsApp Image 2026-05-01 at 8.07.03 PM.jpeg"
+    src="/WhatsApp Image 2026-05-01 at 8.07.03 PM.jpeg"
     alt="AimSkills Logo"
     className="h-10 w-10 object-contain"
   />

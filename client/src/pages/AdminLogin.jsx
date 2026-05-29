@@ -124,7 +124,7 @@ const AdminLoginPage = () => {
             <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group">
               <div className="bg-gradient-to-br from-[#EEF3FC] to-white p-1 sm:p-1.5 rounded-lg sm:rounded-xl group-hover:shadow-md transition-all duration-300">
                 <img
-                  src="/src/assets/WhatsApp Image 2026-05-01 at 8.07.03 PM.jpeg"
+                  src="/WhatsApp Image 2026-05-01 at 8.07.03 PM.jpeg"
                   className="w-9 h-7 sm:w-12 sm:h-10 object-contain"
                   alt="AimSkills Logo"
                 />
@@ -380,7 +380,7 @@ const AdminLoginPage = () => {
       {/* Left Side */}
       <div className="flex items-center justify-center sm:justify-start space-x-3">
         <img
-          src="/src/assets/WhatsApp Image 2026-05-01 at 8.07.03 PM.jpeg"
+          src="/WhatsApp Image 2026-05-01 at 8.07.03 PM.jpeg"
           className="w-10 h-8 sm:w-12 sm:h-10 object-contain"
           alt="AimSkills Logo"
         />
