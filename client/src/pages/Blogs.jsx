@@ -27,7 +27,7 @@ import Footer from "../components/Footer";
 import { toast } from "react-hot-toast";
 import { useSelector } from "react-redux";
 
-const ServerUrl = "http://localhost:8000";
+const ServerUrl = "https://aimskills.onrender.com";
 const BLOGS_PER_PAGE = 6;
 
 const fadeUp = {

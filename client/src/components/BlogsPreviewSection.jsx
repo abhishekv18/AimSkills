@@ -188,7 +188,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, CalendarDays, Clock, Eye, Newspaper } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const ServerUrl = "http://localhost:8000";
+const ServerUrl = "https://aimskills.onrender.com";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 32 },

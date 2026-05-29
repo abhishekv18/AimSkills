@@ -21,7 +21,7 @@ import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-const ServerUrl = "http://localhost:8000";
+const ServerUrl = "https://aimskills.onrender.com";
 const IMAGES_PER_PAGE = 12;
 function normalizeGallery(item) {
   return {
