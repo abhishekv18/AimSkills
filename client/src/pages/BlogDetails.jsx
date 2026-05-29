@@ -433,7 +433,7 @@ import {
 import { FaFacebook, FaLinkedin, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import { toast } from "react-hot-toast";
 
-const ServerUrl = "http://localhost:8000";
+const ServerUrl = "https://aimskills.onrender.com";
 
 function formatDate(date) {
   if (!date) return "";
