@@ -337,7 +337,7 @@ import {
   Shield,
   Cookie,
   Heart,
-  ExternalLink,
+  // ExternalLink,
   MessageCircle,
 } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaXTwitter, FaYoutube } from "react-icons/fa6";
@@ -572,7 +572,7 @@ export default function Footer() {
                   >
                     <Icon size={18} className="transition-transform duration-300 group-hover:scale-110" />
                     <span className="hidden sm:inline">{link.label}</span>
-                    <ExternalLink size={12} className="opacity-0 transition-opacity duration-300 group-hover:opacity-70" />
+                    {/* <ExternalLink size={12} className="opacity-0 transition-opacity duration-300 group-hover:opacity-70" /> */}
                   </motion.a>
                 );
               })}
