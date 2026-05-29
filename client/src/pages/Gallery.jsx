@@ -50,9 +50,7 @@ function GalleryHeroSection({ totalImages }) {
 
       <div className="pointer-events-none absolute -left-24 top-20 h-80 w-80 rounded-full bg-[#2E6FD9]/30 blur-3xl" />
       <div className="pointer-events-none absolute right-10 top-24 h-72 w-72 rounded-full bg-[#B8952A]/25 blur-3xl" />
-      {/* <div className="pointer-events-none absolute bottom-12 right-28 h-40 w-40 rounded-2xl border border-white/10 bg-white/5" />
-      <div className="pointer-events-none absolute bottom-32 right-12 h-24 w-24 rounded-2xl border border-[#D4AF55]/20 bg-[#F5E8C0]/8" /> */}
-
+     
       <div className="pointer-events-none absolute inset-0 opacity-[0.04]">
         <div className="h-full w-full" style={{ backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
       </div>
@@ -85,19 +83,26 @@ function GalleryHeroSection({ totalImages }) {
             </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.25, duration: 0.6 }} className="hidden lg:flex flex-col gap-4 w-56 shrink-0">
+         <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.25, duration: 0.6 }} className="flex flex-row justify-center gap-2.5 lg:flex-col lg:w-56 shrink-0">
             {[
               { value: `${totalImages}+`, label: "Images Captured", icon: Images },
               { value: "50+", label: "Training Sessions", icon: Grid3X3 },
               { value: "20+", label: "Locations Covered", icon: MapPin },
             ].map((stat) => (
-              <div key={stat.label} className="rounded-xl border border-white/15 bg-[#1A4DA8]/40 px-5 py-4 hover:bg-white/10 hover:border-white/20 transition-all">
-                <div className="flex items-center gap-3 mb-2">
-                  <stat.icon size={18} className="text-[#D4AF55]" />
-                  <div className="text-2xl font-extrabold text-white">{stat.value}</div>
-                </div>
-                <div className="text-xs font-medium text-white/40">{stat.label}</div>
-              </div>
+              // <div key={stat.label} className="rounded-xl border border-white/15 bg-[#1A4DA8]/40 px-5 py-4 hover:bg-white/10 hover:border-white/20 transition-all">
+              //   <div className="flex items-center gap-3 mb-2">
+              //     <stat.icon size={18} className="text-[#D4AF55]" />
+              //     <div className="text-2xl font-extrabold text-white">{stat.value}</div>
+              //   </div>
+              //   <div className="text-xs font-medium text-white/40">{stat.label}</div>
+              // </div>
+              <div key={stat.label} className="rounded-xl border border-white/15 bg-[#1A4DA8]/40 px-3 py-3 lg:px-5 lg:py-4 flex-1 text-center lg:text-left hover:bg-white/10 hover:border-white/20 transition-all">
+  <div className="flex items-center justify-center gap-2 lg:gap-3 lg:justify-start lg:mb-2">
+    <stat.icon size={16} className="text-[#D4AF55] lg:size-[18px]" />
+    <div className="text-lg lg:text-2xl font-extrabold text-white">{stat.value}</div>
+  </div>
+  <div className="mt-0.5 text-[10px] lg:text-xs font-medium text-white/40">{stat.label}</div>
+</div>
             ))}
           </motion.div>
         </div>
