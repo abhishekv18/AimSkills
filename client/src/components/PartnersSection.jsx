@@ -77,12 +77,12 @@
 import { motion } from "framer-motion";
 
 // ✅ FIXED IMPORTS (relative path)
-import logo1 from "../assets/Bihaan-183x146.png";
-import logo2 from "../assets/DDU-GKY-260x122.png";
-import logo3 from "../assets/JSDMS-154x146.png";
-import logo4 from "../assets/Skill-India-117x146.png";
-import logo5 from "../assets/UK-Logo-141x146.png";
-import logo6 from "../assets/USDM-145x146.png";
+import logo1 from "/Bihaan-183x146.png";
+import logo2 from "/DDU-GKY-260x122.png";
+import logo3 from "/JSDMS-154x146.png";
+import logo4 from "/Skill-India-117x146.png";
+import logo5 from "/UK-Logo-141x146.png";
+import logo6 from "/USDM-145x146.png";
 
 const partners = [
   { name: "Bihaan", logo: logo1 },
