@@ -345,10 +345,10 @@ function StatCard({ stat, index, startCount }) {
           </div>
 
           {/* Trend indicator */}
-          <div className="flex items-center gap-1 rounded-full bg-[#EEF3FC] px-2.5 py-1">
+          {/* <div className="flex items-center gap-1 rounded-full bg-[#EEF3FC] px-2.5 py-1">
             <TrendingUp size={14} className="text-[#1A4DA8]" strokeWidth={2.5} />
             <span className="text-xs font-bold text-[#1A4DA8]">+{Math.floor(Math.random() * 25 + 5)}%</span>
-          </div>
+          </div> */}
         </div>
 
         <div className="mt-7 text-4xl font-extrabold tracking-tight text-[#1A4DA8] sm:text-5xl">
