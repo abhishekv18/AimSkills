@@ -120,7 +120,7 @@ export default function AboutSection() {
 
           <div className="relative overflow-hidden rounded-2xl border border-[#B8CCF0]/70 bg-white p-2 shadow-md">
             <img
-              src="/src/assets/Gemini_Generated_Image_rdep1wrdep1wrdep.png"
+              src="/Gemini_Generated_Image_rdep1wrdep1wrdep.png"
               alt="AimSkills students in a training session"
               className="h-[340px] w-full rounded-xl object-cover sm:h-[430px] lg:h-[520px]"
             />

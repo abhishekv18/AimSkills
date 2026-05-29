@@ -481,7 +481,7 @@ export default function Footer() {
             <a href="/" className="inline-flex items-center gap-3">
               <span className="flex size-12 items-center justify-center rounded-2xl border border-white/15 bg-white p-1.5">
                 <img 
-                  src="/src/assets/WhatsApp Image 2026-05-01 at 8.07.03 PM.jpeg" 
+                  src="/WhatsApp Image 2026-05-01 at 8.07.03 PM.jpeg" 
                   alt="AimSkills Logo"
                   className="h-full w-full rounded-lg object-contain"
                 />

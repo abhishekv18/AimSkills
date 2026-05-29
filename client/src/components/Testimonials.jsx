@@ -8,21 +8,21 @@ const testimonials = [
       "We got what we expected and AimSkills Trust delivered what they committed. AimSkills is young and vibrant, but they are very dynamic in their actions and quality parameters. Communicative and responsive staff and delivered the training with the help of industry experts.",
     name: "Nitin Yadav",
     company: "The Ocean HR Solution",
-    logo: "/src/assets/the-ocean-hr.png",
+    logo: "/the-ocean-hr.png",
   },
   {
     quote:
       "We were in the need of faculty development programs and than get in touch with the team of AimSkills Trust. They are expert in their field and helped us a lot in upgrading the skills of our in-house trainers. Got tremendous and productive results. Thanks team Aim Skills for the amazing training experience.",
     name: "Mr. Rachit Kumar",
     company: "Shree Bala Ji Degree College",
-    logo: "/src/assets/bala_ji.jpg",
+    logo: "/bala_ji.jpg",
   },
   {
     quote:
       "These people are experienced in the training domain. Properly assessed the requirements, design the required training modules and delivered successfully in given time frame. Got proper return over our investments. Happy with the training delivered by AimSkills Trust.",
     name: "Mr. Anand Pandey",
     company: "CLAT Mentors India Pvt. Ltd.",
-    logo: "/src/assets/clat.jpg",
+    logo: "/clat.jpg",
   },
 ];
 

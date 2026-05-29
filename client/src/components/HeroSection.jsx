@@ -201,7 +201,7 @@ export default function HeroSection() {
 
             <div className="relative overflow-hidden rounded-2xl border border-[#B8CCF0]/70 bg-white p-2 shadow-md">
               <img
-                src="\src\assets\Gemini_Generated_Image_9ccls69ccls69ccl.png"
+                src="\Gemini_Generated_Image_9ccls69ccls69ccl.png"
                
                 alt="Students learning in AimSkills training session"
                 className="h-[360px] w-full rounded-xl object-cover sm:h-[460px] lg:h-[560px]"
