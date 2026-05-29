@@ -39,7 +39,7 @@ export default function DonateHeroSection() {
         <img
        
           // src="/src/assets/Gemini_Generated_Image_9dsdo29dsdo29dsd.png"
-          src="/src/assets/Gemini_Generated_Image_wzb9imwzb9imwzb9.png"
+          src="/Gemini_Generated_Image_wzb9imwzb9imwzb9.png"
           alt="Students learning through AimSkills"
           className="h-full w-full object-cover opacity-80"
         />

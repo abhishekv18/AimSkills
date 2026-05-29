@@ -486,7 +486,7 @@ export default function HireCandidateFormSection() {
 
           <div className="relative overflow-hidden rounded-3xl border border-[#B8CCF0]/70 bg-white p-2 shadow-md">
             <img
-              src="/src/assets/Gemini_Generated_Image_n6urtvn6urtvn6ur.png"
+              src="/Gemini_Generated_Image_n6urtvn6urtvn6ur.png"
               alt="Hiring trained candidates from AimSkills"
               className="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]"
             />

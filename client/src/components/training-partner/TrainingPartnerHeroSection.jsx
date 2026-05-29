@@ -187,7 +187,7 @@ export default function TrainingPartnerHeroSection() {
     <section className="relative min-h-[72vh] overflow-hidden bg-[#0D2B6B]">
       <div className="absolute inset-0">
         <img
-          src="/src/assets/Gemini_Generated_Image_h80bs0h80bs0h80b.png"
+          src="/Gemini_Generated_Image_h80bs0h80bs0h80b.png"
           alt="Professional training partnership with AimSkills"
           className="h-full w-full object-cover opacity-80"
         />

@@ -164,7 +164,7 @@ export default function VolunteerHeroSection() {
     <section className="relative min-h-[72vh] overflow-hidden bg-[#0D2B6B]">
       <div className="absolute inset-0">
         <img
-          src="/src/assets/Gemini_Generated_Image_bc6gfgbc6gfgbc6g.png"
+          src="/Gemini_Generated_Image_bc6gfgbc6gfgbc6g.png"
           alt="AimSkills volunteers working with youth"
           className="h-full w-full object-cover opacity-80"
         />

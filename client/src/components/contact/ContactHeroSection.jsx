@@ -154,7 +154,7 @@ export default function ContactHeroSection() {
     <section className="relative min-h-[72vh] overflow-hidden bg-[#0D2B6B]">
       <div className="absolute inset-0">
         <img
-          src="/src/assets/Gemini_Generated_Image_nmkkbynmkkbynmkk.png"
+          src="/Gemini_Generated_Image_nmkkbynmkkbynmkk.png"
           alt="AimSkills office and training discussion"
           className="h-full w-full object-cover opacity-80"
         />

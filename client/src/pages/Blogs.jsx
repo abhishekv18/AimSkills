@@ -89,7 +89,7 @@ function BlogHeroSection({ totalBlogs }) {
     <section className="relative min-h-[72vh] overflow-hidden bg-[#0D2B6B]">
       <div className="absolute inset-0">
         <img
-          src="/src/assets/Gemini_Generated_Image_7xdl1m7xdl1m7xdl.png"
+          src="/Gemini_Generated_Image_7xdl1m7xdl1m7xdl.png"
           alt="AimSkills knowledge and insights"
           className="h-full w-full object-cover opacity-80"
         />

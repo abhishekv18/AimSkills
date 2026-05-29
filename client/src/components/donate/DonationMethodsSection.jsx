@@ -352,7 +352,7 @@ export default function DonationMethodsSection() {
                     <div className="relative">
                       <div className="absolute -inset-4 rounded-full bg-[#F5E8C0]/20 blur-xl" />
                       <img
-                        src="/src/assets/WhatsApp Image 2026-05-26 at 10.11.00 PM.jpeg"
+                        src="/WhatsApp Image 2026-05-26 at 10.11.00 PM.jpeg"
                         alt="AimSkills donation QR code"
                         className="relative h-72 w-72 rounded-2xl object-contain"
                       />
@@ -360,7 +360,7 @@ export default function DonationMethodsSection() {
                   </motion.div>
 
                   <a
-                    href="/src/assets/WhatsApp Image 2026-05-26 at 10.11.00 PM.jpeg"
+                    href="/WhatsApp Image 2026-05-26 at 10.11.00 PM.jpeg"
                     download
                     className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#B8952A] px-8 py-4 text-base font-extrabold text-white shadow-lg shadow-[#B8952A]/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#D4AF55] hover:shadow-xl"
                   >

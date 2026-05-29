@@ -274,7 +274,7 @@ export default function ContactFormSection() {
 
           <div className="relative overflow-hidden rounded-3xl border border-[#B8CCF0]/70 bg-white p-2 shadow-md">
             <img
-              src="/src/assets/Gemini_Generated_Image_m4vuzwm4vuzwm4vu.png"
+              src="/Gemini_Generated_Image_m4vuzwm4vuzwm4vu.png"
               alt="AimSkills contact and support team"
               className="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]"
             />

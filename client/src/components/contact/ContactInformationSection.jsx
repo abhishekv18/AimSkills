@@ -293,7 +293,8 @@ export default function ContactInformationSection() {
                 </div>
                 
                 <a
-                  href="https://maps.google.com"
+                  //href="https://maps.google.com"
+                  href="https://www.google.com/maps/place/Noida,+Uttar+Pradesh+201301,+India"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1.5 text-sm font-bold text-[#1A4DA8] transition-colors hover:text-[#2E6FD9]"

@@ -39,7 +39,7 @@ function GalleryHeroSection({ totalImages }) {
     <section className="relative min-h-[72vh] overflow-hidden bg-[#0D2B6B]">
       <div className="absolute inset-0">
         <img
-          src="/src/assets/Gemini_Generated_Image_uomf93uomf93uomf.png"
+          src="/Gemini_Generated_Image_uomf93uomf93uomf.png"
           alt="AimSkills gallery"
           className="h-full w-full object-cover opacity-80"
         />

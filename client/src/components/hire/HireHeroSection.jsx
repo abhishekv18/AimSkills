@@ -188,7 +188,7 @@ export default function HireHeroSection() {
     <section className="relative min-h-[72vh] overflow-hidden bg-[#0D2B6B]">
       <div className="absolute inset-0">
         <img
-          src="/src/assets/Gemini_Generated_Image_ou17kuou17kuou17.png"
+          src="/Gemini_Generated_Image_ou17kuou17kuou17.png"
           alt="HR team interviewing trained AimSkills candidates"
           className="h-full w-full object-cover opacity-80"
         />

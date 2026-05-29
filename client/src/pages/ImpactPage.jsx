@@ -97,7 +97,7 @@ const placements = [
   {
     name: "Riya Sharma",
     role: "Customer Support Executive",
-    image: "/src/assets/gettyimages-2164057693-612x612.jpg",
+    image: "/gettyimages-2164057693-612x612.jpg",
     story:
       "After completing communication, digital literacy, and workplace readiness training, Riya secured her first formal job as a Customer Support Executive. Today, she contributes to her family’s financial stability while building confidence, professional experience, and a clear career path.",
   },
@@ -105,7 +105,7 @@ const placements = [
   {
     name: "Aman Khan",
     role: "Retail Operations Associate",
-    image: "/src/assets/indian-man-student-shirt-posed-outdoor_627829-2276.avif",
+    image: "/indian-man-student-shirt-posed-outdoor_627829-2276.avif",
     story:
       "Aman developed interview confidence, digital fundamentals, and practical retail skills through structured training. With placement guidance and mentorship, he successfully transitioned from uncertainty to meaningful employment and now continues to grow in his professional journey.",
   },
@@ -113,7 +113,7 @@ const placements = [
   {
     name: "Neha Patil",
     role: "Data Entry Operator",
-    image: "/src/assets/f045cd4fcc0c57d0f2306e072160c3d0.jpg",
+    image: "/f045cd4fcc0c57d0f2306e072160c3d0.jpg",
     story:
       "Through guided learning, hands-on computer training, and placement support, Neha strengthened her practical skills and workplace confidence. She secured a role aligned with her career aspirations and now looks toward greater independence and long-term professional growth.",
   },
@@ -144,33 +144,33 @@ const caseStudies = [
     title: "From uncertainty to employment",
     before: "Limited exposure to workplace expectations and interview skills.",
     after: "Completed training, improved confidence, and secured an entry-level role.",
-    image: "/src/assets/Screenshot 2026-05-25 042225.png",
+    image: "/Screenshot 2026-05-25 042225.png",
   },
   {
     title: "From isolated learning to community progress",
     before: "Rural learners lacked access to organized skill development programs.",
     after: "Village training sessions created awareness, participation, and career direction.",
-    image: "/src/assets/Screenshot 2026-05-25 042136.png",
+    image: "/Screenshot 2026-05-25 042136.png",
   },
 ];
 
 const gallery = [
   {
-    src: "/src/assets/img5 (1).jpg",
+    src: "/img5 (1).jpg",
     title: "Skill Development Training",
     description:
       "Hands-on workshops helping youth strengthen employability, communication, and workplace readiness skills.",
   },
 
   {
-    src: "/src/assets/img4 (1).jpg",
+    src: "/img4 (1).jpg",
     title: "Community Outreach Programs",
     description:
       "Village-level engagement activities promoting awareness, participation, and sustainable local development.",
   },
 
   {
-    src: "/src/assets/img2 (2).jpg",
+    src: "/img2 (2).jpg",
     title: "Workforce Training & Production Excellence",
     description:
       "Hands-on manufacturing training developing technical expertise, discipline, and future employment opportunities.",
@@ -323,7 +323,7 @@ function ImpactHeroSection() {
   <section className="relative min-h-[72vh] overflow-hidden bg-[#0D2B6B]">
       <div className="absolute inset-0">
         <img
-          src="/src/assets/Gemini_Generated_Image_paj8qqpaj8qqpaj8.png"
+          src="/Gemini_Generated_Image_paj8qqpaj8qqpaj8.png"
           alt="AimSkills students and trainers"
           className="h-full w-full object-cover opacity-80"
         />
@@ -587,7 +587,7 @@ function SHGAndVillageImpactSection() {
           className="relative overflow-hidden rounded-2xl border border-[#B8CCF0]/70 bg-white p-2 shadow-md"
         >
           <img
-            src="/src/assets/Gemini_Generated_Image_omh9psomh9psomh9.png"
+            src="/Gemini_Generated_Image_omh9psomh9psomh9.png"
             alt="Village and SHG impact"
             className="h-[360px] w-full rounded-xl object-cover sm:h-[460px] lg:h-[540px]"
           />

@@ -6,19 +6,19 @@ const awards = [
   {
     title: "Paul & Laura Swanson",
     subtitle: "Premium Paul & Laura Swanson Award",
-    image: "/src/assets/Gemini_Generated_Image_t3dhjbt3dhjbt3dh.png",
+    image: "/Gemini_Generated_Image_t3dhjbt3dhjbt3dh.png",
     description: "Recognized for outstanding quality of training and exceptional trainee feedback management.",
   },
   {
     title: "Brown Eagle Award",
     subtitle: "Excellence in Training Delivery",
-    image: "/src/assets/Gemini_Generated_Image_3jabgz3jabgz3jab.png",
+    image: "/Gemini_Generated_Image_3jabgz3jabgz3jab.png",
     description: "Awarded for best team coordination, trainer efficiency, and post-training feedback collection.",
   },
   {
     title: "Best Training Company",
     subtitle: "Quality & Impact Recognition",
-    image: "/src/assets/Gemini_Generated_Image_diihvldiihvldiih.png",
+    image: "/Gemini_Generated_Image_diihvldiihvldiih.png",
     description: "Honored by partners for maintaining the highest standards in skill development programs.",
   },
 ];

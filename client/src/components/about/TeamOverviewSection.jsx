@@ -102,7 +102,7 @@ export default function TeamOverviewSection() {
             className="relative overflow-hidden rounded-3xl border border-[#B8CCF0]/70 bg-white p-2 shadow-md"
           >
             <img
-              src="/src/assets/Gemini_Generated_Image_lbc36llbc36llbc3.png"
+              src="/Gemini_Generated_Image_lbc36llbc36llbc3.png"
               alt="AimSkills team and training coordinators"
               className="h-[360px] w-full rounded-2xl object-cover sm:h-[500px]"
             />

@@ -227,27 +227,27 @@ import { ChevronLeft, ChevronRight, Images } from "lucide-react";
 
 const galleryImages = [
   {
-    src: "/src/assets/img1.jpg",
+    src: "/img1.jpg",
     alt: "AimSkills classroom training session",
     caption: "Classroom Training",
   },
   {
-    src: "/src/assets/img2.jpg",
+    src: "/img2.jpg",
     alt: "Students learning through AimSkills program",
     caption: "Youth Skill Development",
   },
   {
-    src: "/src/assets/img3.jpg",
+    src: "/img3.jpg",
     alt: "AimSkills workshop activity",
     caption: "Practical Workshops",
   },
   {
-    src: "/src/assets/img4.jpg",
+    src: "/img4.jpg",
     alt: "Community learning session",
     caption: "Community Learning",
   },
   {
-    src: "/src/assets/img5.jpg",
+    src: "/img5.jpg",
     alt: "Faculty development training",
     caption: "Faculty Development",
   },

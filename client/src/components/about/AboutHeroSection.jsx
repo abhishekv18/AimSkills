@@ -142,7 +142,7 @@ export default function AboutHeroSection() {
     <section className="relative min-h-[72vh] overflow-hidden bg-[#0D2B6B]">
       <div className="absolute inset-0">
         <img
-          src="/src/assets/Gemini_Generated_Image_qlgakaqlgakaqlga.png"
+          src="/Gemini_Generated_Image_qlgakaqlgakaqlga.png"
           alt="AimSkills students and trainers"
           className="h-full w-full object-cover opacity-80"
         />

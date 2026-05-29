@@ -167,7 +167,7 @@ export default function FounderMessageSection() {
 
           <div className="relative overflow-hidden rounded-3xl border border-[#B8CCF0]/70 bg-white p-2 shadow-lg">
             <img
-              src="/src/assets/Picture1.png"
+              src="/Picture1.png"
               alt="Founder of Aim Skills Education Trust"
               className="h-[430px] w-full rounded-2xl object-cover sm:h-[540px]"
             />

@@ -39,7 +39,7 @@ export default function CSRHeroSection() {
       <div className="absolute inset-0">
         <img
           // src="/src/assets/Students-of-various-trades-at-Vedanta-Skill-School_1-scaled.jpg"
-          src="/src/assets/Gemini_Generated_Image_rnns11rnns11rnns.png"
+          src="/Gemini_Generated_Image_rnns11rnns11rnns.png"
           alt="CSR partnership and skill development"
           className="h-full w-full object-cover opacity-80"
         />
