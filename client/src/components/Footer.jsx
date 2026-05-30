@@ -630,7 +630,7 @@ export default function Footer() {
               href="https://www.google.com/maps/place/Noida,+Uttar+Pradesh+201301,+India"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-start justify-center gap-3 text-sm font-medium leading-6 text-white/70 transition-colors hover:text-white sm:justify-start"
+              className="flex items-start justify-center gap-2 text-sm font-medium leading-6 text-white/70 transition-colors hover:text-white sm:justify-start"
             >
               <MapPin
                 size={17}

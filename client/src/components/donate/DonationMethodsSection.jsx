@@ -410,23 +410,23 @@ export default function DonationMethodsSection() {
                     <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-slate-500">
                       UPI ID
                     </p>
-                    <div className="mt-4 break-all text-2xl font-extrabold tracking-tight text-[#0D2B6B]">
+                    <div className="mt-4 break-all text-xl font-extrabold tracking-tight text-[#0D2B6B]">
                       {upiId}
                     </div>
                     
                     <button
                       type="button"
                       onClick={copyUpi}
-                      className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#1A4DA8] px-8 py-4 text-base font-bold text-white shadow-lg shadow-[#0D2B6B]/15 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#2E6FD9] hover:shadow-xl"
+                      className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#1A4DA8] px-8 py-4 text-base font-medium text-white shadow-lg shadow-[#0D2B6B]/15 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#2E6FD9] hover:shadow-xl"
                     >
                       {copied ? (
                         <>
-                          <CheckCircle2 size={20} strokeWidth={2.4} />
+                          <CheckCircle2 size={18} strokeWidth={2.4} />
                           Copied Successfully
                         </>
                       ) : (
                         <>
-                          <Copy size={20} strokeWidth={2.4} />
+                          <Copy size={18} strokeWidth={2.4} />
                           Copy UPI ID
                         </>
                       )}

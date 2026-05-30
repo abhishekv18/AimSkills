@@ -192,26 +192,26 @@ import { CalendarDays, ChevronRight } from "lucide-react";
 
 const timelineItems = [
   {
-    date: "29 October 2013",
+    date: "21 March 2016",
     title: "Date of Incorporation",
     description:
       "Aim Skills Education Trust was formed into a legal body by registering as per Indian Government Corporate Governing bodies, marking the official beginning of our structured journey.",
     highlight: true,
   },
   {
-    date: "13 December 2013",
+    date: "13 December 2016",
     title: "Started Rural Development Projects",
     description:
       "We began serving the youth of rural India by providing livelihood-oriented training programs and proper placement options, opening doors to sustainable career opportunities.",
   },
   {
-    date: "25 February 2014",
+    date: "25 February 2017",
     title: "Started Corporate Training Programs",
     description:
       "Started serving the corporate world by increasing their overall productivity through targeted corporate training programs designed to offer complete return on investment.",
   },
   {
-    date: "25 February 2014",
+    date: "25 February 2017",
     title: "Introduced TTT / FDP",
     description:
       "Started delivering various Faculty Development Programs focused on individual skills, upgrading teaching capabilities, effective learning management, and more to technical and professional institutions.",

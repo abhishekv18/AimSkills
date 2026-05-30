@@ -274,8 +274,9 @@ const mainPrograms = [
       "DGCA Compliance & Regulatory Guidance",
     ],
     icon: Drone,
-    gradient: "from-blue-600 to-indigo-600",
-    accentColor: "blue",
+     gradient: "from-amber-500 to-orange-500",
+    accentColor: "amber",
+    
     stats: { label: "Regulatory Experts", value: "100%" },
   },
   {
@@ -304,8 +305,8 @@ const mainPrograms = [
       "Multilingual Training Content Support",
     ],
     icon: FileText,
-    gradient: "from-amber-500 to-orange-500",
-    accentColor: "amber",
+   gradient: "from-blue-600 to-indigo-600",
+    accentColor: "blue",
     stats: { label: "Client Satisfaction", value: "98%" },
   },
 ];
@@ -590,9 +591,10 @@ export default function ProgramsSection() {
           </p>
 
           <div className="mx-auto mt-6 flex items-center justify-center gap-1.5">
-            <div className="h-1 w-16 rounded-full bg-gradient-to-r from-blue-500 to-blue-600" />
+              <div className="h-1 w-12 rounded-full bg-gradient-to-r from-amber-500 to-orange-500" />
+          
             <div className="h-1 w-8 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500" />
-            <div className="h-1 w-12 rounded-full bg-gradient-to-r from-amber-500 to-orange-500" />
+            <div className="h-1 w-16 rounded-full bg-gradient-to-r from-blue-500 to-blue-600" />
           </div>
         </motion.div>
 

@@ -69,7 +69,7 @@ export default function HeroSection() {
             className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#B8CCF0]/70 bg-white px-4 py-2 text-sm font-bold text-[#1A4DA8] shadow-sm"
           >
             <span className="h-2 w-2 rounded-full bg-[#B8952A]" />
-            Aim Skills Foundation
+            Aim Skills Education
           </motion.div>
 
           <motion.h1
