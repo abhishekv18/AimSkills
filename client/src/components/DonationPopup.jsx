@@ -125,7 +125,7 @@ if (isBlockedRoute) return null;
             className="w-full mt-3 bg-white text-[#1A4DA8] py-2.5 rounded-xl font-semibold text-sm hover:bg-[#EEF3FC] transition-all border-2 border-[#B8CCF0] flex items-center justify-center gap-2"
           >
             <Building2 size={16} />
-            Become a Traning Partner
+            Become a Training Partner
           </button>
 
           <div className="mt-3 pt-3 border-t border-gray-100">
