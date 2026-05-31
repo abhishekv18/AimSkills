@@ -641,7 +641,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="mailto:aimskillstrust@gmail.com"
+              href="mailto:info@aimskills.in"
               className="flex items-center justify-center gap-3 text-sm font-medium text-white/70 transition-colors hover:text-white sm:justify-start"
             >
               <Mail
@@ -649,7 +649,7 @@ export default function Footer() {
                 strokeWidth={2.2}
                 className="shrink-0 text-[#D4AF55]"
               />
-              aimskillstrust@gmail.com
+              info@aimskills.in
             </a>
 
             <a

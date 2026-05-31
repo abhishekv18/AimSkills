@@ -1238,7 +1238,7 @@ function Dropdown({ label, items, activePath, mobile = false }) {
 /* ─── Main Export ──────────────────────────────────────────────────────── */
 export default function Navbar({
   activePath = "/",
-  logoSrc = "/assets/aimskills-logo.png",
+  logoSrc = "/aimskills-logo.png",
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -1411,7 +1411,7 @@ export default function Navbar({
             <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
               {[
                 { href: "tel:+917248776407", Icon: Phone, label: "+91 72487 76407" },
-                { href: "mailto:aimskillstrust@gmail.com", Icon: Mail, label: "aimskillstrust@gmail.com" },
+                { href: "mailto:info@aimskills.in", Icon: Mail, label: "info@aimskills.in" },
               ].map(({ href, Icon, label }) => (
                 <a
                   key={label}
@@ -1689,7 +1689,7 @@ export default function Navbar({
                   <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                     {[
                       { href: "tel:+917248776407", Icon: Phone, label: "+91 72487 76407" },
-                      { href: "mailto:aimskillstrust@gmail.com", Icon: Mail, label: "aimskillstrust@gmail.com" },
+                      { href: "mailto:info@aimskills.in", Icon: Mail, label: "info@aimskills.in" },
                     ].map(({ href, Icon, label }) => (
                       <a
                         key={label} href={href}
