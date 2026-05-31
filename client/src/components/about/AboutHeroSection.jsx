@@ -132,7 +132,7 @@ const itemVariants = {
 };
 
 const heroStats = [
-  { value: "2018", label: "Founded" },
+  { value: "2016", label: "Founded" },
   { value: "10,000+", label: "Lives Impacted" },
   { value: "15+", label: "States Reached" },
 ];
