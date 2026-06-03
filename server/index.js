@@ -17,7 +17,7 @@ const app = express();
 
 
 const corsOptions = {
-    origin: ['https://aim-skills.vercel.app','http://localhost:5173',],
+    origin: ['https://www.aimskills.in','https://aim-skills.vercel.app','http://localhost:5173',],
     credentials: true,
 };
 
