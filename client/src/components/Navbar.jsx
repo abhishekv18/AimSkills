@@ -22,7 +22,7 @@
 //   BriefcaseBusiness,
 //   GraduationCap,
 // } from "lucide-react";
-// import { FaFacebook,FaInstagram,FaLinkedin,FaYoutube} from "react-icons/fa";
+// import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube, FaXTwitter } from "react-icons/fa6";
 // /* ─── Design Tokens ───────────────────────────────────────────────────────
 //    Navy Deep : #0D2B6B   Royal Blue: #1A4DA8   Vivid Blue: #2E6FD9
 //    Sky Tint  : #B8CCF0   Ice Wash  : #EEF3FC
@@ -384,7 +384,7 @@
 // /* ─── Main Export ──────────────────────────────────────────────────────── */
 // export default function Navbar({
 //   activePath = "/",
-//   logoSrc = "/assets/aimskills-logo.png",
+//   logoSrc = "/aimskills-logo.png",
 // }) {
 //   const [menuOpen, setMenuOpen] = useState(false);
 //   const [scrolled, setScrolled] = useState(false);
@@ -463,22 +463,43 @@
 //           background: #EEF3FC; color: #0D2B6B;
 //         }
 
-//         /* Social */
+//         /* Social - Topbar */
 //         .aims-social-pill {
 //           width: 28px; height: 28px; border-radius: 50%;
 //           display: flex; align-items: center; justify-content: center;
 //           color: #fff; background: rgba(255,255,255,0.15);
-//           transition: background 0.2s, transform 0.2s; text-decoration: none;
+//           transition: background 0.25s, transform 0.2s, box-shadow 0.25s; 
+//           text-decoration: none;
 //         }
-//         .aims-social-pill:hover { background: #B8952A; transform: scale(1.12); }
+//         .aims-social-pill:hover { 
+//           transform: scale(1.15); 
+//           box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+//         }
+        
+//         /* Brand-specific hover colors */
+//         .aims-social-fb:hover { background: #1877F2; }
+//         .aims-social-ig:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+//         .aims-social-x:hover { background: #000000; }
+//         .aims-social-li:hover { background: #0A66C2; }
+//         .aims-social-yt:hover { background: #FF0000; }
 
+//         /* Social - Mobile */
 //         .aims-social-mobile {
 //           width: 32px; height: 32px; border-radius: 50%;
 //           display: flex; align-items: center; justify-content: center;
 //           color: #1A4DA8; background: #EEF3FC;
-//           transition: background 0.2s, color 0.2s, transform 0.2s; text-decoration: none;
+//           transition: background 0.25s, color 0.2s, transform 0.2s; 
+//           text-decoration: none;
 //         }
-//         .aims-social-mobile:hover { background: #0D2B6B; color: #fff; transform: scale(1.1); }
+//         .aims-social-mobile:hover { 
+//           color: #fff; 
+//           transform: scale(1.12); 
+//         }
+//         .aims-social-mobile.aims-social-fb:hover { background: #1877F2; }
+//         .aims-social-mobile.aims-social-ig:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+//         .aims-social-mobile.aims-social-x:hover { background: #000000; }
+//         .aims-social-mobile.aims-social-li:hover { background: #0A66C2; }
+//         .aims-social-mobile.aims-social-yt:hover { background: #FF0000; }
 
 //         /* Topbar */
 //         @keyframes aimsPulse {
@@ -536,7 +557,7 @@
 //             <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
 //               {[
 //                 { href: "tel:+917248776407", Icon: Phone, label: "+91 72487 76407" },
-//                 { href: "mailto:aimskillstrust@gmail.com", Icon: Mail, label: "aimskillstrust@gmail.com" },
+//                 { href: "mailto:info@aimskills.in", Icon: Mail, label: "info@aimskills.in" },
 //               ].map(({ href, Icon, label }) => (
 //                 <a
 //                   key={label}
@@ -570,13 +591,18 @@
 //               </div>
 //               <div style={{ display: "flex", gap: 6 }}>
 //                 {[
-//                     { href: "https://www.facebook.com/aimskillsedu",  label: "Facebook",  Icon: FaFacebook },
-//                       { href: "https://www.instagram.com/aimskillsedu", label: "Instagram", Icon: FaInstagram },
-//                       { href: "https://twitter.com/Aimskillsedu", label: "Twitter", Icon: X },
-//                       { href: "https://www.linkedin.com/company/aimskillsedu",  label: "LinkedIn",  Icon: FaLinkedin },
-//                       { href: "https://youtube.com/channel/UC3SfcVEeOO72bi3mwSLER7A",   label: "YouTube",   Icon: FaYoutube },
-//                 ].map(({ href, label, Icon }) => (
-//                   <a key={label} href={href} aria-label={label} className="aims-social-pill">
+//                   { href: "https://www.facebook.com/aimskillsedu", label: "Facebook", Icon: FaFacebook, socialClass: "aims-social-fb" },
+//                   { href: "https://www.instagram.com/aimskillsedu", label: "Instagram", Icon: FaInstagram, socialClass: "aims-social-ig" },
+//                   { href: "https://twitter.com/Aimskillsedu", label: "Twitter", Icon: FaXTwitter, socialClass: "aims-social-x" },
+//                   { href: "https://www.linkedin.com/company/aimskillsedu", label: "LinkedIn", Icon: FaLinkedin, socialClass: "aims-social-li" },
+//                   { href: "https://youtube.com/channel/UC3SfcVEeOO72bi3mwSLER7A", label: "YouTube", Icon: FaYoutube, socialClass: "aims-social-yt" },
+//                 ].map(({ href, label, Icon, socialClass }) => (
+//                   <a 
+//                     key={label} 
+//                     href={href} 
+//                     aria-label={label} 
+//                     className={`aims-social-pill ${socialClass}`}
+//                   >
 //                     <Icon size={13} />
 //                   </a>
 //                 ))}
@@ -636,7 +662,7 @@
 //                 }
 //               >
 //                 <img
-//                   src="/src/assets/WhatsApp Image 2026-05-01 at 8.07.03 PM.jpeg"
+//                   src="/WhatsApp Image 2026-05-01 at 8.07.03 PM.jpeg"
 //                   alt="AimSkills logo"
 //                   style={{ width: "100%", height: "100%", objectFit: "contain" }}
 //                 />
@@ -809,7 +835,7 @@
 //                   <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
 //                     {[
 //                       { href: "tel:+917248776407", Icon: Phone, label: "+91 72487 76407" },
-//                 { href: "mailto:aimskillstrust@gmail.com", Icon: Mail, label: "aimskillstrust@gmail.com" },
+//                       { href: "mailto:info@aimskills.in", Icon: Mail, label: "info@aimskills.in" },
 //                     ].map(({ href, Icon, label }) => (
 //                       <a
 //                         key={label} href={href}
@@ -831,13 +857,13 @@
 //                     }}
 //                   >
 //                     {[
-//                       { href: "https://www.facebook.com/aimskillsedu",  label: "Facebook",  Icon: FaFacebook },
-//                       { href: "https://www.instagram.com/aimskillsedu", label: "Instagram", Icon: FaInstagram },
-//                           { href: "https://twitter.com/Aimskillsedu", label: "Twitter", Icon: X },
-//                       { href: "https://www.linkedin.com/company/aimskillsedu",  label: "LinkedIn",  Icon: FaLinkedin },
-//                       { href: "https://youtube.com/channel/UC3SfcVEeOO72bi3mwSLER7A",   label: "YouTube",   Icon: FaYoutube },
-//                     ].map(({ href, label, Icon }) => (
-//                       <a key={label} href={href} aria-label={label} className="aims-social-mobile">
+//                       { href: "https://www.facebook.com/aimskillsedu", label: "Facebook", Icon: FaFacebook, socialClass: "aims-social-fb" },
+//                       { href: "https://www.instagram.com/aimskillsedu", label: "Instagram", Icon: FaInstagram, socialClass: "aims-social-ig" },
+//                       { href: "https://twitter.com/Aimskillsedu", label: "Twitter", Icon: FaXTwitter, socialClass: "aims-social-x" },
+//                       { href: "https://www.linkedin.com/company/aimskillsedu", label: "LinkedIn", Icon: FaLinkedin, socialClass: "aims-social-li" },
+//                       { href: "https://youtube.com/channel/UC3SfcVEeOO72bi3mwSLER7A", label: "YouTube", Icon: FaYoutube, socialClass: "aims-social-yt" },
+//                     ].map(({ href, label, Icon, socialClass }) => (
+//                       <a key={label} href={href} aria-label={label} className={`aims-social-mobile ${socialClass}`}>
 //                         <Icon size={15} />
 //                       </a>
 //                     ))}
@@ -852,19 +878,12 @@
 //   );
 // }
 
-
 import { useEffect, useState, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   ChevronDown,
-  FileBoxIcon,
-  FishingHookIcon,
   HeartHandshake,
   Image,
-  ImageOffIcon,
-  Import,
-  Loader2,
-  Loader2Icon,
   Mail,
   Menu,
   Newspaper,
@@ -877,6 +896,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube, FaXTwitter } from "react-icons/fa6";
+
 /* ─── Design Tokens ───────────────────────────────────────────────────────
    Navy Deep : #0D2B6B   Royal Blue: #1A4DA8   Vivid Blue: #2E6FD9
    Sky Tint  : #B8CCF0   Ice Wash  : #EEF3FC
@@ -1087,7 +1107,14 @@ function Dropdown({ label, items, activePath, mobile = false }) {
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         className={`aims-nav-link${isActive ? " active" : ""}`}
-        style={{ display: "flex", alignItems: "center", gap: 5, border: isActive ? "1.5px solid #1A4DA8" : "1.5px solid transparent", fontFamily: "inherit" }}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 4,
+          border: isActive ? "1.5px solid #1A4DA8" : "1.5px solid transparent",
+          fontFamily: "inherit",
+          whiteSpace: "nowrap",
+        }}
       >
         {label}
         <ChevronDown
@@ -1095,6 +1122,7 @@ function Dropdown({ label, items, activePath, mobile = false }) {
           style={{
             transition: "transform 0.25s",
             transform: open ? "rotate(180deg)" : "rotate(0deg)",
+            flexShrink: 0,
           }}
         />
       </button>
@@ -1255,13 +1283,14 @@ export default function Navbar({
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
 
-        .aims-header, .aims-header * { font-family: 'Plus Jakarta Sans', sans-serif; box-sizing: border-box; }
+        *, *::before, *::after { box-sizing: border-box; }
+        .aims-header, .aims-header * { font-family: 'Plus Jakarta Sans', sans-serif; }
 
-        /* Nav link */
+        /* ── Nav link ── */
         .aims-nav-link {
-          padding: 8px 14px;
+          padding: 7px 10px;
           border-radius: 40px;
-          font-size: 14px;
+          font-size: 13px;
           font-weight: 600;
           text-decoration: none;
           color: #111827;
@@ -1269,20 +1298,22 @@ export default function Navbar({
           transition: background 0.18s, color 0.18s;
           background: transparent;
           cursor: pointer;
+          white-space: nowrap;
         }
         .aims-nav-link:hover { background: #EEF3FC; color: #0D2B6B; }
         .aims-nav-link.active { background: #EEF3FC; color: #0D2B6B; border-color: #1A4DA8 !important; }
 
-        /* CTA buttons */
+        /* ── CTA buttons ── */
         .aims-donate-btn {
           display: inline-flex; align-items: center; gap: 6px;
-          padding: 10px 22px; border-radius: 40px;
+          padding: 9px 16px; border-radius: 40px;
           background: linear-gradient(135deg,#B8952A,#D4AF55);
-          color: #fff; font-size: 14px; font-weight: 800;
+          color: #fff; font-size: 13px; font-weight: 800;
           text-decoration: none; letter-spacing: 0.01em;
           box-shadow: 0 4px 18px rgba(184,149,42,0.38);
           transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
           border: none; cursor: pointer; white-space: nowrap;
+          flex-shrink: 0;
         }
         .aims-donate-btn:hover {
           transform: translateY(-2px);
@@ -1292,13 +1323,14 @@ export default function Navbar({
 
         .aims-partner-btn {
           display: inline-flex; align-items: center; gap: 6px;
-          padding: 10px 22px; border-radius: 40px;
+          padding: 9px 16px; border-radius: 40px;
           background: #153B8F;
-          color: #fff; font-size: 14px; font-weight: 700;
+          color: #fff; font-size: 13px; font-weight: 700;
           text-decoration: none; letter-spacing: 0.01em;
           box-shadow: 0 4px 16px rgba(13,43,107,0.28);
           transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
           border: none; cursor: pointer; white-space: nowrap;
+          flex-shrink: 0;
         }
         .aims-partner-btn:hover {
           transform: translateY(-2px);
@@ -1306,7 +1338,7 @@ export default function Navbar({
           box-shadow: 0 8px 24px rgba(13,43,107,0.38);
         }
 
-        /* Mobile link */
+        /* ── Mobile link ── */
         .aims-mobile-link {
           display: block; padding: 12px 16px; border-radius: 14px;
           font-size: 15px; font-weight: 600;
@@ -1317,78 +1349,133 @@ export default function Navbar({
           background: #EEF3FC; color: #0D2B6B;
         }
 
-        /* Social - Topbar */
+        /* ── Social – Topbar ── */
         .aims-social-pill {
           width: 28px; height: 28px; border-radius: 50%;
           display: flex; align-items: center; justify-content: center;
           color: #fff; background: rgba(255,255,255,0.15);
-          transition: background 0.25s, transform 0.2s, box-shadow 0.25s; 
+          transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
           text-decoration: none;
         }
-        .aims-social-pill:hover { 
-          transform: scale(1.15); 
-          box-shadow: 0 4px 14px rgba(0,0,0,0.3);
-        }
-        
-        /* Brand-specific hover colors */
+        .aims-social-pill:hover { transform: scale(1.15); box-shadow: 0 4px 14px rgba(0,0,0,0.3); }
         .aims-social-fb:hover { background: #1877F2; }
-        .aims-social-ig:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-        .aims-social-x:hover { background: #000000; }
+        .aims-social-ig:hover { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+        .aims-social-x:hover  { background: #000; }
         .aims-social-li:hover { background: #0A66C2; }
         .aims-social-yt:hover { background: #FF0000; }
 
-        /* Social - Mobile */
+        /* ── Social – Mobile ── */
         .aims-social-mobile {
           width: 32px; height: 32px; border-radius: 50%;
           display: flex; align-items: center; justify-content: center;
           color: #1A4DA8; background: #EEF3FC;
-          transition: background 0.25s, color 0.2s, transform 0.2s; 
+          transition: background 0.25s, color 0.2s, transform 0.2s;
           text-decoration: none;
         }
-        .aims-social-mobile:hover { 
-          color: #fff; 
-          transform: scale(1.12); 
-        }
+        .aims-social-mobile:hover { color: #fff; transform: scale(1.12); }
         .aims-social-mobile.aims-social-fb:hover { background: #1877F2; }
-        .aims-social-mobile.aims-social-ig:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-        .aims-social-mobile.aims-social-x:hover { background: #000000; }
+        .aims-social-mobile.aims-social-ig:hover { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+        .aims-social-mobile.aims-social-x:hover  { background: #000; }
         .aims-social-mobile.aims-social-li:hover { background: #0A66C2; }
         .aims-social-mobile.aims-social-yt:hover { background: #FF0000; }
 
-        /* Topbar */
-        @keyframes aimsPulse {
-          0%,100% { opacity:1; } 50% { opacity:0.5; }
-        }
+        /* ── Topbar pulse ── */
+        @keyframes aimsPulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
         .aims-live-dot {
           width: 6px; height: 6px; border-radius: 50%;
           background: #D4AF55; animation: aimsPulse 2s ease-in-out infinite; flex-shrink: 0;
         }
 
-        /* Responsive */
-        @media (min-width: 1024px) {
-          .aims-desktop-nav    { display: flex !important; }
-          .aims-partner-desk   { display: inline-flex !important; }
-          .aims-hamburger      { display: none !important; }
-          .aims-topbar         { display: block !important; }
-        }
-        @media (max-width: 1023px) {
-          .aims-topbar { display: none !important; }
-        }
-
-        /* Topbar link hover */
+        /* ── Topbar link ── */
         .aims-tb-link { transition: color 0.18s; }
         .aims-tb-link:hover { color: #D4AF55 !important; }
+
+        /* ── Logo wordmark ── */
+        .aims-logo-text   { font-size: 21px; }
+        .aims-logo-sub    { font-size: 9px; }
+        .aims-logo-box    { width: 44px; height: 44px; border-radius: 12px; }
+
+        /* ============================================================
+           RESPONSIVE BREAKPOINTS
+        ============================================================ */
+
+        /* --- Hide/show helpers --- */
+        /* Topbar: only ≥1024px */
+        .aims-topbar         { display: none; }
+
+        /* Desktop nav & partner btn: only ≥1024px */
+        .aims-desktop-nav    { display: none; }
+        .aims-partner-desk   { display: none !important; }
+
+        /* Hamburger: only <1024px */
+        .aims-hamburger      { display: flex; }
+
+        /* Donate button: always visible, size adjusts */
+
+        /* --- ≥1280px (wide desktop) --- */
+        @media (min-width: 1280px) {
+          .aims-topbar        { display: block; }
+          .aims-desktop-nav   { display: flex !important; }
+          .aims-partner-desk  { display: inline-flex !important; }
+          .aims-hamburger     { display: none !important; }
+          .aims-nav-link      { font-size: 13.5px; padding: 8px 12px; }
+          .aims-donate-btn,
+          .aims-partner-btn   { font-size: 14px; padding: 10px 20px; }
+          .aims-logo-text     { font-size: 23px; }
+          .aims-logo-sub      { font-size: 10px; }
+          .aims-logo-box      { width: 48px; height: 48px; border-radius: 14px; }
+        }
+
+        /* --- 1024px–1279px (small desktop / large laptop) --- */
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          .aims-topbar        { display: block; }
+          .aims-desktop-nav   { display: flex !important; }
+          .aims-partner-desk  { display: inline-flex !important; }
+          .aims-hamburger     { display: none !important; }
+          .aims-nav-link      { font-size: 12px; padding: 7px 8px; gap: 2px; }
+          .aims-donate-btn,
+          .aims-partner-btn   { font-size: 12px; padding: 8px 13px; gap: 5px; }
+          .aims-logo-text     { font-size: 19px; }
+          .aims-logo-sub      { font-size: 9px; }
+          .aims-logo-box      { width: 40px; height: 40px; border-radius: 11px; }
+        }
+
+        /* --- 768px–1023px (tablet) --- */
+        @media (min-width: 768px) and (max-width: 1023px) {
+          .aims-desktop-nav   { display: none !important; }
+          .aims-partner-desk  { display: none !important; }
+          .aims-hamburger     { display: flex !important; }
+          .aims-donate-btn    { font-size: 13px; padding: 9px 16px; }
+          .aims-logo-text     { font-size: 20px; }
+          .aims-logo-sub      { font-size: 9px; }
+          .aims-logo-box      { width: 42px; height: 42px; border-radius: 12px; }
+        }
+
+        /* --- <480px (small mobile) --- */
+        @media (max-width: 479px) {
+          .aims-donate-btn    { font-size: 12px; padding: 8px 12px; gap: 5px; }
+          .aims-logo-text     { font-size: 17px; }
+          .aims-logo-sub      { font-size: 8px; letter-spacing: 0.12em; }
+          .aims-logo-box      { width: 36px; height: 36px; border-radius: 10px; }
+          .aims-hamburger     { width: 38px !important; height: 38px !important; }
+        }
+
+        /* --- 480px–767px (mobile) --- */
+        @media (min-width: 480px) and (max-width: 767px) {
+          .aims-donate-btn    { font-size: 13px; padding: 9px 14px; }
+          .aims-logo-text     { font-size: 19px; }
+          .aims-logo-box      { width: 40px; height: 40px; }
+        }
       `}</style>
 
       <header
         className="aims-header"
         style={{ position: "sticky", top: 0, zIndex: 50, width: "100%" }}
       >
-        {/* ── Top bar ── */}
+        {/* ── Top bar (desktop only via CSS) ── */}
         <div
           className="aims-topbar"
           style={{
-            display: "none",
             overflow: "hidden",
             maxHeight: scrolled ? 0 : 44,
             opacity: scrolled ? 0 : 1,
@@ -1400,7 +1487,7 @@ export default function Navbar({
             style={{
               maxWidth: 1280,
               margin: "0 auto",
-              padding: "0 28px",
+              padding: "0 24px",
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
@@ -1408,7 +1495,7 @@ export default function Navbar({
             }}
           >
             {/* Contact */}
-            <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
               {[
                 { href: "tel:+917248776407", Icon: Phone, label: "+91 72487 76407" },
                 { href: "mailto:info@aimskills.in", Icon: Mail, label: "info@aimskills.in" },
@@ -1419,8 +1506,9 @@ export default function Navbar({
                   className="aims-tb-link"
                   style={{
                     display: "flex", alignItems: "center", gap: 7,
-                    fontSize: 13, fontWeight: 600,
+                    fontSize: 12.5, fontWeight: 600,
                     color: "rgba(255,255,255,0.88)", textDecoration: "none",
+                    whiteSpace: "nowrap",
                   }}
                 >
                   <Icon size={13} />
@@ -1430,7 +1518,7 @@ export default function Navbar({
             </div>
 
             {/* Social */}
-            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                 <div className="aims-live-dot" />
                 <span
@@ -1443,7 +1531,7 @@ export default function Navbar({
                   Follow Us
                 </span>
               </div>
-              <div style={{ display: "flex", gap: 6 }}>
+              <div style={{ display: "flex", gap: 5 }}>
                 {[
                   { href: "https://www.facebook.com/aimskillsedu", label: "Facebook", Icon: FaFacebook, socialClass: "aims-social-fb" },
                   { href: "https://www.instagram.com/aimskillsedu", label: "Instagram", Icon: FaInstagram, socialClass: "aims-social-ig" },
@@ -1451,12 +1539,7 @@ export default function Navbar({
                   { href: "https://www.linkedin.com/company/aimskillsedu", label: "LinkedIn", Icon: FaLinkedin, socialClass: "aims-social-li" },
                   { href: "https://youtube.com/channel/UC3SfcVEeOO72bi3mwSLER7A", label: "YouTube", Icon: FaYoutube, socialClass: "aims-social-yt" },
                 ].map(({ href, label, Icon, socialClass }) => (
-                  <a 
-                    key={label} 
-                    href={href} 
-                    aria-label={label} 
-                    className={`aims-social-pill ${socialClass}`}
-                  >
+                  <a key={label} href={href} aria-label={label} className={`aims-social-pill ${socialClass}`}>
                     <Icon size={13} />
                   </a>
                 ))}
@@ -1482,25 +1565,28 @@ export default function Navbar({
             style={{
               maxWidth: 1280,
               margin: "0 auto",
-              padding: "0 20px",
+              /* Fluid horizontal padding: comfortable on all sizes */
+              padding: "0 clamp(12px, 3vw, 28px)",
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              height: 72,
-              gap: 16,
+              height: 68,
+              gap: 8,
+              minWidth: 0,
             }}
           >
             {/* ── Logo ── */}
             <a
               href="/"
               style={{
-                display: "flex", alignItems: "center", gap: 12,
+                display: "flex", alignItems: "center", gap: 10,
                 textDecoration: "none", flexShrink: 0,
+                minWidth: 0,
               }}
             >
               <div
+                className="aims-logo-box"
                 style={{
-                  width: 48, height: 48, borderRadius: 14,
                   background: "linear-gradient(135deg,#EEF3FC 0%,#F5E8C0 100%)",
                   border: "1.5px solid #1A4DA8",
                   display: "flex", alignItems: "center", justifyContent: "center",
@@ -1522,33 +1608,42 @@ export default function Navbar({
                 />
               </div>
 
-              <div style={{ lineHeight: 1 }}>
+              <div style={{ lineHeight: 1, minWidth: 0 }}>
                 <div
+                  className="aims-logo-text"
                   style={{
-                    fontSize: 23, fontWeight: 800,
+                    fontWeight: 800,
                     letterSpacing: "-0.03em", lineHeight: 1.1,
                     color: "#111827",
+                    whiteSpace: "nowrap",
                   }}
                 >
                   Aim<span style={{ color: "#B8952A" }}> Skills</span>
                 </div>
                 <div
+                  className="aims-logo-sub"
                   style={{
-                    fontSize: 10, fontWeight: 700, color: "#1A4DA8",
+                    fontWeight: 700, color: "#1A4DA8",
                     letterSpacing: "0.18em", textTransform: "uppercase", marginTop: 3,
+                    whiteSpace: "nowrap",
                   }}
                 >
-                 Building futures
+                  Building futures
                 </div>
               </div>
             </a>
 
-            {/* ── Desktop links ── */}
+            {/* ── Desktop links (centred, flex-1) ── */}
             <div
               className="aims-desktop-nav"
               style={{
-                display: "none", alignItems: "center",
-                gap: 2, flex: 1, justifyContent: "center",
+                alignItems: "center",
+                gap: 1,
+                flex: 1,
+                justifyContent: "center",
+                flexWrap: "nowrap",
+                minWidth: 0,
+                overflow: "visible",
               }}
             >
               {NAV_ITEMS.map((item) => (
@@ -1556,7 +1651,7 @@ export default function Navbar({
                   key={item.label}
                   href={item.href}
                   className={`aims-nav-link${activePath === item.href ? " active" : ""}`}
-                  style={{ border: "1.5px solid transparent" }}
+                  style={{ border: "1.5px solid transparent", flexShrink: 0 }}
                 >
                   {item.label}
                 </a>
@@ -1566,18 +1661,17 @@ export default function Navbar({
             </div>
 
             {/* ── Right CTAs ── */}
-            <div style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0 }}>
               <a href="/donate" className="aims-donate-btn">
-                <HeartHandshake size={15} strokeWidth={2.5} />
+                <HeartHandshake size={14} strokeWidth={2.5} />
                 Donate
               </a>
 
               <a
                 href="/partner"
                 className="aims-partner-btn aims-partner-desk"
-                style={{ display: "none" }}
               >
-                <Users size={15} strokeWidth={2.5} />
+                <Users size={14} strokeWidth={2.5} />
                 Partner with Us
               </a>
 
@@ -1593,9 +1687,9 @@ export default function Navbar({
                   border: "1.5px solid #EEF3FC",
                   background: menuOpen ? "#EEF3FC" : "#fff",
                   color: "#1A4DA8",
-                  display: "flex", alignItems: "center", justifyContent: "center",
+                  alignItems: "center", justifyContent: "center",
                   cursor: "pointer", transition: "background 0.2s",
-                  fontFamily: "inherit",
+                  fontFamily: "inherit", flexShrink: 0,
                 }}
               >
                 <AnimatePresence mode="wait" initial={false}>
@@ -1630,12 +1724,15 @@ export default function Navbar({
                 borderBottom: "1px solid #EEF3FC",
                 boxShadow: "0 20px 60px rgba(13,43,107,0.1)",
                 zIndex: 49,
+                /* Scroll if viewport very short */
+                maxHeight: "calc(100dvh - 68px)",
+                overflowY: "auto",
               }}
             >
               <div
                 style={{
                   maxWidth: 1280, margin: "0 auto",
-                  padding: "16px 20px 28px",
+                  padding: "16px 16px 28px",
                   display: "flex", flexDirection: "column", gap: 4,
                 }}
               >
@@ -1658,12 +1755,13 @@ export default function Navbar({
                   style={{
                     display: "flex", gap: 10, marginTop: 12,
                     paddingTop: 16, borderTop: "1px solid #EEF3FC",
+                    flexWrap: "wrap",
                   }}
                 >
                   <a
                     href="/donate"
                     className="aims-donate-btn"
-                    style={{ flex: 1, justifyContent: "center" }}
+                    style={{ flex: "1 1 140px", justifyContent: "center" }}
                   >
                     <HeartHandshake size={15} />
                     Donate Now
@@ -1671,7 +1769,7 @@ export default function Navbar({
                   <a
                     href="/partner"
                     className="aims-partner-btn"
-                    style={{ flex: 1, justifyContent: "center" }}
+                    style={{ flex: "1 1 140px", justifyContent: "center" }}
                   >
                     <Users size={15} />
                     Partner with Us
@@ -1708,6 +1806,7 @@ export default function Navbar({
                     style={{
                       display: "flex", gap: 8, marginTop: 14,
                       paddingTop: 12, borderTop: "1px solid #B8CCF0",
+                      flexWrap: "wrap",
                     }}
                   >
                     {[
