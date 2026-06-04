@@ -985,30 +985,14 @@ function Dropdown({ label, items, activePath, mobile = false }) {
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
-          style={{
-            width: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            padding: "12px 16px",
-            borderRadius: 14,
-            border: "none",
-            background: isActive ? "#EEF3FC" : "transparent",
-            color: isActive ? "#0D2B6B" : "#111827",
-            fontSize: 15,
-            fontWeight: 600,
-            cursor: "pointer",
-            transition: "background 0.2s",
-            fontFamily: "inherit",
-          }}
+          className="aims-mobile-dropdown-trigger"
         >
           {label}
           <ChevronDown
-            size={17}
+            size={18}
+            className="aims-chevron-icon"
             style={{
-              transition: "transform 0.25s",
               transform: open ? "rotate(180deg)" : "rotate(0deg)",
-              color: "#1A4DA8",
             }}
           />
         </button>
@@ -1022,17 +1006,7 @@ function Dropdown({ label, items, activePath, mobile = false }) {
               transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
               style={{ overflow: "hidden", marginTop: 4 }}
             >
-              <div
-                style={{
-                  background: "#F0F4FD",
-                  border: "1px solid #B8CCF0",
-                  borderRadius: 14,
-                  padding: 8,
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 4,
-                }}
-              >
+              <div className="aims-mobile-dropdown-container">
                 {items.map((item) => {
                   const Icon = item.icon;
                   return (
@@ -1040,44 +1014,31 @@ function Dropdown({ label, items, activePath, mobile = false }) {
                       key={item.label}
                       href={item.href}
                       onClick={() => setOpen(false)}
+                      className="aims-mobile-dropdown-item"
                       style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 12,
-                        padding: "10px 12px",
-                        borderRadius: 10,
-                        textDecoration: "none",
                         background: item.cta
                           ? "linear-gradient(135deg,#B8952A,#D4AF55)"
                           : activePath === item.href
                           ? "#EEF3FC"
                           : "transparent",
                         color: item.cta ? "#fff" : "#111827",
-                        transition: "background 0.18s",
                       }}
                     >
                       <span
+                        className="aims-mobile-dropdown-icon"
                         style={{
-                          width: 34,
-                          height: 34,
-                          borderRadius: 10,
                           background: item.cta ? "rgba(255,255,255,0.25)" : "#EEF3FC",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          flexShrink: 0,
                           color: item.cta ? "#fff" : "#1A4DA8",
                         }}
                       >
-                        <Icon size={16} strokeWidth={2.2} />
+                        <Icon size={17} strokeWidth={2.2} />
                       </span>
                       <div>
-                        <div style={{ fontSize: 14, fontWeight: 700 }}>{item.label}</div>
+                        <div className="aims-mobile-dropdown-label">{item.label}</div>
                         <div
+                          className="aims-mobile-dropdown-desc"
                           style={{
-                            fontSize: 12,
                             color: item.cta ? "rgba(255,255,255,0.85)" : "#6B7280",
-                            marginTop: 1,
                           }}
                         >
                           {item.description}
@@ -1107,22 +1068,13 @@ function Dropdown({ label, items, activePath, mobile = false }) {
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         className={`aims-nav-link${isActive ? " active" : ""}`}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: 4,
-          border: isActive ? "1.5px solid #1A4DA8" : "1.5px solid transparent",
-          fontFamily: "inherit",
-          whiteSpace: "nowrap",
-        }}
       >
         {label}
         <ChevronDown
-          size={14}
+          size={15}
+          className="aims-chevron-desktop"
           style={{
-            transition: "transform 0.25s",
             transform: open ? "rotate(180deg)" : "rotate(0deg)",
-            flexShrink: 0,
           }}
         />
       </button>
@@ -1134,35 +1086,10 @@ function Dropdown({ label, items, activePath, mobile = false }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 8, scale: 0.97 }}
             transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            style={{
-              position: "absolute",
-              top: "calc(100% + 14px)",
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: 300,
-              background: "#fff",
-              borderRadius: 20,
-              border: "1px solid #EEF3FC",
-              boxShadow: "0 20px 60px rgba(13,43,107,0.12), 0 4px 16px rgba(13,43,107,0.06)",
-              padding: 8,
-              zIndex: 100,
-            }}
+            className="aims-desktop-dropdown"
           >
             {/* Caret */}
-            <div
-              style={{
-                position: "absolute",
-                top: -7,
-                left: "50%",
-                width: 13,
-                height: 13,
-                background: "#fff",
-                border: "1px solid #EEF3FC",
-                borderBottom: "none",
-                borderRight: "none",
-                transform: "translateX(-50%) rotate(45deg)",
-              }}
-            />
+            <div className="aims-dropdown-caret" />
 
             {items.map((item) => {
               const Icon = item.icon;
@@ -1172,21 +1099,14 @@ function Dropdown({ label, items, activePath, mobile = false }) {
                   key={item.label}
                   href={item.href}
                   onClick={() => setOpen(false)}
+                  className="aims-desktop-dropdown-item"
                   style={{
-                    display: "flex",
-                    alignItems: "flex-start",
-                    gap: 12,
-                    padding: "10px 12px",
-                    borderRadius: 12,
-                    textDecoration: "none",
                     background: item.cta
                       ? "linear-gradient(135deg,#B8952A 0%,#D4AF55 100%)"
                       : active
                       ? "#EEF3FC"
                       : "transparent",
                     color: item.cta ? "#fff" : "#111827",
-                    marginBottom: 2,
-                    transition: "all 0.18s",
                   }}
                   onMouseOver={(e) => {
                     if (!item.cta && !active) e.currentTarget.style.background = "#EEF3FC";
@@ -1198,56 +1118,28 @@ function Dropdown({ label, items, activePath, mobile = false }) {
                   }}
                 >
                   <span
+                    className="aims-desktop-dropdown-icon"
                     style={{
-                      width: 36,
-                      height: 36,
-                      borderRadius: 10,
-                      flexShrink: 0,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
                       background: item.cta ? "rgba(255,255,255,0.25)" : "#EEF3FC",
                       color: item.cta ? "#fff" : "#1A4DA8",
                     }}
                   >
-                    <Icon size={17} strokeWidth={2} />
+                    <Icon size={18} strokeWidth={2} />
                   </span>
                   <span style={{ flex: 1 }}>
-                    <span
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 6,
-                        fontSize: 13.5,
-                        fontWeight: 700,
-                        color: item.cta ? "#fff" : "#111827",
-                      }}
-                    >
+                    <span className="aims-desktop-dropdown-label">
                       {item.label}
-                      {item.cta && <ArrowUpRight size={12} strokeWidth={2.5} />}
+                      {item.cta && <ArrowUpRight size={13} strokeWidth={2.5} />}
                       {item.tag && (
-                        <span
-                          style={{
-                            fontSize: 9,
-                            fontWeight: 700,
-                            padding: "2px 6px",
-                            borderRadius: 20,
-                            background: "#EEF3FC",
-                            color: "#1A4DA8",
-                            letterSpacing: "0.04em",
-                          }}
-                        >
+                        <span className="aims-dropdown-tag">
                           {item.tag}
                         </span>
                       )}
                     </span>
                     <span
+                      className="aims-desktop-dropdown-desc"
                       style={{
-                        display: "block",
-                        fontSize: 12,
                         color: item.cta ? "rgba(255,255,255,0.85)" : "#6B7280",
-                        marginTop: 2,
-                        lineHeight: 1.4,
                       }}
                     >
                       {item.description}
@@ -1288,27 +1180,114 @@ export default function Navbar({
 
         /* ── Nav link ── */
         .aims-nav-link {
-          padding: 7px 10px;
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+          padding: 8px 14px;
           border-radius: 40px;
-          font-size: 13px;
+          font-size: 14px;
           font-weight: 600;
           text-decoration: none;
           color: #111827;
           letter-spacing: 0.01em;
           transition: background 0.18s, color 0.18s;
           background: transparent;
+          border: 1.5px solid transparent;
           cursor: pointer;
           white-space: nowrap;
+          font-family: inherit;
         }
         .aims-nav-link:hover { background: #EEF3FC; color: #0D2B6B; }
         .aims-nav-link.active { background: #EEF3FC; color: #0D2B6B; border-color: #1A4DA8 !important; }
 
+        /* ── Chevron ── */
+        .aims-chevron-desktop {
+          transition: transform 0.25s;
+          flex-shrink: 0;
+        }
+
+        /* ── Desktop dropdown ── */
+        .aims-desktop-dropdown {
+          position: absolute;
+          top: calc(100% + 14px);
+          left: 50%;
+          transform: translateX(-50%);
+          width: 300px;
+          background: #fff;
+          border-radius: 20px;
+          border: 1px solid #EEF3FC;
+          box-shadow: 0 20px 60px rgba(13,43,107,0.12), 0 4px 16px rgba(13,43,107,0.06);
+          padding: 8px;
+          z-index: 100;
+        }
+
+        .aims-dropdown-caret {
+          position: absolute;
+          top: -7px;
+          left: 50%;
+          width: 13px;
+          height: 13px;
+          background: #fff;
+          border: 1px solid #EEF3FC;
+          border-bottom: none;
+          border-right: none;
+          transform: translateX(-50%) rotate(45deg);
+        }
+
+        .aims-desktop-dropdown-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 12px;
+          padding: 10px 12px;
+          border-radius: 12px;
+          text-decoration: none;
+          margin-bottom: 2px;
+          transition: all 0.18s;
+          color: #111827;
+        }
+
+        .aims-desktop-dropdown-icon {
+          width: 38px;
+          height: 38px;
+          border-radius: 10px;
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .aims-desktop-dropdown-label {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 14px;
+          font-weight: 700;
+          color: inherit;
+        }
+
+        .aims-desktop-dropdown-desc {
+          display: block;
+          font-size: 12.5px;
+          margin-top: 2px;
+          line-height: 1.4;
+        }
+
+        .aims-dropdown-tag {
+          font-size: 9.5px;
+          font-weight: 700;
+          padding: 2px 7px;
+          border-radius: 20px;
+          background: #EEF3FC;
+          color: #1A4DA8;
+          letter-spacing: 0.04em;
+        }
+
         /* ── CTA buttons ── */
         .aims-donate-btn {
           display: inline-flex; align-items: center; gap: 6px;
-          padding: 9px 16px; border-radius: 40px;
+          padding: 10px 20px; border-radius: 40px;
           background: linear-gradient(135deg,#B8952A,#D4AF55);
-          color: #fff; font-size: 13px; font-weight: 800;
+          color: #fff; font-size: 14px; font-weight: 800;
           text-decoration: none; letter-spacing: 0.01em;
           box-shadow: 0 4px 18px rgba(184,149,42,0.38);
           transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
@@ -1323,9 +1302,9 @@ export default function Navbar({
 
         .aims-partner-btn {
           display: inline-flex; align-items: center; gap: 6px;
-          padding: 9px 16px; border-radius: 40px;
+          padding: 10px 20px; border-radius: 40px;
           background: #153B8F;
-          color: #fff; font-size: 13px; font-weight: 700;
+          color: #fff; font-size: 14px; font-weight: 700;
           text-decoration: none; letter-spacing: 0.01em;
           box-shadow: 0 4px 16px rgba(13,43,107,0.28);
           transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
@@ -1340,13 +1319,79 @@ export default function Navbar({
 
         /* ── Mobile link ── */
         .aims-mobile-link {
-          display: block; padding: 12px 16px; border-radius: 14px;
-          font-size: 15px; font-weight: 600;
+          display: block; padding: 13px 18px; border-radius: 14px;
+          font-size: 15.5px; font-weight: 600;
           text-decoration: none; color: #111827;
           transition: background 0.18s, color 0.18s;
         }
         .aims-mobile-link:hover, .aims-mobile-link.active {
           background: #EEF3FC; color: #0D2B6B;
+        }
+
+        /* ── Mobile dropdown ── */
+        .aims-mobile-dropdown-trigger {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 13px 18px;
+          border-radius: 14px;
+          border: none;
+          background: transparent;
+          color: #111827;
+          font-size: 15.5px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.2s;
+          font-family: inherit;
+        }
+        .aims-mobile-dropdown-trigger:hover {
+          background: #EEF3FC;
+        }
+
+        .aims-chevron-icon {
+          transition: transform 0.25s;
+          color: #1A4DA8;
+        }
+
+        .aims-mobile-dropdown-container {
+          background: #F0F4FD;
+          border: 1px solid #B8CCF0;
+          border-radius: 14px;
+          padding: 8px;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+
+        .aims-mobile-dropdown-item {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 11px 13px;
+          border-radius: 10px;
+          text-decoration: none;
+          transition: background 0.18s;
+        }
+
+        .aims-mobile-dropdown-icon {
+          width: 36px;
+          height: 36px;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+
+        .aims-mobile-dropdown-label {
+          font-size: 14.5px;
+          font-weight: 700;
+        }
+
+        .aims-mobile-dropdown-desc {
+          font-size: 12.5px;
+          margin-top: 1px;
         }
 
         /* ── Social – Topbar ── */
@@ -1366,7 +1411,7 @@ export default function Navbar({
 
         /* ── Social – Mobile ── */
         .aims-social-mobile {
-          width: 32px; height: 32px; border-radius: 50%;
+          width: 34px; height: 34px; border-radius: 50%;
           display: flex; align-items: center; justify-content: center;
           color: #1A4DA8; background: #EEF3FC;
           transition: background 0.25s, color 0.2s, transform 0.2s;
@@ -1382,7 +1427,7 @@ export default function Navbar({
         /* ── Topbar pulse ── */
         @keyframes aimsPulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
         .aims-live-dot {
-          width: 6px; height: 6px; border-radius: 50%;
+          width: 7px; height: 7px; border-radius: 50%;
           background: #D4AF55; animation: aimsPulse 2s ease-in-out infinite; flex-shrink: 0;
         }
 
@@ -1390,40 +1435,106 @@ export default function Navbar({
         .aims-tb-link { transition: color 0.18s; }
         .aims-tb-link:hover { color: #D4AF55 !important; }
 
-        /* ── Logo wordmark ── */
-        .aims-logo-text   { font-size: 21px; }
-        .aims-logo-sub    { font-size: 9px; }
-        .aims-logo-box    { width: 44px; height: 44px; border-radius: 12px; }
+        /* ── Logo ── */
+        .aims-logo-box {
+          background: linear-gradient(135deg,#EEF3FC 0%,#F5E8C0 100%);
+          border: 1.5px solid #1A4DA8;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          flex-shrink: 0;
+          box-shadow: 0 4px 14px rgba(13,43,107,0.16);
+          transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        .aims-logo-box:hover {
+          transform: scale(1.07) rotate(-4deg);
+        }
+
+        .aims-logo-text {
+          font-weight: 800;
+          letter-spacing: -0.03em;
+          line-height: 1.1;
+          color: #111827;
+          white-space: nowrap;
+        }
+
+        .aims-logo-sub {
+          font-weight: 700;
+          color: #1A4DA8;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          margin-top: 3px;
+          white-space: nowrap;
+        }
+
+        /* ── Hamburger ── */
+        .aims-hamburger {
+          width: 44px; height: 44px; border-radius: 12px;
+          border: 1.5px solid #EEF3FC;
+          background: #fff;
+          color: #1A4DA8;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: background 0.2s;
+          font-family: inherit;
+          flex-shrink: 0;
+        }
 
         /* ============================================================
            RESPONSIVE BREAKPOINTS
         ============================================================ */
 
-        /* --- Hide/show helpers --- */
-        /* Topbar: only ≥1024px */
+        /* --- Base: Mobile first (<768px) --- */
         .aims-topbar         { display: none; }
-
-        /* Desktop nav & partner btn: only ≥1024px */
         .aims-desktop-nav    { display: none; }
         .aims-partner-desk   { display: none !important; }
-
-        /* Hamburger: only <1024px */
         .aims-hamburger      { display: flex; }
 
-        /* Donate button: always visible, size adjusts */
+        .aims-logo-box       { width: 40px; height: 40px; border-radius: 11px; }
+        .aims-logo-text      { font-size: 20px; }
+        .aims-logo-sub       { font-size: 9px; }
 
-        /* --- ≥1280px (wide desktop) --- */
-        @media (min-width: 1280px) {
-          .aims-topbar        { display: block; }
-          .aims-desktop-nav   { display: flex !important; }
-          .aims-partner-desk  { display: inline-flex !important; }
-          .aims-hamburger     { display: none !important; }
-          .aims-nav-link      { font-size: 13.5px; padding: 8px 12px; }
-          .aims-donate-btn,
-          .aims-partner-btn   { font-size: 14px; padding: 10px 20px; }
+        .aims-donate-btn,
+        .aims-partner-btn    { font-size: 13px; padding: 9px 16px; }
+
+        /* --- Small mobile (<480px) --- */
+        @media (max-width: 479px) {
+          .aims-logo-box      { width: 36px; height: 36px; border-radius: 10px; }
+          .aims-logo-text     { font-size: 18px; }
+          .aims-logo-sub      { font-size: 8px; letter-spacing: 0.12em; }
+          .aims-donate-btn    { font-size: 12px; padding: 8px 13px; gap: 5px; }
+          .aims-hamburger     { width: 40px !important; height: 40px !important; }
+          .aims-mobile-link,
+          .aims-mobile-dropdown-trigger { font-size: 14.5px; padding: 12px 15px; }
+        }
+
+        /* --- 480px–639px (large mobile) --- */
+        @media (min-width: 480px) and (max-width: 639px) {
+          .aims-logo-box      { width: 42px; height: 42px; }
+          .aims-logo-text     { font-size: 21px; }
+          .aims-logo-sub      { font-size: 9px; }
+          .aims-donate-btn    { font-size: 13.5px; padding: 9px 18px; }
+        }
+
+        /* --- 640px–767px (small tablet) --- */
+        @media (min-width: 640px) and (max-width: 767px) {
+          .aims-logo-box      { width: 44px; height: 44px; border-radius: 12px; }
+          .aims-logo-text     { font-size: 22px; }
+          .aims-logo-sub      { font-size: 9.5px; }
+          .aims-donate-btn    { font-size: 14px; padding: 10px 20px; }
+        }
+
+        /* --- 768px–1023px (tablet) --- */
+        @media (min-width: 768px) and (max-width: 1023px) {
+          .aims-logo-box      { width: 46px; height: 46px; border-radius: 13px; }
           .aims-logo-text     { font-size: 23px; }
           .aims-logo-sub      { font-size: 10px; }
-          .aims-logo-box      { width: 48px; height: 48px; border-radius: 14px; }
+          .aims-donate-btn    { font-size: 14px; padding: 10px 22px; }
+          .aims-mobile-link,
+          .aims-mobile-dropdown-trigger { font-size: 16px; padding: 14px 20px; }
         }
 
         /* --- 1024px–1279px (small desktop / large laptop) --- */
@@ -1432,39 +1543,38 @@ export default function Navbar({
           .aims-desktop-nav   { display: flex !important; }
           .aims-partner-desk  { display: inline-flex !important; }
           .aims-hamburger     { display: none !important; }
-          .aims-nav-link      { font-size: 12px; padding: 7px 8px; gap: 2px; }
-          .aims-donate-btn,
-          .aims-partner-btn   { font-size: 12px; padding: 8px 13px; gap: 5px; }
-          .aims-logo-text     { font-size: 19px; }
-          .aims-logo-sub      { font-size: 9px; }
-          .aims-logo-box      { width: 40px; height: 40px; border-radius: 11px; }
-        }
-
-        /* --- 768px–1023px (tablet) --- */
-        @media (min-width: 768px) and (max-width: 1023px) {
-          .aims-desktop-nav   { display: none !important; }
-          .aims-partner-desk  { display: none !important; }
-          .aims-hamburger     { display: flex !important; }
+          
+          .aims-nav-link      { font-size: 13px; padding: 7px 11px; gap: 3px; }
           .aims-donate-btn    { font-size: 13px; padding: 9px 16px; }
-          .aims-logo-text     { font-size: 20px; }
+          .aims-partner-btn   { font-size: 13px; padding: 9px 16px; }
+          .aims-logo-box      { width: 42px; height: 42px; border-radius: 11px; }
+          .aims-logo-text     { font-size: 21px; }
           .aims-logo-sub      { font-size: 9px; }
-          .aims-logo-box      { width: 42px; height: 42px; border-radius: 12px; }
         }
 
-        /* --- <480px (small mobile) --- */
-        @media (max-width: 479px) {
-          .aims-donate-btn    { font-size: 12px; padding: 8px 12px; gap: 5px; }
-          .aims-logo-text     { font-size: 17px; }
-          .aims-logo-sub      { font-size: 8px; letter-spacing: 0.12em; }
-          .aims-logo-box      { width: 36px; height: 36px; border-radius: 10px; }
-          .aims-hamburger     { width: 38px !important; height: 38px !important; }
+        /* --- ≥1280px (wide desktop) --- */
+        @media (min-width: 1280px) {
+          .aims-topbar        { display: block; }
+          .aims-desktop-nav   { display: flex !important; }
+          .aims-partner-desk  { display: inline-flex !important; }
+          .aims-hamburger     { display: none !important; }
+          
+          .aims-nav-link      { font-size: 14px; padding: 8px 16px; gap: 4px; }
+          .aims-donate-btn    { font-size: 14px; padding: 10px 22px; }
+          .aims-partner-btn   { font-size: 14px; padding: 10px 22px; }
+          .aims-logo-box      { width: 48px; height: 48px; border-radius: 14px; }
+          .aims-logo-text     { font-size: 23px; }
+          .aims-logo-sub      { font-size: 10px; }
         }
 
-        /* --- 480px–767px (mobile) --- */
-        @media (min-width: 480px) and (max-width: 767px) {
-          .aims-donate-btn    { font-size: 13px; padding: 9px 14px; }
-          .aims-logo-text     { font-size: 19px; }
-          .aims-logo-box      { width: 40px; height: 40px; }
+        /* --- ≥1440px (ultra-wide) --- */
+        @media (min-width: 1440px) {
+          .aims-nav-link      { font-size: 14.5px; padding: 9px 18px; }
+          .aims-donate-btn,
+          .aims-partner-btn   { font-size: 14.5px; padding: 11px 24px; }
+          .aims-logo-box      { width: 50px; height: 50px; border-radius: 15px; }
+          .aims-logo-text     { font-size: 24px; }
+          .aims-logo-sub      { font-size: 10.5px; }
         }
       `}</style>
 
@@ -1487,7 +1597,7 @@ export default function Navbar({
             style={{
               maxWidth: 1280,
               margin: "0 auto",
-              padding: "0 24px",
+              padding: "0 clamp(16px, 3vw, 28px)",
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
@@ -1506,12 +1616,12 @@ export default function Navbar({
                   className="aims-tb-link"
                   style={{
                     display: "flex", alignItems: "center", gap: 7,
-                    fontSize: 12.5, fontWeight: 600,
+                    fontSize: 13, fontWeight: 600,
                     color: "rgba(255,255,255,0.88)", textDecoration: "none",
                     whiteSpace: "nowrap",
                   }}
                 >
-                  <Icon size={13} />
+                  <Icon size={14} />
                   {label}
                 </a>
               ))}
@@ -1523,7 +1633,7 @@ export default function Navbar({
                 <div className="aims-live-dot" />
                 <span
                   style={{
-                    fontSize: 11, fontWeight: 700,
+                    fontSize: 11.5, fontWeight: 700,
                     color: "rgba(255,255,255,0.7)",
                     letterSpacing: "0.1em", textTransform: "uppercase",
                   }}
@@ -1565,13 +1675,12 @@ export default function Navbar({
             style={{
               maxWidth: 1280,
               margin: "0 auto",
-              /* Fluid horizontal padding: comfortable on all sizes */
               padding: "0 clamp(12px, 3vw, 28px)",
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              height: 68,
-              gap: 8,
+              height: 70,
+              gap: 10,
               minWidth: 0,
             }}
           >
@@ -1584,23 +1693,7 @@ export default function Navbar({
                 minWidth: 0,
               }}
             >
-              <div
-                className="aims-logo-box"
-                style={{
-                  background: "linear-gradient(135deg,#EEF3FC 0%,#F5E8C0 100%)",
-                  border: "1.5px solid #1A4DA8",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  overflow: "hidden", flexShrink: 0,
-                  boxShadow: "0 4px 14px rgba(13,43,107,0.16)",
-                  transition: "transform 0.28s cubic-bezier(0.34,1.56,0.64,1)",
-                }}
-                onMouseOver={(e) =>
-                  (e.currentTarget.style.transform = "scale(1.07) rotate(-4deg)")
-                }
-                onMouseOut={(e) =>
-                  (e.currentTarget.style.transform = "scale(1) rotate(0deg)")
-                }
-              >
+              <div className="aims-logo-box">
                 <img
                   src="/WhatsApp Image 2026-05-01 at 8.07.03 PM.jpeg"
                   alt="AimSkills logo"
@@ -1609,36 +1702,21 @@ export default function Navbar({
               </div>
 
               <div style={{ lineHeight: 1, minWidth: 0 }}>
-                <div
-                  className="aims-logo-text"
-                  style={{
-                    fontWeight: 800,
-                    letterSpacing: "-0.03em", lineHeight: 1.1,
-                    color: "#111827",
-                    whiteSpace: "nowrap",
-                  }}
-                >
+                <div className="aims-logo-text">
                   Aim<span style={{ color: "#B8952A" }}> Skills</span>
                 </div>
-                <div
-                  className="aims-logo-sub"
-                  style={{
-                    fontWeight: 700, color: "#1A4DA8",
-                    letterSpacing: "0.18em", textTransform: "uppercase", marginTop: 3,
-                    whiteSpace: "nowrap",
-                  }}
-                >
+                <div className="aims-logo-sub">
                   Building futures
                 </div>
               </div>
             </a>
 
-            {/* ── Desktop links (centred, flex-1) ── */}
+            {/* ── Desktop links ── */}
             <div
               className="aims-desktop-nav"
               style={{
                 alignItems: "center",
-                gap: 1,
+                gap: 2,
                 flex: 1,
                 justifyContent: "center",
                 flexWrap: "nowrap",
@@ -1651,7 +1729,7 @@ export default function Navbar({
                   key={item.label}
                   href={item.href}
                   className={`aims-nav-link${activePath === item.href ? " active" : ""}`}
-                  style={{ border: "1.5px solid transparent", flexShrink: 0 }}
+                  style={{ flexShrink: 0 }}
                 >
                   {item.label}
                 </a>
@@ -1661,9 +1739,9 @@ export default function Navbar({
             </div>
 
             {/* ── Right CTAs ── */}
-            <div style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
               <a href="/donate" className="aims-donate-btn">
-                <HeartHandshake size={14} strokeWidth={2.5} />
+                <HeartHandshake size={15} strokeWidth={2.5} />
                 Donate
               </a>
 
@@ -1671,7 +1749,7 @@ export default function Navbar({
                 href="/partner"
                 className="aims-partner-btn aims-partner-desk"
               >
-                <Users size={14} strokeWidth={2.5} />
+                <Users size={15} strokeWidth={2.5} />
                 Partner with Us
               </a>
 
@@ -1683,13 +1761,7 @@ export default function Navbar({
                 aria-expanded={menuOpen}
                 className="aims-hamburger"
                 style={{
-                  width: 42, height: 42, borderRadius: 12,
-                  border: "1.5px solid #EEF3FC",
                   background: menuOpen ? "#EEF3FC" : "#fff",
-                  color: "#1A4DA8",
-                  alignItems: "center", justifyContent: "center",
-                  cursor: "pointer", transition: "background 0.2s",
-                  fontFamily: "inherit", flexShrink: 0,
                 }}
               >
                 <AnimatePresence mode="wait" initial={false}>
@@ -1701,7 +1773,7 @@ export default function Navbar({
                     transition={{ duration: 0.18 }}
                     style={{ display: "flex" }}
                   >
-                    {menuOpen ? <X size={20} /> : <Menu size={20} />}
+                    {menuOpen ? <X size={21} /> : <Menu size={21} />}
                   </motion.span>
                 </AnimatePresence>
               </button>
@@ -1724,15 +1796,14 @@ export default function Navbar({
                 borderBottom: "1px solid #EEF3FC",
                 boxShadow: "0 20px 60px rgba(13,43,107,0.1)",
                 zIndex: 49,
-                /* Scroll if viewport very short */
-                maxHeight: "calc(100dvh - 68px)",
+                maxHeight: "calc(100dvh - 70px)",
                 overflowY: "auto",
               }}
             >
               <div
                 style={{
                   maxWidth: 1280, margin: "0 auto",
-                  padding: "16px 16px 28px",
+                  padding: "clamp(14px, 3vw, 20px) clamp(14px, 3vw, 24px) 28px",
                   display: "flex", flexDirection: "column", gap: 4,
                 }}
               >
@@ -1763,7 +1834,7 @@ export default function Navbar({
                     className="aims-donate-btn"
                     style={{ flex: "1 1 140px", justifyContent: "center" }}
                   >
-                    <HeartHandshake size={15} />
+                    <HeartHandshake size={16} />
                     Donate Now
                   </a>
                   <a
@@ -1771,7 +1842,7 @@ export default function Navbar({
                     className="aims-partner-btn"
                     style={{ flex: "1 1 140px", justifyContent: "center" }}
                   >
-                    <Users size={15} />
+                    <Users size={16} />
                     Partner with Us
                   </a>
                 </div>
@@ -1793,11 +1864,11 @@ export default function Navbar({
                         key={label} href={href}
                         style={{
                           display: "flex", alignItems: "center", gap: 10,
-                          fontSize: 13.5, fontWeight: 600,
+                          fontSize: 14, fontWeight: 600,
                           color: "#1A4DA8", textDecoration: "none",
                         }}
                       >
-                        <Icon size={15} /> {label}
+                        <Icon size={16} /> {label}
                       </a>
                     ))}
                   </div>
@@ -1817,7 +1888,7 @@ export default function Navbar({
                       { href: "https://youtube.com/channel/UC3SfcVEeOO72bi3mwSLER7A", label: "YouTube", Icon: FaYoutube, socialClass: "aims-social-yt" },
                     ].map(({ href, label, Icon, socialClass }) => (
                       <a key={label} href={href} aria-label={label} className={`aims-social-mobile ${socialClass}`}>
-                        <Icon size={15} />
+                        <Icon size={16} />
                       </a>
                     ))}
                   </div>
