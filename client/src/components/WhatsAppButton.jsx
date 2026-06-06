@@ -8,7 +8,7 @@
 //   const location = useLocation();
 
 //   // Block on admin pages
-//   const blockedRoutes = ["/admin","/blogs/"];
+//   const blockedRoutes = ["/admin", "/blogs/"];
 
 //   const isBlockedRoute = blockedRoutes.some((route) =>
 //     location.pathname.startsWith(route)
@@ -16,7 +16,6 @@
 
 //   useEffect(() => {
 //     const handleScroll = () => {
-//       // Show only once
 //       if (window.scrollY > 100) {
 //         setShowButton(true);
 //       }
@@ -29,23 +28,20 @@
 //     };
 //   }, []);
 
-//   // Hide completely on admin routes
 //   if (isBlockedRoute) return null;
 
-//   // WhatsApp pre-filled message
+//   // Larger WhatsApp message
 //   const message =
-//     "Hi Aim Skill NGO, I want to know more about your services.";
+//     "Hello Aim Skills Education Trust, I visited your website and would like to know more about your training programs, consultancy services, skill development initiatives, and opportunities for collaboration. Please share more details. Thank you.";
 
 //   return (
 //     <a
-//       href={`https://wa.me/918604050163?text=${encodeURIComponent(
-//         message
-//       )}`}
+//       href={`https://wa.me/917248776407?text=${encodeURIComponent(message)}`}
 //       target="_blank"
 //       rel="noopener noreferrer"
 //       aria-label="Chat on WhatsApp"
 //       className={`
-//         fixed bottom-5 sm:bottom-7 right-6 z-[9999]
+//         fixed bottom-5 sm:bottom-5 right-4 z-[9999]
 //         flex h-13 w-13 items-center justify-center
 //         rounded-full
 //         bg-[#1C8C5E]
@@ -63,17 +59,12 @@
 //         }
 //       `}
 //     >
-//       <FaWhatsapp
-//         size={25}
-//         className="text-white"
-//       />
+//       <FaWhatsapp size={25} className="text-white" />
 //     </a>
 //   );
 // };
 
 // export default WhatsAppButton;
-
-
 
 import { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
@@ -97,7 +88,7 @@ const WhatsAppButton = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -106,7 +97,7 @@ const WhatsAppButton = () => {
 
   if (isBlockedRoute) return null;
 
-  // Larger WhatsApp message
+  // WhatsApp message
   const message =
     "Hello Aim Skills Education Trust, I visited your website and would like to know more about your training programs, consultancy services, skill development initiatives, and opportunities for collaboration. Please share more details. Thank you.";
 
@@ -117,16 +108,19 @@ const WhatsAppButton = () => {
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
       className={`
-        fixed bottom-5 sm:bottom-5 right-4 z-[9999]
-        flex h-13 w-13 items-center justify-center
+        fixed bottom-4 sm:bottom-5 md:bottom-6 right-3 sm:right-4 md:right-5 z-[9999]
+        flex items-center justify-center
         rounded-full
         bg-[#1C8C5E]
-        shadow-[0_10px_30px_rgba(0,0,0,0.28)]
+        shadow-[0_8px_24px_rgba(0,0,0,0.25)] sm:shadow-[0_10px_30px_rgba(0,0,0,0.28)]
         backdrop-blur-md
         transition-all duration-500 ease-out
         hover:bg-[#18794D]
         hover:scale-110
         active:scale-95
+        
+        /* Responsive sizing */
+        w-12 h-12 sm:w-13 sm:h-13 md:w-14 md:h-14
 
         ${
           showButton
@@ -135,7 +129,13 @@ const WhatsAppButton = () => {
         }
       `}
     >
-      <FaWhatsapp size={25} className="text-white" />
+      <FaWhatsapp 
+        size={22} 
+        className="text-white sm:size-[24px] md:size-[26px]" 
+      />
+      
+      {/* Optional: Pulse animation ring */}
+      <span className="absolute inset-0 rounded-full bg-[#1C8C5E] animate-ping opacity-20" />
     </a>
   );
 };

@@ -5,7 +5,7 @@
 // import ProgramsIntroSection from "../components/program/ProgramsIntroSection";
 // import DetailedProgramsSection from "../components/program/DetailedProgramsSection";
 // import ApproachSection from "../components/program/ApproachSection";
-// import PartnersSection from "../components/PartneRSction";
+// import PartnersSection from "../components/PartnersSection";
 // import CTASection from "../components/CTASection";
 // import Footer from "../components/Footer";
 // import { useSelector } from "react-redux";
@@ -46,7 +46,7 @@
 // }
 
 // export default function ProgramsPage() {
-//     const { userData } = useSelector((state) => state.user);
+//   const { userData } = useSelector((state) => state.user);
 //   const navigate = useNavigate();
 
 //   useEffect(() => {
@@ -68,12 +68,13 @@
 //         <ProgramsIntroSection />
 //       </SectionReveal>
 
-//       <SectionReveal
+//       {/* FIX: Remove SectionReveal wrapper - render DetailedProgramsSection directly */}
+//       <section
 //         id="detailed-programs"
 //         className="relative overflow-hidden bg-[#EEF3FC] py-8 sm:py-10 lg:py-12"
 //       >
-//        <DetailedProgramsSection/>
-//       </SectionReveal>
+//         <DetailedProgramsSection />
+//       </section>
 
 //       <SectionReveal
 //         id="approach"
@@ -97,7 +98,6 @@
 //     </main>
 //   );
 // }
-
 
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
@@ -156,44 +156,51 @@ export default function ProgramsPage() {
   }, [userData, navigate]);
 
   return (
-    <main className="min-h-screen scroll-smooth bg-[#F8F9FB] text-[#111827] antialiased">
+    <main className="min-h-screen scroll-smooth bg-[#F8F9FB] font-['Plus_Jakarta_Sans',sans-serif] text-[#111827] antialiased">
+      {/* Navigation */}
       <Navbar activePath="/programs" />
 
+      {/* Hero Section */}
       <ProgramsHeroSection />
 
+      {/* Programs Introduction */}
       <SectionReveal
         id="programs-intro"
-        className="relative bg-white py-8 sm:py-10 lg:py-12"
+        className="relative bg-white"
       >
         <ProgramsIntroSection />
       </SectionReveal>
 
-      {/* FIX: Remove SectionReveal wrapper - render DetailedProgramsSection directly */}
+      {/* Detailed Programs - Direct render without SectionReveal wrapper */}
       <section
         id="detailed-programs"
-        className="relative overflow-hidden bg-[#EEF3FC] py-8 sm:py-10 lg:py-12"
+        className="relative overflow-hidden bg-[#EEF3FC]"
       >
         <DetailedProgramsSection />
       </section>
 
+      {/* Our Approach */}
       <SectionReveal
         id="approach"
-        className="relative bg-white py-8 sm:py-10 lg:py-12"
+        className="relative bg-white"
       >
         <ApproachSection />
       </SectionReveal>
 
-      <SectionReveal id="cta" className="relative bg-white">
+      {/* Call to Action */}
+      <SectionReveal id="cta" className="relative bg-[#F5E8C0]">
         <CTASection />
       </SectionReveal>
 
+      {/* Partners & Collaborators */}
       <SectionReveal
         id="partners"
-        className="relative overflow-hidden bg-[#F8F9FB]"
+        className="relative bg-[#F8F9FB]"
       >
         <PartnersSection />
       </SectionReveal>
 
+      {/* Footer */}
       <Footer />
     </main>
   );
