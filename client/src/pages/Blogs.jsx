@@ -699,7 +699,7 @@ function BlogHeroSection({ totalBlogs }) {
           <motion.div variants={containerVariants} initial="hidden" animate="visible" className="max-w-3xl">
             <motion.div variants={itemVariants} className="mb-4 sm:mb-5 md:mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold text-[#F5E8C0] shadow-sm backdrop-blur-md">
               <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#D4AF55] animate-pulse" />
-              AimSkills Knowledge Hub
+              Aim Skills Knowledge Hub
             </motion.div>
 
             <motion.h1 variants={itemVariants} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.05]">
@@ -718,7 +718,7 @@ function BlogHeroSection({ totalBlogs }) {
                 <ArrowRight size={15} strokeWidth={2.4} className="sm:size-[16px]" />
               </a>
               <a href="/about" className="inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 px-5 sm:px-6 py-3 sm:py-3.5 text-sm sm:text-base font-bold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20 hover:border-white/30 active:scale-[0.98]">
-                About AimSkills
+                About Aim Skills
               </a>
             </motion.div>
           </motion.div>

@@ -729,13 +729,13 @@ export default function Footer() {
             <p className="text-xs sm:text-sm font-medium text-white/60">
               © {new Date().getFullYear()} Aim Skills Education Trust. All rights reserved.
             </p>
-            <span className="hidden text-white/40 sm:inline">•</span>
-            <p className="inline-flex items-center gap-1 text-xs sm:text-sm font-medium text-white/50">
+            {/* <span className="hidden text-white/40 sm:inline">•</span> */}
+            {/* <p className="inline-flex items-center gap-1 text-xs sm:text-sm font-medium text-white/50">
               Made with <Heart size={12} className="fill-red-500 text-red-500 sm:size-[14px]" /> by <span className="font-semibold text-white/70">Abhishek</span>
-            </p>
+            </p> */}
           </div>
-          <div className="flex items-center gap-3 sm:gap-4">
-            <a
+          <div className="flex items-center">
+            {/* <a
               href="/"
               className="text-xs sm:text-sm font-medium text-white/60 transition-colors hover:text-white"
             >
@@ -754,7 +754,10 @@ export default function Footer() {
               className="text-xs sm:text-sm font-medium text-white/60 transition-colors hover:text-white"
             >
               Cookie Policy
-            </a>
+            </a> */}
+             <p className="inline-flex items-center gap-1 text-xs sm:text-sm font-medium text-white/50">
+              Made with <Heart size={12} className="fill-red-500 text-red-500 sm:size-[14px]" /> by <span className="font-semibold text-white/70">Abhishek</span>
+            </p>
           </div>
         </motion.div>
       </motion.div>
