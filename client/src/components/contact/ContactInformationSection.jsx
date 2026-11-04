@@ -339,9 +339,9 @@ const contactCards = [
   },
   {
     title: "Email Address",
-    detail: "info@aimskills.in",
+    detail: "Aimskillstrust@gmail.com",
     subDetail: "We reply within 24 hours",
-    href: "mailto:info@aimskills.in",
+    href: "mailto:Aimskillstrust@gmail.com",
     icon: Mail,
     color: "from-emerald-50 to-white",
     iconBg: "bg-emerald-50 text-emerald-600",

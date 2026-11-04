@@ -103,7 +103,7 @@ const supportItems = [
     title: "Email Assistance",
     description: "Write to us for donation confirmation or contribution queries.",
     icon: Mail,
-    href: "mailto:info@aimskills.in",
+    href: "mailto:Aimskillstrust@gmail.com",
   },
   {
     title: "Call Support",

@@ -543,7 +543,7 @@ export default function CSRPartnerFormSection() {
                   Prefer a direct conversation?
                 </h3>
                 <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm font-medium leading-5 sm:leading-6 text-slate-600">
-                  Email us at contact@aimskills.org or call +91 84829 69631.
+                  Email us at Aimskillstrust@gmail.com or call +91 72487 76407.
                 </p>
               </div>
             </div>

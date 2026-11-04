@@ -717,10 +717,10 @@ const AdminLoginPage = () => {
               <p className="text-xs sm:text-sm text-[#111827]/60">
                 Need help? Contact{' '}
                 <a 
-                  href="mailto:support@aimskills.org" 
+                  href="mailto:Aimskillstrust@gmail.com" 
                   className="font-semibold text-[#1A4DA8] hover:text-[#2E6FD9] transition-colors"
                 >
-                  support@aimskills.org
+                  Aimskillstrust@gmail.com
                 </a>
               </p>
             </motion.div>

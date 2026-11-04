@@ -1608,7 +1608,7 @@ export default function Navbar({
             <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
               {[
                 { href: "tel:+917248776407", Icon: Phone, label: "+91 72487 76407" },
-                { href: "mailto:info@aimskills.in", Icon: Mail, label: "info@aimskills.in" },
+                { href: "mailto:Aimskillstrust@gmail.com", Icon: Mail, label: "Aimskillstrust@gmail.com" },
               ].map(({ href, Icon, label }) => (
                 <a
                   key={label}
@@ -1858,7 +1858,7 @@ export default function Navbar({
                   <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                     {[
                       { href: "tel:+917248776407", Icon: Phone, label: "+91 72487 76407" },
-                      { href: "mailto:info@aimskills.in", Icon: Mail, label: "info@aimskills.in" },
+                      { href: "mailto:Aimskillstrust@gmail.com", Icon: Mail, label: "Aimskillstrust@gmail.com" },
                     ].map(({ href, Icon, label }) => (
                       <a
                         key={label} href={href}
